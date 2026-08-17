@@ -119,7 +119,7 @@ details[open] .summary-style{margin-bottom:20px;border-radius:10px 10px 0 0}
 
 <section class="panel">
 <details>
-  <summary class="summary-style">📖 Грамматический справочник (краткая версия) ▼</summary>
+  <summary class="summary-style">📖 Грамматический справочник (полная версия) ▼</summary>
   <div class="grammar-content" style="margin-top: 15px;">
     <!-- Внедрение PDF-документа вместо длинного HTML-кода -->
     <iframe src="Grammar+Reference.pdf" width="100%" height="800px" style="border: 1px solid var(--bd); border-radius: 12px;">
@@ -869,13 +869,13 @@ const WORDS=[
 const IRREGULAR_VERBS = [
   ["arise", "arose", "arisen", "возникать", " /əˈraɪz/ ", " /əˈrəʊz/ ", " /əˈrɪzən/ "],
   ["awake", "awoke", "awoken", "просыпаться", " /əˈweɪk/ ", " /əˈwəʊk/ ", " /əˈwəʊkən/ "],
-  ["be", "was/were", "been", "быть", " /biː/ ", " /wɒz/ /wɜː(r)/ ", " /bɪn/ "],
+  ["be", "was/were", "been", "быть", " /biː/ ", " /wɒz/ /wɜː(r)/ ", " /biːn/ "],
   ["become", "became", "become", "становиться", " /bɪˈkʌm/ ", " /bɪˈkeɪm/ ", " /bɪˈkʌm/ "],
   ["begin", "began", "begun", "начинать", " /bɪˈɡɪn/ ", " /bɪˈɡæn/ ", " /bɪˈɡʌn/ "],
   ["bend", "bent", "bent", "гнуть", " /bend/ ", " /bent/ ", " /bent/ "],
   ["bet", "bet", "bet", "делать ставку", " /bet/ ", " /bet/ ", " /bet/ "],
   ["bid", "bid", "bid", "предлагать (цену)", " /bɪd/ ", " /bɪd/ ", " /bɪd/ "],
-  ["bite", "bit", "bitten", "кусать", " /baɪt/ ", " /bɪt/ ", " /ˈbɪtən/ "],
+  ["bite", "bit", "bitten", "кусать", " /baɪt/ ", " /bɪt/ ", " /ˈbɪtn/ "],
   ["bleed", "bled", "bled", "кровоточить", " /bliːd/ ", " /bled/ ", " /bled/ "],
   ["blow", "blew", "blown", "дуть; взорвать", " /bləʊ/ ", " /bluː/ ", " /bləʊn/ "],
   ["break", "broke", "broken", "ломать", " /breɪk/ ", " /brəʊk/ ", " /ˈbrəʊkən/ "],
@@ -883,10 +883,10 @@ const IRREGULAR_VERBS = [
   ["build", "built", "built", "строить", " /bɪld/ ", " /bɪlt/ ", " /bɪlt/ "],
   ["burn", "burnt", "burnt", "гореть; сжигать", " /bɜːn/ ", " /bɜːnt/ ", " /bɜːnt/ "],
   ["buy", "bought", "bought", "покупать", " /baɪ/ ", " /bɔːt/ ", " /bɔːt/ "],
-  ["can", "could", "been able", "мочь", " /kæn/ ", " /kʊd/ ", " /biːn ˈeɪbəl/ "],
+  ["can", "could", "been able", "мочь", " /kæn/ ", " /kʊd/ ", " /biːn ˈeɪbl/ "],
   ["cast", "cast", "cast", "бросать; отливать", " /kɑːst/ ", " /kɑːst/ ", " /kɑːst/ "],
   ["catch", "caught", "caught", "ловить", " /kætʃ/ ", " /kɔːt/ ", " /kɔːt/ "],
-  ["choose", "chose", "chosen", "выбирать", " /tʃuːz/ ", " /tʃəʊz/ ", " /ˈtʃəʊzən/ "],
+  ["choose", "chose", "chosen", "выбирать", " /tʃuːz/ ", " /tʃəʊz/ ", " /ˈtʃəʊzn/ "],
   ["come", "came", "come", "приходить", " /kʌm/ ", " /keɪm/ ", " /kʌm/ "],
   ["cost", "cost", "cost", "стоить", " /kɒst/ ", " /kɒst/ ", " /kɒst/ "],
   ["cut", "cut", "cut", "резать", " /kʌt/ ", " /kʌt/ ", " /kʌt/ "],
@@ -896,9 +896,9 @@ const IRREGULAR_VERBS = [
   ["do", "did", "done", "делать", " /duː/ ", " /dɪd/ ", " /dʌn/ "],
   ["draw", "drew", "drawn", "рисовать; тянуть", " /drɔː/ ", " /druː/ ", " /drɔːn/ "],
   ["dream", "dreamt", "dreamt", "мечтать; видеть сны", " /driːm/ ", " /dremt/ ", " /dremt/ "],
-  ["drive", "drove", "driven", "водить", " /draɪv/ ", " /drəʊv/ ", " /ˈdrɪvən/ "],
+  ["drive", "drove", "driven", "водить", " /draɪv/ ", " /drəʊv/ ", " /ˈdrɪvn/ "],
   ["drink", "drank", "drunk", "пить", " /drɪŋk/ ", " /dræŋk/ ", " /drʌŋk/ "],
-  ["eat", "ate", "eaten", "есть", " /iːt/ ", " /eɪt/ ", " /ˈiːtən/ "],
+  ["eat", "ate", "eaten", "есть", " /iːt/ ", " /eɪt/ ", " /ˈiːtn/ "],
   ["fall", "fell", "fallen", "падать", " /fɔːl/ ", " /fel/ ", " /ˈfɔːlən/ "],
   ["feed", "fed", "fed", "кормить", " /fiːd/ ", " /fed/ ", " /fed/ "],
   ["feel", "felt", "felt", "чувствовать", " /fiːl/ ", " /felt/ ", " /felt/ "],
@@ -906,19 +906,19 @@ const IRREGULAR_VERBS = [
   ["find", "found", "found", "находить", " /faɪnd/ ", " /faʊnd/ ", " /faʊnd/ "],
   ["flee", "fled", "fled", "бежать", " /fliː/ ", " /fled/ ", " /fled/ "],
   ["fly", "flew", "flown", "летать", " /flaɪ/ ", " /fluː/ ", " /fləʊn/ "],
-  ["forbid", "forbade", "forbidden", "запрещать", " /fərˈbɪd/ ", " /fəˈbæd/ ", " /fərˈbɪdən/ "],
-  ["forgive", "forgave", "forgiven", "прощать", " /fəˈɡɪv/ ", " /fəˈɡeɪv/ ", " /fərˈɡɪvən/ "],
-  ["forget", "forgot", "forgotten", "забывать", " /fəˈɡet/ ", " /fɒˈɡɒt/ ", " /fəˈɡɒtn/ "],
-  ["freeze", "froze", "frozen", "замерзать", " /friːz/ ", " /frəʊz/ ", " /ˈfrəʊzən/ "],
+  ["forbid", "forbade", "forbidden", "запрещать", " /fəˈbɪd/ ", " /fəˈbæd/ ", " /fəˈbɪdn/ "],
+  ["forgive", "forgave", "forgiven", "прощать", " /fəˈɡɪv/ ", " /fəˈɡeɪv/ ", " /fəˈɡɪvn/ "],
+  ["forget", "forgot", "forgotten", "забывать", " /fəˈɡet/ ", " /fəˈɡɒt/ ", " /fəˈɡɒtn/ "],
+  ["freeze", "froze", "frozen", "замерзать", " /friːz/ ", " /frəʊz/ ", " /ˈfrəʊzn/ "],
   ["get", "got", "got", "получать", " /ɡet/ ", " /ɡɒt/ ", " /ɡɒt/ "],
-  ["give", "gave", "given", "давать", " /ɡɪv/ ", " /ɡeɪv/ ", " /ˈɡɪvən/ "],
+  ["give", "gave", "given", "давать", " /ɡɪv/ ", " /ɡeɪv/ ", " /ˈɡɪvn/ "],
   ["go", "went", "gone", "идти", " /ɡəʊ/ ", " /went/ ", " /ɡɒn/ "],
   ["grind", "ground", "ground", "молоть; размалывать", " /ɡraɪnd/ ", " /ɡraʊnd/ ", " /ɡraʊnd/ "],
   ["grow", "grew", "grown", "расти", " /ɡrəʊ/ ", " /ɡruː/ ", " /ɡrəʊn/ "],
   ["hang", "hung", "hung", "висеть", " /hæŋ/ ", " /hʌŋ/ ", " /hʌŋ/ "],
   ["have", "had", "had", "иметь", " /hæv/ ", " /hæd/ ", " /hæd/ "],
   ["hear", "heard", "heard", "слышать", " /hɪə(r)/ ", " /hɜːd/ ", " /hɜːd/ "],
-  ["hide", "hid", "hidden", "прятать", " /haɪd/ ", " /hɪd/ ", " /ˈhɪdən/ "],
+  ["hide", "hid", "hidden", "прятать", " /haɪd/ ", " /hɪd/ ", " /ˈhɪdn/ "],
   ["hold", "held", "held", "держать", " /həʊld/ ", " /held/ ", " /held/ "],
   ["hit", "hit", "hit", "ударять", " /hɪt/ ", " /hɪt/ ", " /hɪt/ "],
   ["hurt", "hurt", "hurt", "ранить; причинять боль", " /hɜːt/ ", " /hɜːt/ ", " /hɜːt/ "],
@@ -937,17 +937,17 @@ const IRREGULAR_VERBS = [
   ["make", "made", "made", "делать", " /meɪk/ ", " /meɪd/ ", " /meɪd/ "],
   ["mean", "meant", "meant", "значить", " /miːn/ ", " /ment/ ", " /ment/ "],
   ["meet", "met", "met", "встречать", " /miːt/ ", " /met/ ", " /met/ "],
-  ["mislead", "misled", "misled", "вводить в заблуждение", " /ˌmɪsˈliːd/ ", " /ˌmɪsˈlɛd/ ", " /ˌmɪsˈlɛd/ "],
+  ["mislead", "misled", "misled", "вводить в заблуждение", " /ˌmɪsˈliːd/ ", " /ˌmɪsˈled/ ", " /ˌmɪsˈled/ "],
   ["overcome", "overcame", "overcome", "преодолевать", " /ˌəʊvəˈkʌm/ ", " /ˌəʊvəˈkeɪm/ ", " /ˌəʊvəˈkʌm/ "],
   ["overdo", "overdid", "overdone", "перегибать", " /ˌəʊvəˈduː/ ", " /ˌəʊvəˈdɪd/ ", " /ˌəʊvəˈdʌn/ "],
   ["overtake", "overtook", "overtaken", "догонять", " /ˌəʊvəˈteɪk/ ", " /ˌəʊvəˈtʊk/ ", " /ˌəʊvəˈteɪkən/ "],
   ["pay", "paid", "paid", "платить", " /peɪ/ ", " /peɪd/ ", " /peɪd/ "],
-  ["prove", "proved", "proven", "доказывать", " /pruːv/ ", " /pruːvd/ ", " /ˈpruːvən/ "],
+  ["prove", "proved", "proven", "доказывать", " /pruːv/ ", " /pruːvd/ ", " /ˈpruːvn/ "],
   ["put", "put", "put", "класть", " /pʊt/ ", " /pʊt/ ", " /pʊt/ "],
   ["read", "read", "read", "читать", " /riːd/ ", " /red/ ", " /red/ "],
   ["ring", "rang", "rung", "звонить", " /rɪŋ/ ", " /ræŋ/ ", " /rʌŋ/ "],
-  ["rise", "rose", "risen", "подниматься", " /raɪz/ ", " /rəʊz/ ", " /ˈrɪzən/ "],
-  ["ride", "rode", "ridden", "ездить", " /raɪd/ ", " /rəʊd/ ", " /ˈrɪdən/ "],
+  ["rise", "rose", "risen", "подниматься", " /raɪz/ ", " /rəʊz/ ", " /ˈrɪzn/ "],
+  ["ride", "rode", "ridden", "ездить", " /raɪd/ ", " /rəʊd/ ", " /ˈrɪdn/ "],
   ["run", "ran", "run", "бежать", " /rʌn/ ", " /ræn/ ", " /rʌn/ "],
   ["say", "said", "said", "сказать", " /seɪ/ ", " /sed/ ", " /sed/ "],
   ["see", "saw", "seen", "видеть", " /siː/ ", " /sɔː/ ", " /siːn/ "],
@@ -964,12 +964,12 @@ const IRREGULAR_VERBS = [
   ["teach", "taught", "taught", "учить", " /tiːtʃ/ ", " /tɔːt/ ", " /tɔːt/ "],
   ["tell", "told", "told", "рассказывать", " /tel/ ", " /təʊld/ ", " /təʊld/ "],
   ["think", "thought", "thought", "думать", " /θɪŋk/ ", " /θɔːt/ ", " /θɔːt/ "],
-  ["understand", "understood", "understood", "понимать", " /ˌʌndəˈstænd/ ", " /ˌʌndərˈstʊd/ ", " /ˌʌndərˈstʊd/ "],
-  ["write", "wrote", "written", "писать", " /raɪt/ ", " /rəʊt/ ", " /ˈrɪtən/ "]
+  ["understand", "understood", "understood", "понимать", " /ˌʌndəˈstænd/ ", " /ˌʌndəˈstʊd/ ", " /ˌʌndəˈstʊd/ "],
+  ["write", "wrote", "written", "писать", " /raɪt/ ", " /rəʊt/ ", " /ˈrɪtn/ "]
 ];
 
 let learned=new Set(JSON.parse(localStorage.getItem('vocab8learned')||'[]'));let offsetDay=parseInt(localStorage.getItem('vocab8day')||'0',10);let card=0,flipped=false;
-function seededShuffle(arr,seed=20260922){const a=arr.map((w,i)=>({w,i}));let x=seed>>>0;for(let i=a.length-1;i>0;i--){x=(1664525*x+1013904223)>>>0;const j=x%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
+function seededShuffle(arr,seed=20260920){const a=arr.map((w,i)=>({w,i}));let x=seed>>>0;for(let i=a.length-1;i>0;i--){x=(1664525*x+1013904223)>>>0;const j=x%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
 const SHUFFLED=seededShuffle(WORDS);
 const $=id=>document.getElementById(id);const size=()=>+$('size').value;const start=()=>offsetDay*size();const dayWords=()=>SHUFFLED.slice(start(),start()+size());const days=()=>Math.ceil(WORDS.length/size());
 function save(){localStorage.setItem('vocab8learned',JSON.stringify([...learned]));localStorage.setItem('vocab8day',offsetDay)}
@@ -1109,7 +1109,7 @@ function renderTestQuestion(){
     } else {
         $('testInput').classList.add('hidden');
         $('testOptions').classList.remove('hidden');
-        $('testActionBtn').classList.add('hidden'); // Скрываем кнопку проверки до выбора варианта
+        $('testActionBtn').classList.add('hidden'); 
         
         let correctStr = testDir==='en-ru' ? w[2] : w[0];
         let opts = [correctStr];
@@ -1176,10 +1176,8 @@ function checkClosedTest(btnEl, ans){
         });
     }
 
-    // Отключаем все кнопки
     Array.from($('testOptions').children).forEach(b => { b.disabled = true; b.style.cursor = 'default'; });
 
-    // Показываем кнопку перехода к следующему вопросу
     let nextBtn = $('testActionBtn');
     nextBtn.textContent = 'Дальше ➡';
     nextBtn.classList.replace('primary', 'soft');
@@ -1197,33 +1195,80 @@ function nextTest(){
     }
 }
 
-let voice=null;function initVoice(){if(!('speechSynthesis'in window))return;let load=()=>{let vs=speechSynthesis.getVoices();voice=vs.find(v=>/^en[-_]/i.test(v.lang))||vs[0]};load();speechSynthesis.onvoiceschanged=load}
-function speakWord(t){if(!('speechSynthesis'in window))return alert('Браузер не поддерживает озвучивание');speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(String(t));u.lang='en-US';u.rate=.9;if(voice)u.voice=voice;speechSynthesis.speak(u)}
-function speakCurrent(){let w=dayWords()[card];if(w)speakWord(w.w[0])}
-function speakDay(){let ws=dayWords();if(ws.length)speakWord(ws.map(w=>w.w[0]).join('. '))}
-
 let ttsEnabled = false;
+
 function toggleTTS() {
   ttsEnabled = !ttsEnabled;
   const btn = document.getElementById('ttsToggle');
   btn.setAttribute('aria-pressed', String(ttsEnabled));
   btn.textContent = ttsEnabled ? '🔊 Озвучивание: ВКЛ' : '🔊 Озвучивание: ВЫКЛ';
-  document.querySelectorAll('.irregular-table .tts-btn').forEach(b => { b.disabled = !ttsEnabled; });
+  document.querySelectorAll('.irregular-table .tts-btn').forEach(b => {
+    b.disabled = !ttsEnabled;
+  });
 }
-function getTtsUrl(text) { return `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${encodeURIComponent('en-GB')}&q=${encodeURIComponent(text)}`; }
+
+function getTtsUrl(text) {
+  return 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=' 
+    + encodeURIComponent('en-GB') + '&q=' + encodeURIComponent(text);
+}
+
 function speakVerbForm(rawText) {
   if (!ttsEnabled) return;
-  const audio = document.getElementById('ttsAudio');
   const parts = String(rawText).split('/').map(s => s.trim()).filter(Boolean);
-  let i = 0;
-  const playNext = () => {
-    if (i >= parts.length) return;
-    const part = parts[i++];
-    audio.src = getTtsUrl(part);
-    audio.play().catch(() => { playNext(); });
-    audio.onended = () => playNext();
+
+  if ('speechSynthesis' in window) {
+    try { speechSynthesis.cancel(); } catch(e){}
+    let i = 0;
+    const next = () => {
+      if (i >= parts.length) return;
+      const u = new SpeechSynthesisUtterance(parts[i++]);
+      u.lang = 'en-GB';
+      u.rate = 0.95;
+      u.pitch = 1;
+      u.onend = next;
+      speechSynthesis.speak(u);
+    };
+    next();
+    return;
+  }
+
+  const audio = document.getElementById('ttsAudio');
+  if (!audio) return;
+  let idx = 0;
+  audio.onended = () => {
+    idx++;
+    if (idx < parts.length) {
+      audio.src = getTtsUrl(parts[idx]);
+      audio.play().catch(()=>{});
+    }
   };
-  playNext();
+  audio.src = getTtsUrl(parts[0]);
+  audio.play().catch(()=>{});
+}
+
+function speakWord(text) {
+  if (!text) return;
+  if ('speechSynthesis' in window) {
+    try { speechSynthesis.cancel(); } catch(e){}
+    const u = new SpeechSynthesisUtterance(String(text));
+    u.lang = 'en-GB';
+    u.rate = 0.95;
+    u.pitch = 1;
+    speechSynthesis.speak(u);
+    return;
+  }
+  const audio = document.getElementById('ttsAudio');
+  if (audio) { audio.src = getTtsUrl(text); audio.play().catch(()=>{}); }
+}
+
+function speakCurrent(){
+    let w=dayWords()[card];
+    if(w) speakWord(w.w[0]);
+}
+
+function speakDay(){
+    let ws=dayWords();
+    if(ws.length) speakWord(ws.map(w=>w.w[0]).join('. '));
 }
 
 function csv(rows){
@@ -1240,7 +1285,7 @@ function exportDayCsv(){let s=start();download('oxford_3000_b2_day_'+(offsetDay+
 function exportAllCsv(){download('oxford_3000_b2_all.csv',csv(WORDS),'text/csv;charset=utf-8')}
 
 function resetAll(){if(confirm('Сбросить весь прогресс?')){learned.clear();save();render()}}
- $('size').addEventListener('change',()=>{offsetDay=Math.min(offsetDay,days()-1);card=0;flipped=false;save();render()});initVoice();if(!localStorage.getItem('vocab8base'))localStorage.setItem('vocab8base',Math.floor(new Date().setHours(0,0,0,0)/86400000));render();
+ $('size').addEventListener('change',()=>{offsetDay=Math.min(offsetDay,days()-1);card=0;flipped=false;save();render()});if(!localStorage.getItem('vocab8base'))localStorage.setItem('vocab8base',Math.floor(new Date().setHours(0,0,0,0)/86400000));render();
 </script>
 </body>
 </html>
