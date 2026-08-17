@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Oxford 3000™ Complete List (Часть 1: уровень A1) + Тесты</title>
 <style>
-:root{--p:#4f67d8;--p2:#3449a8;--bg:#f4f6fb;--card:#fff;--text:#202633;--muted:#6b7280;--ok:#25a96a;--bd:#e2e6ee}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Aria[...]
+:root{--p:#4f67d8;--p2:#3449a8;--bg:#f4f6fb;--card:#fff;--text:#202633;--muted:#6b7280;--ok:#25a96a;--bd:#e2e6ee}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}header{background:linear-gradient(135deg,#4f67d8,#7659d8);color:#fff;padding:28px 16px 72px;text-align:center}header h1{margin:0;font-size:clamp(1.4rem,4vw,2rem)}header p{margin:8px 0 0;opacity:.9}main{max-width:1050px;margin:-42px auto 0;padding:0 14px 40px;position:relative}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat,.panel{background:var(--card);border:1px solid var(--bd);border-radius:16px;box-shadow:0 5px 24px #4f67d81a}.stat{padding:16px;text-align:center}.num{font-size:1.55rem;font-weight:800;color:var(--p)}.lbl{font-size:.78rem;color:var(--muted)}.panel{padding:18px;margin-top:14px}.bar{height:11px;background:#e9edf5;border-radius:9px;overflow:hidden;margin-top:10px}.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--p),#7659d8);width:0}.controls,.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}select,input{padding:9px 11px;border:1px solid var(--bd);border-radius:10px;background:#fff}button{border:0;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer;font-family:inherit}.primary{background:var(--p);color:#fff}.soft{background:#eef2ff;color:var(--p2)}.green{background:var(--ok);color:#fff}.danger{background:#fff1f1;color:#b42318}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;margin-top:12px}th,td{padding:10px 8px;border-bottom:1px solid var(--bd);text-align:left}th{font-size:.75rem;color:var(--muted);text-transform:uppercase}.word{font-weight:800}.ipa{color:var(--p);font-size:.88rem}.vforms{font-size:.85rem;color:var(--p2);font-weight:600}.speak{padding:5px 8px;background:#eef2ff;color:var(--p);margin-left:5px}.check{width:25px;height:25px;border:2px solid #c9d1e4;border-radius:7px;background:#fff;color:#fff;padding:0}.check.on{background:var(--ok);border-color:var(--ok)}.cards{max-width:620px;margin:15px auto}.flash{min-height:290px;background:#fff;border:1px solid var(--bd);border-radius:22px;box-shadow:0 5px 24px #4f67d81a;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;position:relative;cursor:pointer}.flash .big{font-size:clamp(1.8rem,6vw,3rem);font-weight:850}.hint{position:absolute;bottom:14px;color:#9aa0a6;font-size:.75rem}.hidden{display:none!important}.day-title{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.author{line-height:1.5;color:#454d5c}.author a{color:var(--p)}footer{text-align:center;color:#8b93a1;font-size:.8rem;padding:10px 16px 30px}@media(max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}th:nth-child(3),td:nth-child(3){display:none}}
 /* Таблицы и детали */
-.irregular-table th{font-size:.85rem}.summary-style{font-size:1.3rem;font-weight:700;color:var(--p2);cursor:pointer;display:block;margin:0;text-align:center;background:#eef2ff;padding:12px;border-radi[...]
+.irregular-table th{font-size:.85rem}.summary-style{font-size:1.3rem;font-weight:700;color:var(--p2);cursor:pointer;display:block;margin:0;text-align:center;background:#eef2ff;padding:12px;border-radius:10px;transition:0.2s}.summary-style:hover{background:#e0e7ff}
 details summary::-webkit-details-marker{display:none}
 details[open] .summary-style{margin-bottom:20px;border-radius:10px 10px 0 0}
-.tts-btn {margin-left: 8px;padding: 6px 10px;border-radius: 8px;border: 1px solid #cbd5e1;background: #ffffff;color: #0f172a;cursor: pointer;font-weight: 700;line-height: 1;}.tts-btn:disabled {opa[...]
+.tts-btn {margin-left: 8px;padding: 6px 10px;border-radius: 8px;border: 1px solid #cbd5e1;background: #ffffff;color: #0f172a;cursor: pointer;font-weight: 700;line-height: 1;}.tts-btn:disabled {opacity: 0.5;cursor: not-allowed;}.tts-toggle-btn {background: #fff;border: 1px solid #cbd5e1;border-radius: 12px;padding: 10px 14px;font-weight: 800;cursor: pointer;}.tts-formcell {display:flex;align-items:center;flex-wrap:wrap;gap: 6px;}
 
 /* Стили для тестов */
 .test-container { max-width: 620px; margin: 15px auto; padding: 30px; background: #fff; border: 1px solid var(--bd); border-radius: 22px; box-shadow: 0 5px 24px #4f67d81a; text-align: center; }
@@ -18,7 +18,7 @@ details[open] .summary-style{margin-bottom:20px;border-radius:10px 10px 0 0}
 .test-input:focus { border-color: var(--p); }
 .test-result { margin-top: 15px; font-weight: bold; font-size: 1.2rem; min-height: 1.5rem; }
 .test-controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
-.test-opt { display:block; width:100%; padding:14px; margin:10px 0; border:2px solid var(--bd); border-radius:12px; background:#fff; text-align:left; cursor:pointer; font-size:1.1rem; transition:0.2s;[...]
+.test-opt { display:block; width:100%; padding:14px; margin:10px 0; border:2px solid var(--bd); border-radius:12px; background:#fff; text-align:left; cursor:pointer; font-size:1.1rem; transition:0.2s; color:var(--text); }
 .test-opt:hover:not(:disabled) { border-color:var(--p); background:#f8faff; }
 .test-opt.correct { background:var(--ok); color:#fff; border-color:var(--ok); }
 .test-opt.wrong { background:#fff1f1; color:#b42318; border-color:#b42318; }
@@ -27,8 +27,8 @@ details[open] .summary-style{margin-bottom:20px;border-radius:10px 10px 0 0}
 <body>
 <header><h1>📚 The Oxford 3000™ (Часть 1: A1) 🔊</h1><p>Базовый словарь Оксфорд • до 30 слов в день • 🔀 челендж на 30 дней</p></header>
 <main>
-<section class="grid"><div class="stat"><div class="num" id="total">0</div><div class="lbl">всего слов</div></div><div class="stat"><div class="num" id="learned">0</div><div class="lbl">вы�[...]
-<section class="panel"><div class="day-title"><b>📈 Прогресс</b><span id="pct">0%</span></div><div class="bar"><i id="progress"></i></div><div class="controls" style="margin-top:14px"><label[...] 
+<section class="grid"><div class="stat"><div class="num" id="total">0</div><div class="lbl">всего слов</div></div><div class="stat"><div class="num" id="learned">0</div><div class="lbl">выучено</div></div><div class="stat"><div class="num" id="left">0</div><div class="lbl">осталось</div></div><div class="stat"><div class="num" id="days">0</div><div class="lbl">дней</div></div></section>
+<section class="panel"><div class="day-title"><b>📈 Прогресс</b><span id="pct">0%</span></div><div class="bar"><i id="progress"></i></div><div class="controls" style="margin-top:14px"><label>Слов в день:</label><select id="size"><option>10</option><option>15</option><option selected>20</option><option>25</option><option>30</option></select><button class="soft" onclick="prevDay()">⬅ День</button><button class="primary" onclick="today()">Сегодня</button><button class="soft" onclick="nextDay()">День ➡</button><button class="green" onclick="speakDay()">🔊 Озвучить день</button><button class="soft" onclick="exportDayCsv()">⬇ CSV дня</button><button class="soft" onclick="exportAllCsv()">⬇ CSV всего</button></div></section>
 
 <section class="panel">
 <div class="day-title">
@@ -51,7 +51,7 @@ details[open] .summary-style{margin-bottom:20px;border-radius:10px 10px 0 0}
   <div class="cards">
     <div class="flash" id="flash" onclick="flip()">
       <button class="speak" style="position:absolute;right:14px;top:12px" onclick="event.stopPropagation();speakCurrent()">🔊</button>
-      <div><div id="cardLabel" style="color:var(--muted);font-size:.75rem">ENGLISH</div><div id="cardText" class="big">—</div><div id="cardIpa" class="ipa" style="margin-top:8px"></div><div id="card[...]
+      <div><div id="cardLabel" style="color:var(--muted);font-size:.75rem">ENGLISH</div><div id="cardText" class="big">—</div><div id="cardIpa" class="ipa" style="margin-top:8px"></div><div id="cardForms" class="vforms" style="margin-top:8px;font-size:1.2rem"></div></div>
       <div class="hint">Нажмите на карточку, чтобы перевернуть</div>
     </div>
     <div class="actions" style="justify-content:center;margin-top:12px">
@@ -109,11 +109,11 @@ details[open] .summary-style{margin-bottom:20px;border-radius:10px 10px 0 0}
 <details>
   <summary class="summary-style">📜 Таблица неправильных глаголов  ▼</summary>
   <div class="day-title" style="margin-top: 20px;">
-    <div><h2 style="margin:0">Таблица неправильных глаголов</h2><div style="color:var(--muted);font-size:.85rem">Все формы с транскрипцией и озву�[...]
+    <div><h2 style="margin:0">Таблица неправильных глаголов</h2><div style="color:var(--muted);font-size:.85rem">Все формы с транскрипцией и озвучкой (UK)</div></div>
     <button id="ttsToggle" type="button" onclick="toggleTTS()" class="tts-toggle-btn" aria-pressed="false">🔊 Озвучивание: ВЫКЛ</button>
   </div>
   <audio id="ttsAudio" preload="none"></audio>
-  <div class="table-wrap"><table class="irregular-table"><thead><tr><th>V1 (Infinitive)</th><th>V2 (Past Simple)</th><th>V3 (Past Participle)</th><th>Перевод</th></tr></thead><tbody id="irregul[...]
+  <div class="table-wrap"><table class="irregular-table"><thead><tr><th>V1 (Infinitive)</th><th>V2 (Past Simple)</th><th>V3 (Past Participle)</th><th>Перевод</th></tr></thead><tbody id="irregularBody"></tbody></table></div>
 </details>
 </section>
 
@@ -132,133 +132,9 @@ details[open] .summary-style{margin-bottom:20px;border-radius:10px 10px 0 0}
 </details>
 </section>
 
-<section class="panel"><h2 style="margin-top:0">👤 Об авторе</h2><div class="author"><b>Материалы подготовил: Бабков Иван Леонидович</b><br>✉ <a href[...]
+<section class="panel"><h2 style="margin-top:0">👤 Об авторе</h2><div class="author"><b>Материалы подготовил: Бабков Иван Леонидович</b><br>✉ <a href="mailto:i@ibabkow.ru">i@ibabkow.ru</a></div></section>
 </main>
 <footer>Прогресс хранится локально в браузере. Словарь: The Oxford 3000™ Part 1 (A1).</footer>
 <script>
 const WORDS=[
-["a, an","ə, æn","неопределенный артикль","indefinite article","1"],["about","əˈbaʊt","о, около, примерно","prep., adv.","1"],["above","əˈbʌv","над, вы�[...]
-];
-
-const VERB_FORMS = {
-    "add": "added, added", "agree": "agreed, agreed", "answer": "answered, answered", 
-    "arrive": "arrived, arrived", "ask": "asked, asked", "be": "was/were, been", 
-    "become": "became, become", "begin": "began, begun", "believe": "believed, believed", 
-    "break": "broke, broken", "bring": "brought, brought", "build": "built, built", 
-    "buy": "bought, bought", "call": "called, called", "can": "could, —", 
-    "change": "changed, changed", "check": "checked, checked", "choose": "chose, chosen", 
-    "clean": "cleaned, cleaned", "climb": "climbed, climbed", "close": "closed, closed", 
-    "come": "came, come", "compare": "compared, compared", "complete": "completed, completed", 
-    "cook": "cooked, cooked", "correct": "corrected, corrected", "cost": "cost, cost", 
-    "create": "created, created", "cut": "cut, cut", "dance": "danced, danced", 
-    "decide": "decided, decided", "describe": "described, described", "design": "designed, designed", 
-    "die": "died, died", "discuss": "discussed, discussed", "do": "did, done", 
-    "draw": "drew, drawn", "dress": "dressed, dressed", "drink": "drank, drunk", 
-    "drive": "drove, driven", "eat": "ate, eaten", "email": "emailed, emailed", 
-    "end": "ended, ended", "enjoy": "enjoyed, enjoyed", "exercise": "exercised, exercised", 
-    "explain": "explained, explained", "fall": "fell, fallen", "feel": "felt, felt", 
-    "fill": "filled, filled", "find": "found, found", "finish": "finished, finished", 
-    "fly": "flew, flown", "follow": "followed, followed", "forget": "forgot, forgotten", 
-    "form": "formed, formed", "get": "got, got", "give": "gave, given", 
-    "go": "went, gone", "grow": "grew, grown", "guess": "guessed, guessed", 
-    "happen": "happened, happened", "hate": "hated, hated", "have": "had, had", 
-    "have to": "had to, —", "hear": "heard, heard", "help": "helped, helped", 
-    "hope": "hoped, hoped", "imagine": "imagined, imagined", "improve": "improved, improved", 
-    "include": "included, included", "interest": "interested, interested", "interview": "interviewed, interviewed", 
-    "introduce": "introduced, introduced", "join": "joined, joined", "keep": "kept, kept", 
-    "know": "knew, known", "laugh": "laughed, laughed", "learn": "learnt, learnt", 
-    "leave": "left, left", "let": "let, let", "lie": "lay, lain", 
-    "like": "liked, liked", "list": "listed, listed", "listen": "listened, listened", 
-    "live": "lived, lived", "look": "looked, looked", "lose": "lost, lost", 
-    "love": "loved, loved", "make": "made, made", "match": "matched, matched", 
-    "mean": "meant, meant", "meet": "met, met", "miss": "missed, missed", 
-    "move": "moved, moved", "name": "named, named", "need": "needed, needed", 
-    "open": "opened, opened", "order": "ordered, ordered", "paint": "painted, painted", 
-    "park": "parked, parked", "pay": "paid, paid", "phone": "phoned, phoned", 
-    "plan": "planned, planned", "play": "played, played", "post": "posted, posted", 
-    "practise": "practised, practised", "prefer": "preferred, preferred", "prepare": "prepared, prepared", 
-    "read": "read, read", "rain": "rained, rained", "relax": "relaxed, relaxed", 
-    "remember": "remembered, remembered", "repeat": "repeated, repeated", "return": "returned, returned", 
-    "ride": "rode, ridden", "run": "ran, run", "say": "said, said", 
-    "see": "saw, seen", "sell": "sold, sold", "send": "sent, sent", 
-    "share": "shared, shared", "shop": "shopped, shopped", "show": "showed, shown", 
-    "sing": "sang, sung", "sit": "sat, sat", "sleep": "slept, slept", 
-    "snow": "snowed, snowed", "sound": "sounded, sounded", "speak": "spoke, spoken", 
-    "spell": "spelt, spelt", "spend": "spent, spent", "start": "started, started", 
-    "stay": "stayed, stayed", "stop": "stopped, stopped", "stand": "stood, stood", 
-    "study": "studied, studied", "swim": "swam, swum", "take": "took, taken", 
-    "talk": "talked, talked", "teach": "taught, taught", "telephone": "telephoned, telephoned", 
-    "tell": "told, told", "test": "tested, tested", "thank": "thanked, thanked", 
-    "travel": "travelled, travelled", "try": "tried, tried", "turn": "turned, turned", 
-    "understand": "understood, understood", "use": "used, used", "visit": "visited, visited", 
-    "wait": "waited, waited", "wake": "woke, woken", "walk": "walked, walked", 
-    "want": "wanted, wanted", "wash": "washed, washed", "watch": "watched, watched", 
-    "wear": "wore, worn", "welcome": "welcomed, welcomed", "win": "won, won", 
-    "work": "worked, worked", "write": "wrote, written"
-};
-
-const IRREGULAR_VERBS = [
-[...]
-
-</script>
-
-<script>
-(function(){
-  // Ensure we don't break if ttsEnabled isn't defined yet
-  window.ttsEnabled = !!window.ttsEnabled;
-  function getTtsUrl(text){
-    return 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=' + encodeURIComponent('en-GB') + '&q=' + encodeURIComponent(text);
-  }
-  window.getTtsUrl = getTtsUrl;
-
-  function speakVerbForm(rawText){
-    if(!window.ttsEnabled) return;
-    const parts = String(rawText).split('/').map(s=>s.trim()).filter(Boolean);
-
-    if('speechSynthesis' in window){
-      try{ speechSynthesis.cancel(); }catch(e){}
-      let i=0;
-      const next = ()=>{
-        if(i>=parts.length) return;
-        const u = new SpeechSynthesisUtterance(parts[i++]);
-        u.lang='en-GB'; u.rate=0.95; u.pitch=1;
-        u.onend = next;
-        speechSynthesis.speak(u);
-      };
-      next();
-      return;
-    }
-
-    const audio = document.getElementById('ttsAudio');
-    if(!audio) return;
-    let idx=0;
-    audio.onended = ()=>{
-      idx++;
-      if(idx < parts.length){
-        audio.src = getTtsUrl(parts[idx]);
-        audio.play().catch(()=>{});
-      }
-    };
-    audio.src = getTtsUrl(parts[0]);
-    audio.play().catch(()=>{});
-  }
-  window.speakVerbForm = speakVerbForm;
-
-  // Override speakWord used elsewhere so buttons call browser TTS first
-  window.speakWord = function(text){
-    if(!text) return;
-    if('speechSynthesis' in window){
-      try{ speechSynthesis.cancel(); }catch(e){}
-      const u = new SpeechSynthesisUtterance(String(text));
-      u.lang='en-GB'; u.rate=0.95; u.pitch=1;
-      speechSynthesis.speak(u);
-      return;
-    }
-    const audio = document.getElementById('ttsAudio');
-    if(audio){ audio.src = getTtsUrl(text); audio.play().catch(()=>{}); }
-  };
-})();
-</script>
-
-</body>
-</html>
+["a, an","ə, æn","неопределенный артикль","indefinite article","1"],["about","əˈbaʊt","о, около, примерно","prep., adv.","1"],["above","əˈbʌv","над, выше","prep., adv.","1"],["across","əˈkrɒs","через, сквозь","prep., adv.","1"],["action","ˈækʃn","действие, поступок","n.","1"],["activity","ækˈtɪvəti","деятельность, активность","n.","1"],["actor","ˈæktə(r)","актер","n.","1"],["actress","ˈæktrəs","актриса","n.","1"],["add","æd","добавлять","v.","1"],["address","əˈdres","адрес","n.","1"],["adult","ˈædʌlt","взрослый","n.","1"],["advice","ədˈvaɪs","совет","n.","1"],["afraid","əˈfreɪd","испуганный","adj.","1"],["after","ˈɑːftə(r)","после","prep.","1"],["afternoon","ˌɑːftəˈnuːn","день (после полудня)","n.","1"],["again","əˈɡen","снова","adv.","1"],["age","eɪdʒ","возраст","n.","1"],["ago","əˈɡəʊ","назад (о времени)","adv.","1"],["agree","əˈɡriː","соглашаться","v.","1"],["air","eə(r)","воздух","n.","1"],["airport","ˈeəpɔːt","аэропорт","n.","1"],["all","ɔːl","все, всё","det., pron.","1"],["also","ˈɔːlsəʊ","также","adv.","1"],["always","ˈɔːlweɪz","всегда","adv.","1"],["amazing","əˈmeɪzɪŋ","удивительный","adj.","1"],["and","ənd","и","conj.","1"],["angry","ˈæŋɡri","сердитый","adj.","1"],["animal","ˈænɪml","животное","n.","1"],["another","əˈnʌðə(r)","другой","det./pron.","1"],["answer","ˈɑːnsə(r)","ответ, отвечать","n., v.","1"],["any","ˈeni","любой","det., pron.","1"],["anyone","ˈeniwʌn","кто угодно","pron.","1"],["anything","ˈeniθɪŋ","что угодно","pron.","1"],["apartment","əˈpɑːtmənt","квартира","n.","1"],["apple","ˈæpl","яблоко","n.","1"],["April","ˈeɪprəl","апрель","n.","1"],["area","ˈeəriə","область, территория","n.","1"],["arm","ɑːm","рука (от кисти до плеча)","n.","1"],["around","əˈraʊnd","вокруг","prep., adv.","1"],["arrive","əˈraɪv","прибывать, приезжать","v.","1"],["art","ɑːt","искусство","n.","1"],["article","ˈɑːtɪkl","статья, артикль","n.","1"],["artist","ˈɑːtɪst","художник","n.","1"],["as","əz","как","prep.","1"],["ask","ɑːsk","спрашивать","v.","1"],["at","ət","в, у, на","prep.","1"],["August","ˈɔːɡəst","август","n.","1"],["aunt","ɑːnt","тетя","n.","1"],["autumn","ˈɔːtəm","осень","n.","1"],["away","əˈweɪ","далеко, прочь","adv.","1"],["baby","ˈbeɪbi","ребенок, младенец","n.","1"],["back","bæk","спина, назад","n., adv.","1"],["bad","bæd","плохой","adj.","1"],["bag","bæɡ","сумка","n.","1"],["ball","bɔːl","мяч","n.","1"],["banana","bəˈnɑːnə","банан","n.","1"],["band","bænd","музыкальная группа","n.","1"],["bank (money)","bæŋk","банк","n.","1"],["bath","bɑːθ","ванна","n.","1"],["bathroom","ˈbɑːθruːm","ванная комната","n.","1"],["be","biː","быть, являться","v., auxiliary v.","1"],["beach","biːtʃ","пляж","n.","1"],["beautiful","ˈbjuːtɪfl","красивый","adj.","1"],["because","bɪˈkɒz","потому что","conj.","1"],["become","bɪˈkʌm","становиться","v.","1"],["bed","bed","кровать","n.","1"],["bedroom","ˈbedruːm","спальня","n.","1"],["beer","bɪə(r)","пиво","n.","1"],["before","bɪˈfɔː(r)","до, перед","prep.","1"],["begin","bɪˈɡɪn","начинать","v.","1"],["beginning","bɪˈɡɪnɪŋ","начало","n.","1"],["behind","bɪˈhaɪnd","позади","prep., adv.","1"],["believe","bɪˈliːv","верить","v.","1"],["below","bɪˈləʊ","ниже","adv., prep.","1"],["best","best","лучший","adj.","1"],["better","ˈbetə(r)","лучше","adj.","1"],["between","bɪˈtwiːn","между","prep.","1"],["bicycle","ˈbaɪsɪkl","велосипед","n.","1"],["big","bɪɡ","большой","adj.","1"],["bike","baɪk","велосипед","n.","1"],["bill","bɪl","счет","n.","1"],["bird","bɜːd","птица","n.","1"],["birthday","ˈbɜːθdeɪ","день рождения","n.","1"],["black","blæk","черный","adj., n.","1"],["blog","blɒɡ","блог","n.","1"],["blonde","blɒnd","блондин/ка","adj.","1"],["blue","bluː","синий, голубой","adj., n.","1"],["boat","bəʊt","лодка","n.","1"],["body","ˈbɒdi","тело","n.","1"],["book","bʊk","книга","n.","1"],["boot","buːt","ботинок","n.","1"],["bored","bɔːd","скучающий","adj.","1"],["boring","ˈbɔːrɪŋ","скучный","adj.","1"],["born","bɔːn","рожденный","v.","1"],["both","bəʊθ","оба","det./pron.","1"],["bottle","ˈbɒtl","бутылка","n.","1"],["box","bɒks","коробка","n.","1"],["boy","bɔɪ","мальчик","n.","1"],["boyfriend","ˈbɔɪfrend","парень","n.","1"],["bread","bred","хлеб","n.","1"],["break","breɪk","ломать, перерыв","v., n.","1"],["breakfast","ˈbrekfəst","завтрак","n.","1"],["bring","brɪŋ","приносить","v.","1"],["brother","ˈbrʌðə(r)","брат","n.","1"],["brown","braʊn","коричневый","adj., n.","1"],["build","bɪld","строить","v.","1"],["building","ˈbɪldɪŋ","здание","n.","1"],["bus","bʌs","автобус","n.","1"],["business","ˈbɪznəs","бизнес, дело","n.","1"],["busy","ˈbɪзи","занятой","adj.","1"],["but","bʌt","но","conj.","1"],["butter","ˈbʌtə(r)","сливочное масло","n.","1"],["buy","baɪ","покупать","v.","1"],["by","baɪ","около, к (времени)","prep.","1"],["bye","baɪ","пока","exclam.","1"],["cafe","ˈkæfeɪ","кафе","n.","1"],["cake","keɪk","торт, пирожное","n.","1"],["call","kɔːl","звонить, вызов","v., n.","1"],["camera","ˈkæmrə","камера, фотоаппарат","n.","1"],["can","kæn","мочь, уметь","modal v.","1"],["cannot","ˈkænɒt","не мочь","modal v.","1"],["capital","ˈkæpɪtl","столица, заглавный","n., adj.","1"],["car","kɑː(r)","машина, автомобиль","n.","1"],["card","kɑːd","карта, карточка","n.","1"],["career","kə
