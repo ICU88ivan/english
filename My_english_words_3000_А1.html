@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Oxford 3000™ Complete List (Часть 1: уровень A1) + Тесты</title>
+<style>
+:root{--p:#4f67d8;--p2:#3449a8;--bg:#f4f6fb;--card:#fff;--text:#202633;--muted:#6b7280;--ok:#25a96a;--bd:#e2e6ee}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}header{background:linear-gradient(135deg,#4f67d8,#7659d8);color:#fff;padding:28px 16px 72px;text-align:center}header h1{margin:0;font-size:clamp(1.4rem,4vw,2rem)}header p{margin:8px 0 0;opacity:.9}main{max-width:1050px;margin:-42px auto 0;padding:0 14px 40px;position:relative}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat,.panel{background:var(--card);border:1px solid var(--bd);border-radius:16px;box-shadow:0 5px 24px #4f67d81a}.stat{padding:16px;text-align:center}.num{font-size:1.55rem;font-weight:800;color:var(--p)}.lbl{font-size:.78rem;color:var(--muted)}.panel{padding:18px;margin-top:14px}.bar{height:11px;background:#e9edf5;border-radius:9px;overflow:hidden;margin-top:10px}.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--p),#7659d8);width:0}.controls,.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}select,input{padding:9px 11px;border:1px solid var(--bd);border-radius:10px;background:#fff}button{border:0;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer;font-family:inherit}.primary{background:var(--p);color:#fff}.soft{background:#eef2ff;color:var(--p2)}.green{background:var(--ok);color:#fff}.danger{background:#fff1f1;color:#b42318}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;margin-top:12px}th,td{padding:10px 8px;border-bottom:1px solid var(--bd);text-align:left}th{font-size:.75rem;color:var(--muted);text-transform:uppercase}.word{font-weight:800}.ipa{color:var(--p);font-size:.88rem}.vforms{font-size:.85rem;color:var(--p2);font-weight:600}.speak{padding:5px 8px;background:#eef2ff;color:var(--p);margin-left:5px}.check{width:25px;height:25px;border:2px solid #c9d1e4;border-radius:7px;background:#fff;color:#fff;padding:0}.check.on{background:var(--ok);border-color:var(--ok)}.cards{max-width:620px;margin:15px auto}.flash{min-height:290px;background:#fff;border:1px solid var(--bd);border-radius:22px;box-shadow:0 5px 24px #4f67d81a;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;position:relative;cursor:pointer}.flash .big{font-size:clamp(1.8rem,6vw,3rem);font-weight:850}.hint{position:absolute;bottom:14px;color:#9aa0a6;font-size:.75rem}.hidden{display:none!important}.day-title{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.author{line-height:1.5;color:#454d5c}.author a{color:var(--p)}footer{text-align:center;color:#8b93a1;font-size:.8rem;padding:10px 16px 30px}@media(max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}th:nth-child(3),td:nth-child(3){display:none}}
+/* Таблицы и детали */
+.irregular-table th{font-size:.85rem}.summary-style{font-size:1.3rem;font-weight:700;color:var(--p2);cursor:pointer;display:block;margin:0;text-align:center;background:#eef2ff;padding:12px;border-radius:10px;transition:0.2s}.summary-style:hover{background:#e0e7ff}
+details summary::-webkit-details-marker{display:none}
+details[open] .summary-style{margin-bottom:20px;border-radius:10px 10px 0 0}
+.tts-btn {margin-left: 8px;padding: 6px 10px;border-radius: 8px;border: 1px solid #cbd5e1;background: #ffffff;color: #0f172a;cursor: pointer;font-weight: 700;line-height: 1;}.tts-btn:disabled {opacity: 0.5;cursor: not-allowed;}.tts-toggle-btn {background: #fff;border: 1px solid #cbd5e1;border-radius: 12px;padding: 10px 14px;font-weight: 800;cursor: pointer;}.tts-formcell {display:flex;align-items:center;flex-wrap:wrap;gap: 6px;}
+
+/* Стили для тестов */
+.test-container { max-width: 620px; margin: 15px auto; padding: 30px; background: #fff; border: 1px solid var(--bd); border-radius: 22px; box-shadow: 0 5px 24px #4f67d81a; text-align: center; }
+.test-input { font-size: 1.3rem; padding: 12px; width: 100%; max-width: 400px; margin: 20px 0; border: 2px solid var(--bd); border-radius: 12px; outline: none; transition: border 0.3s; }
+.test-input:focus { border-color: var(--p); }
+.test-result { margin-top: 15px; font-weight: bold; font-size: 1.2rem; min-height: 1.5rem; }
+.test-controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+.test-opt { display:block; width:100%; padding:14px; margin:10px 0; border:2px solid var(--bd); border-radius:12px; background:#fff; text-align:left; cursor:pointer; font-size:1.1rem; transition:0.2s; color:var(--text); }
+.test-opt:hover:not(:disabled) { border-color:var(--p); background:#f8faff; }
+.test-opt.correct { background:var(--ok); color:#fff; border-color:var(--ok); }
+.test-opt.wrong { background:#fff1f1; color:#b42318; border-color:#b42318; }
+</style>
+</head>
+<body>
+<header><h1>📚 The Oxford 3000™ (Часть 1: A1) 🔊</h1><p>Базовый словарь Оксфорд • до 30 слов в день • 🔀 челендж на 30 дней</p></header>
+<main>
+<section class="grid"><div class="stat"><div class="num" id="total">0</div><div class="lbl">всего слов</div></div><div class="stat"><div class="num" id="learned">0</div><div class="lbl">выучено</div></div><div class="stat"><div class="num" id="left">0</div><div class="lbl">осталось</div></div><div class="stat"><div class="num" id="days">0</div><div class="lbl">дней</div></div></section>
+<section class="panel"><div class="day-title"><b>📈 Прогресс</b><span id="pct">0%</span></div><div class="bar"><i id="progress"></i></div><div class="controls" style="margin-top:14px"><label>Слов в день:</label><select id="size"><option>10</option><option>15</option><option selected>20</option><option>25</option><option>30</option></select><button class="soft" onclick="prevDay()">⬅ День</button><button class="primary" onclick="today()">Сегодня</button><button class="soft" onclick="nextDay()">День ➡</button><button class="green" onclick="speakDay()">🔊 Озвучить день</button><button class="soft" onclick="exportDayCsv()">⬇ CSV дня</button><button class="soft" onclick="exportAllCsv()">⬇ CSV всего</button></div></section>
+
+<section class="panel">
+<div class="day-title">
+  <div><h2 id="dayHead" style="margin:0">День 1</h2><div id="range" style="color:var(--muted);font-size:.85rem"></div></div>
+  <div class="actions">
+    <button id="btnList" class="primary" onclick="mode('list')">📋 Список</button>
+    <button id="btnCards" class="soft" onclick="mode('cards')">🃏 Карточки</button>
+    <button id="btnTest" class="soft" onclick="mode('test')">📝 Проверка</button>
+    <button class="danger" onclick="resetAll()">Сбросить прогресс</button>
+  </div>
+</div>
+
+<!-- Режим списка -->
+<div id="listMode" class="table-wrap">
+  <table><thead><tr><th>✓</th><th>English</th><th>IPA</th><th>Формы глагола</th><th>Перевод</th><th>Часть</th></tr></thead><tbody id="tbody"></tbody></table>
+</div>
+
+<!-- Режим карточек -->
+<div id="cardsMode" class="hidden">
+  <div class="cards">
+    <div class="flash" id="flash" onclick="flip()">
+      <button class="speak" style="position:absolute;right:14px;top:12px" onclick="event.stopPropagation();speakCurrent()">🔊</button>
+      <div><div id="cardLabel" style="color:var(--muted);font-size:.75rem">ENGLISH</div><div id="cardText" class="big">—</div><div id="cardIpa" class="ipa" style="margin-top:8px"></div><div id="cardForms" class="vforms" style="margin-top:8px;font-size:1.2rem"></div></div>
+      <div class="hint">Нажмите на карточку, чтобы перевернуть</div>
+    </div>
+    <div class="actions" style="justify-content:center;margin-top:12px">
+      <button class="soft" onclick="cardMove(-1)">⬅</button>
+      <span id="cardPos" style="padding:10px;color:var(--muted)">1/20</span>
+      <button class="soft" onclick="cardMove(1)">➡</button>
+      <button class="primary" onclick="speakCurrent()">🔊</button>
+      <button class="green" onclick="markCurrent()">✓ Знаю</button>
+    </div>
+  </div>
+</div>
+
+<!-- Режим тестов -->
+<div id="testMode" class="hidden">
+  <div class="test-container">
+    <div id="testSetup">
+      <h2 style="margin-top:0">Настройка проверки</h2>
+      <div class="test-controls">
+        <select id="testScope">
+          <option value="day">Слова текущего дня</option>
+          <option value="all">Весь словарь A1</option>
+        </select>
+        <select id="testDir">
+          <option value="en-ru">Английский ➡ Русский</option>
+          <option value="ru-en">Русский ➡ Английский</option>
+        </select>
+        <select id="testType">
+          <option value="closed">Выбор из 4 вариантов</option>
+          <option value="open">Ввод текста вручную</option>
+        </select>
+      </div>
+      <button class="primary" style="font-size:1.1rem; padding: 12px 24px;" onclick="startTest()">▶ Начать тест</button>
+    </div>
+    <div id="testActive" class="hidden">
+      <div id="testProgress" class="lbl">Вопрос 1 из 20 | Счёт: 0</div>
+      <div id="testQuestion" class="big" style="font-size:2.5rem; font-weight:800; color:var(--p); margin-top:20px;">—</div>
+      
+      <!-- Для открытого теста -->
+      <input type="text" id="testInput" class="test-input" placeholder="Введите перевод..." onkeydown="if(event.key==='Enter') testBtnAction()">
+      
+      <!-- Для закрытого теста -->
+      <div id="testOptions" style="margin:20px 0;"></div>
+
+      <div class="actions" style="justify-content:center; margin-top: 15px;">
+        <button id="testActionBtn" class="primary" style="font-size:1.1rem; padding: 12px 24px;" onclick="testBtnAction()">Проверить</button>
+        <button class="soft" onclick="mode('list')">Выйти</button>
+      </div>
+      <div id="testResult" class="test-result"></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="panel">
+<details>
+  <summary class="summary-style">📜 Таблица неправильных глаголов  ▼</summary>
+  <div class="day-title" style="margin-top: 20px;">
+    <div><h2 style="margin:0">Таблица неправильных глаголов</h2><div style="color:var(--muted);font-size:.85rem">Все формы с транскрипцией и озвучкой (UK)</div></div>
+    <button id="ttsToggle" type="button" onclick="toggleTTS()" class="tts-toggle-btn" aria-pressed="false">🔊 Озвучивание: ВЫКЛ</button>
+  </div>
+  <audio id="ttsAudio" preload="none"></audio>
+  <div class="table-wrap"><table class="irregular-table"><thead><tr><th>V1 (Infinitive)</th><th>V2 (Past Simple)</th><th>V3 (Past Participle)</th><th>Перевод</th></tr></thead><tbody id="irregularBody"></tbody></table></div>
+</details>
+</section>
+
+<section class="panel">
+<details>
+  <summary class="summary-style">📖 Грамматический справочник (краткая версия) ▼</summary>
+  <div class="grammar-content" style="margin-top: 15px;">
+    <!-- Внедрение PDF-документа вместо длинного HTML-кода -->
+    <iframe src="Grammar+Reference.pdf" width="100%" height="800px" style="border: 1px solid var(--bd); border-radius: 12px;">
+      <div style="padding: 20px; text-align: center; background: #fff1f1; color: #b42318; border-radius: 12px;">
+        Ваш браузер не поддерживает встроенный просмотр PDF-файлов.<br><br>
+        <a href="Grammar+Reference.pdf" target="_blank" style="color: var(--p); font-weight: bold; text-decoration: none;">⬇ Скачать справочник (Grammar+Reference.pdf)</a>
+      </div>
+    </iframe>
+  </div>
+</details>
+</section>
+
+<section class="panel"><h2 style="margin-top:0">👤 Об авторе</h2><div class="author"><b>Материалы подготовил: Бабков Иван Леонидович</b><br>✉ <a href="mailto:i@ibabkow.ru">i@ibabkow.ru</a></div></section>
+</main>
+<footer>Прогресс хранится локально в браузере. Словарь: The Oxford 3000™ Part 1 (A1).</footer>
+<script>
+const WORDS=[
+["a, an","ə, æn","неопределенный артикль","indefinite article","1"],["about","əˈbaʊt","о, около, примерно","prep., adv.","1"],["above","əˈbʌv","над, выше","prep., adv.","1"],["across","əˈkrɒs","через, сквозь","prep., adv.","1"],["action","ˈækʃn","действие, поступок","n.","1"],["activity","ækˈtɪvəti","деятельность, активность","n.","1"],["actor","ˈæktə(r)","актер","n.","1"],["actress","ˈæktrəs","актриса","n.","1"],["add","æd","добавлять","v.","1"],["address","əˈdres","адрес","n.","1"],["adult","ˈædʌlt","взрослый","n.","1"],["advice","ədˈvaɪs","совет","n.","1"],["afraid","əˈfreɪd","испуганный","adj.","1"],["after","ˈɑːftə(r)","после","prep.","1"],["afternoon","ˌɑːftəˈnuːn","день (после полудня)","n.","1"],["again","əˈɡen","снова","adv.","1"],["age","eɪdʒ","возраст","n.","1"],["ago","əˈɡəʊ","назад (о времени)","adv.","1"],["agree","əˈɡriː","соглашаться","v.","1"],["air","eə(r)","воздух","n.","1"],["airport","ˈeəpɔːt","аэропорт","n.","1"],["all","ɔːl","все, всё","det., pron.","1"],["also","ˈɔːlsəʊ","также","adv.","1"],["always","ˈɔːlweɪz","всегда","adv.","1"],["amazing","əˈmeɪzɪŋ","удивительный","adj.","1"],["and","ənd","и","conj.","1"],["angry","ˈæŋɡri","сердитый","adj.","1"],["animal","ˈænɪml","животное","n.","1"],["another","əˈnʌðə(r)","другой","det./pron.","1"],["answer","ˈɑːnsə(r)","ответ, отвечать","n., v.","1"],["any","ˈeni","любой","det., pron.","1"],["anyone","ˈeniwʌn","кто угодно","pron.","1"],["anything","ˈeniθɪŋ","что угодно","pron.","1"],["apartment","əˈpɑːtmənt","квартира","n.","1"],["apple","ˈæpl","яблоко","n.","1"],["April","ˈeɪprəl","апрель","n.","1"],["area","ˈeəriə","область, территория","n.","1"],["arm","ɑːm","рука (от кисти до плеча)","n.","1"],["around","əˈraʊnd","вокруг","prep., adv.","1"],["arrive","əˈraɪv","прибывать, приезжать","v.","1"],["art","ɑːt","искусство","n.","1"],["article","ˈɑːtɪkl","статья, артикль","n.","1"],["artist","ˈɑːtɪst","художник","n.","1"],["as","əz","как","prep.","1"],["ask","ɑːsk","спрашивать","v.","1"],["at","ət","в, у, на","prep.","1"],["August","ˈɔːɡəst","август","n.","1"],["aunt","ɑːnt","тетя","n.","1"],["autumn","ˈɔːtəm","осень","n.","1"],["away","əˈweɪ","далеко, прочь","adv.","1"],["baby","ˈbeɪbi","ребенок, младенец","n.","1"],["back","bæk","спина, назад","n., adv.","1"],["bad","bæd","плохой","adj.","1"],["bag","bæɡ","сумка","n.","1"],["ball","bɔːl","мяч","n.","1"],["banana","bəˈnɑːnə","банан","n.","1"],["band","bænd","музыкальная группа","n.","1"],["bank (money)","bæŋk","банк","n.","1"],["bath","bɑːθ","ванна","n.","1"],["bathroom","ˈbɑːθruːm","ванная комната","n.","1"],["be","biː","быть, являться","v., auxiliary v.","1"],["beach","biːtʃ","пляж","n.","1"],["beautiful","ˈbjuːtɪfl","красивый","adj.","1"],["because","bɪˈkɒz","потому что","conj.","1"],["become","bɪˈkʌm","становиться","v.","1"],["bed","bed","кровать","n.","1"],["bedroom","ˈbedruːm","спальня","n.","1"],["beer","bɪə(r)","пиво","n.","1"],["before","bɪˈfɔː(r)","до, перед","prep.","1"],["begin","bɪˈɡɪn","начинать","v.","1"],["beginning","bɪˈɡɪnɪŋ","начало","n.","1"],["behind","bɪˈhaɪnd","позади","prep., adv.","1"],["believe","bɪˈliːv","верить","v.","1"],["below","bɪˈləʊ","ниже","adv., prep.","1"],["best","best","лучший","adj.","1"],["better","ˈbetə(r)","лучше","adj.","1"],["between","bɪˈtwiːn","между","prep.","1"],["bicycle","ˈbaɪsɪkl","велосипед","n.","1"],["big","bɪɡ","большой","adj.","1"],["bike","baɪk","велосипед","n.","1"],["bill","bɪl","счет","n.","1"],["bird","bɜːd","птица","n.","1"],["birthday","ˈbɜːθdeɪ","день рождения","n.","1"],["black","blæk","черный","adj., n.","1"],["blog","blɒɡ","блог","n.","1"],["blonde","blɒnd","блондин/ка","adj.","1"],["blue","bluː","синий, голубой","adj., n.","1"],["boat","bəʊt","лодка","n.","1"],["body","ˈbɒdi","тело","n.","1"],["book","bʊk","книга","n.","1"],["boot","buːt","ботинок","n.","1"],["bored","bɔːd","скучающий","adj.","1"],["boring","ˈbɔːrɪŋ","скучный","adj.","1"],["born","bɔːn","рожденный","v.","1"],["both","bəʊθ","оба","det./pron.","1"],["bottle","ˈbɒtl","бутылка","n.","1"],["box","bɒks","коробка","n.","1"],["boy","bɔɪ","мальчик","n.","1"],["boyfriend","ˈbɔɪfrend","парень","n.","1"],["bread","bred","хлеб","n.","1"],["break","breɪk","ломать, перерыв","v., n.","1"],["breakfast","ˈbrekfəst","завтрак","n.","1"],["bring","brɪŋ","приносить","v.","1"],["brother","ˈbrʌðə(r)","брат","n.","1"],["brown","braʊn","коричневый","adj., n.","1"],["build","bɪld","строить","v.","1"],["building","ˈbɪldɪŋ","здание","n.","1"],["bus","bʌs","автобус","n.","1"],["business","ˈbɪznəs","бизнес, дело","n.","1"],["busy","ˈbɪzi","занятой","adj.","1"],["but","bʌt","но","conj.","1"],["butter","ˈbʌtə(r)","сливочное масло","n.","1"],["buy","baɪ","покупать","v.","1"],["by","baɪ","около, к (времени)","prep.","1"],["bye","baɪ","пока","exclam.","1"],["cafe","ˈkæfeɪ","кафе","n.","1"],["cake","keɪk","торт, пирожное","n.","1"],["call","kɔːl","звонить, вызов","v., n.","1"],["camera","ˈkæmrə","камера, фотоаппарат","n.","1"],["can","kæn","мочь, уметь","modal v.","1"],["cannot","ˈkænɒt","не мочь","modal v.","1"],["capital","ˈkæpɪtl","столица, заглавный","n., adj.","1"],["car","kɑː(r)","машина, автомобиль","n.","1"],["card","kɑːd","карта, карточка","n.","1"],["career","kəˈrɪə(r)","карьера","n.","1"],["carrot","ˈkærət","морковь","n.","1"],["carry","ˈkæri","нести, перевозить","v.","1"],["cat","kæt","кот, кошка","n.","1"],["CD","ˌsiː ˈdiː","CD-диск","n.","1"],["cent","sent","цент","n.","1"],["centre","ˈsentə(r)","центр","n.","1"],["century","ˈsentʃəri","век, столетие","n.","1"],["chair","tʃeə(r)","стул","n.","1"],["change","tʃeɪndʒ","менять, изменение","v., n.","1"],["chart","tʃɑːt","график, диаграмма","n.","1"],["cheap","tʃiːp","дешевый","adj.","1"],["check","tʃek","проверять","v.","1"],["cheese","tʃiːz","сыр","n.","1"],["chicken","ˈtʃɪkɪn","курица","n.","1"],["child","tʃaɪld","ребенок","n.","1"],["chocolate","ˈtʃɒklət","шоколад","n.","1"],["choose","tʃuːz","выбирать","v.","1"],["cinema","ˈsɪnəmə","кинотеатр","n.","1"],["city","ˈsɪti","город","n.","1"],["class","klɑːs","класс, урок","n.","1"],["classroom","ˈklɑːsruːm","классная комната","n.","1"],["clean","kliːn","чистый, чистить","adj., v.","1"],["climb","klaɪm","взбираться","v.","1"],["clock","klɒk","часы (настенные)","n.","1"],["close","kləʊz","закрывать","v.","1"],["clothes","kləʊðz","одежда","n.","1"],["club","klʌb","клуб","n.","1"],["coat","kəʊt","пальто","n.","1"],["coffee","ˈkɒfi","кофе","n.","1"],["cold","kəʊld","холодный, холод","adj., n.","1"],["college","ˈkɒlɪdʒ","колледж","n.","1"],["colour","ˈkʌlə(r)","цвет","n.","1"],["come","kʌm","приходить","v.","1"],["common","ˈkɒmən","общий, обычный","adj.","1"],["company","ˈkʌmpəni","компания","n.","1"],["compare","kəmˈpeə(r)","сравнивать","v.","1"],["complete","kəmˈpliːt","полный, завершать","adj., v.","1"],["computer","kəmˈpjuːtə(r)","компьютер","n.","1"],["concert","ˈkɒnsət","концерт","n.","1"],["conversation","ˌkɒnvəˈseɪʃn","разговор","n.","1"],["cook","kʊk","готовить (еду)","v.","1"],["cooking","ˈkʊkɪŋ","готовка","n.","1"],["cool","kuːl","прохладный, крутой","adj.","1"],["correct","kəˈrekt","правильный, исправлять","adj., v.","1"],["cost","kɒst","стоимость, стоить","n., v.","1"],["could","kʊd","мог, мог бы","modal v.","1"],["country","ˈkʌntri","страна","n.","1"],["course","kɔːs","курс","n.","1"],["cousin","ˈkʌzn","двоюродный брат/сестра","n.","1"],["cow","kaʊ","корова","n.","1"],["cream","kriːm","сливки, крем","n.","1"],["create","kriˈeɪt","создавать","v.","1"],["culture","ˈkʌltʃə(r)","культура","n.","1"],["cup","kʌp","чашка","n.","1"],["customer","ˈkʌstəmə(r)","клиент, покупатель","n.","1"],["cut","kʌt","резать","v.","1"],["dad","dæd","папа","n.","1"],["dance","dɑːns","танец, танцевать","n., v.","1"],["dancer","ˈdɑːnsə(r)","танцор","n.","1"],["dancing","ˈdɑːnsɪŋ","танцы","n.","1"],["dangerous","ˈdeɪndʒərəs","опасный","adj.","1"],["dark","dɑːk","темный","adj.","1"],["date","deɪt","дата, свидание","n.","1"],["daughter","ˈdɔːtə(r)","дочь","n.","1"],["day","deɪ","день","n.","1"],["dear","dɪə(r)","дорогой, милый","adj.","1"],["December","dɪˈsembə(r)","декабрь","n.","1"],["decide","dɪˈsaɪd","решать","v.","1"],["delicious","dɪˈlɪʃəs","очень вкусный","adj.","1"],["describe","dɪˈskraɪb","описывать","v.","1"],["description","dɪˈskrɪpʃn","описание","n.","1"],["design","dɪˈzaɪn","дизайн, проектировать","n., v.","1"],["desk","desk","письменный стол","n.","1"],["detail","ˈdiːteɪl","деталь","n.","1"],["dialogue","ˈdaɪəlɒɡ","диалог","n.","1"],["dictionary","ˈdɪkʃənri","словарь","n.","1"],["die","daɪ","умирать","v.","1"],["diet","ˈdaɪət","диета","n.","1"],["difference","ˈdɪfrəns","разница","n.","1"],["different","ˈdɪfrənt","различный, другой","adj.","1"],["difficult","ˈdɪfɪkəlt","трудный, сложный","adj.","1"],["dinner","ˈdɪnə(r)","ужин","n.","1"],["dirty","ˈdɜːti","грязный","adj.","1"],["discuss","dɪˈskʌs","обсуждать","v.","1"],["dish","dɪʃ","блюдо","n.","1"],["do","duː","делать","v., auxiliary v.","1"],["doctor","ˈdɒktə(r)","доктор, врач","n.","1"],["dog","dɒɡ","собака","n.","1"],["dollar","ˈdɒlə(r)","доллар","n.","1"],["door","dɔː(r)","дверь","n.","1"],["down","daʊn","вниз","adv., prep.","1"],["downstairs","ˌdaʊnˈsteəz","вниз по лестнице, на нижнем этаже","adv.","1"],["draw","drɔː","рисовать, тянуть","v.","1"],["dress","dres","платье, одеваться","n., v.","1"],["drink","drɪŋk","напиток, пить","n., v.","1"],["drive","draɪv","водить (машину)","v.","1"],["driver","ˈdraɪvə(r)","водитель","n.","1"],["during","ˈdjʊərɪŋ","во время","prep.","1"],["DVD","ˌdiː viː ˈdiː","DVD-диск","n.","1"],["each","iːtʃ","каждый","det./pron./adv.","1"],["ear","ɪə(r)","ухо","n.","1"],["early","ˈɜːli","ранний, рано","adj., adv.","1"],["east","iːst","восток","n., adj., adv.","1"],["easy","ˈiːzi","легкий, простой","adj.","1"],["eat","iːt","есть, кушать","v.","1"],["egg","eɡ","яйцо","n.","1"],["eight","eɪt","восемь","number","1"],["eighteen","ˌeɪˈtiːn","восемнадцать","number","1"],["eighty","ˈeɪti","восемьдесят","number","1"],["elephant","ˈelɪfənt","слон","n.","1"],["eleven","ɪˈlevn","одиннадцать","number","1"],["else","els","еще, кроме","adv.","1"],["email","ˈiːmeɪl","электронная почта, писать на e-mail","n., v.","1"],["end","end","конец, заканчивать","n., v.","1"],["enjoy","ɪnˈdʒɔɪ","наслаждаться","v.","1"],["enough","ɪˈnʌf","достаточно","det., pron., adv.","1"],["euro","ˈjʊərəʊ","евро","n.","1"],["even","ˈiːvn","даже","adv.","1"],["evening","ˈiːvnɪŋ","вечер","n.","1"],["event","ɪˈvent","событие, мероприятие","n.","1"],["ever","ˈevə(r)","когда-либо","adv.","1"],["every","ˈevri","каждый","det.","1"],["everybody","ˈevribɒdi","все (люди)","pron.","1"],["everyone","ˈevriwʌn","все, каждый (человек)","pron.","1"],["everything","ˈevriθɪŋ","всё","pron.","1"],["exam","ɪɡˈzæm","экзамен","n.","1"],["example","ɪɡˈzɑːmpl","пример","n.","1"],["excited","ɪkˈsaɪtɪd","взволнованный, радостный","adj.","1"],["exciting","ɪkˈsaɪtɪŋ","захватывающий","adj.","1"],["exercise","ˈeksəsaɪz","упражнение, тренироваться","n., v.","1"],["expensive","ɪkˈspensɪv","дорогой","adj.","1"],["explain","ɪkˈspleɪn","объяснять","v.","1"],["extra","ˈekstrə","дополнительный","adj.","1"],["eye","aɪ","глаз","n.","1"],["face","feɪs","лицо","n.","1"],["fact","fækt","факт","n.","1"],["fall","fɔːl","падать","v.","1"],["false","fɔːls","ложный, неверный","adj.","1"],["family","ˈfæməli","семья, семейный","n., adj.","1"],["famous","ˈfeɪməs","знаменитый","adj.","1"],["fantastic","fænˈtæstɪk","фантастический","adj.","1"],["far","fɑː(r)","далеко","adv.","1"],["farm","fɑːm","ферма","n.","1"],["farmer","ˈfɑːmə(r)","фермер","n.","1"],["fast","fɑːst","быстрый, быстро","adj., adv.","1"],["fat","fæt","толстый, жирный","adj.","1"],["father","ˈfɑːðə(r)","отец","n.","1"],["favourite","ˈfeɪvərɪt","любимый","adj., n.","1"],["February","ˈfebruəri","февраль","n.","1"],["feel","fiːl","чувствовать","v.","1"],["feeling","ˈfiːlɪŋ","чувство","n.","1"],["festival","ˈfestɪvl","фестиваль","n.","1"],["few","fjuː","несколько, мало","det./adj., pron.","1"],["fifteen","ˌfɪfˈtiːn","пятнадцать","number","1"],["fifth","fɪfθ","пятый","number","1"],["fifty","ˈfɪfti","пятьдесят","number","1"],["fill","fɪl","наполнять","v.","1"],["film","fɪlm","фильм","n.","1"],["final","ˈfaɪnl","финальный, последний","adj.","1"],["find","faɪnd","находить","v.","1"],["fine","faɪn","хороший, прекрасный","adj.","1"],["finish","ˈfɪnɪʃ","заканчивать","v.","1"],["fire","ˈfaɪə(r)","огонь, пожар","n.","1"],["first","fɜːst","первый, сначала","det./number, adv.","1"],["fish","fɪʃ","рыба","n.","1"],["five","faɪv","пять","number","1"],["flat","flæt","квартира","n.","1"],["flight","flaɪt","полет, рейс","n.","1"],["floor","flɔː(r)","пол, этаж","n.","1"],["flower","ˈflaʊə(r)","цветок","n.","1"],["fly","flaɪ","летать","v.","1"],["follow","ˈfɒləʊ","следовать","v.","1"],["food","fuːd","еда","n.","1"],["foot","fʊt","стопа, нога","n.","1"],["football","ˈfʊtbɔːl","футбол","n.","1"],["for","fə(r)","для, за","prep.","1"],["forget","fəˈɡet","забывать","v.","1"],["form","fɔːm","форма, формировать","n., v.","1"],["forty","ˈfɔːti","сорок","number","1"],["four","fɔː(r)","четыре","number","1"],["fourteen","ˌfɔːˈtiːn","четырнадцать","number","1"],["fourth","fɔːθ","четвертый","number","1"],["free","friː","свободный, бесплатный","adj.","1"],["Friday","ˈfraɪdeɪ","пятница","n.","1"],["friend","frend","друг","n.","1"],["friendly","ˈfrendli","дружелюбный","adj.","1"],["from","frəm","от, из","prep.","1"],["front","frʌnt","перед, передний","n., adj.","1"],["fruit","fruːt","фрукты","n.","1"],["full","fʊl","полный","adj.","1"],["fun","fʌn","веселье","n.","1"],["funny","ˈfʌni","смешной","adj.","1"],["future","ˈfjuːtʃə(r)","будущее","n.","1"],["game","ɡeɪm","игра","n.","1"],["garden","ˈɡɑːdn","сад","n.","1"],["geography","dʒiˈɒɡrəfi","география","n.","1"],["get","ɡet","получать, добираться","v.","1"],["girl","ɡɜːl","девочка, девушка","n.","1"],["girlfriend","ˈɡɜːlfrend","девушка (подруга)","n.","1"],["give","ɡɪv","давать","v.","1"],["glass","ɡlɑːs","стакан, стекло","n.","1"],["go","ɡəʊ","идти, ехать","v.","1"],["good","ɡʊd","хороший","adj.","1"],["goodbye","ˌɡʊdˈbaɪ","до свидания","exclam./n.","1"],["grandfather","ˈɡrænfɑːðə(r)","дедушка","n.","1"],["grandmother","ˈɡrænmʌðə(r)","бабушка","n.","1"],["grandparent","ˈɡrænpeərənt","дедушка или бабушка","n.","1"],["great","ɡreɪt","великий, отличный","adj.","1"],["green","ɡriːn","зеленый","adj., n.","1"],["grey","ɡreɪ","серый","adj., n.","1"],["group","ɡruːp","группа","n.","1"],["grow","ɡrəʊ","расти, выращивать","v.","1"],["guess","ɡes","догадываться, догадка","v., n.","1"],["guitar","ɡɪˈtɑː(r)","гитара","n.","1"],["gym","dʒɪm","тренажерный зал","n.","1"],["hair","heə(r)","волосы","n.","1"],["half","hɑːf","половина","n., det./pron.","1"],["hand","hænd","рука (кисть)","n.","1"],["happen","ˈhæpən","случаться, происходить","v.","1"],["happy","ˈhæpi","счастливый","adj.","1"],["hard","hɑːd","трудный, твердый, усердно","adj., adv.","1"],["hat","hæt","шляпа, шапка","n.","1"],["hate","heɪt","ненавидеть","v.","1"],["have","hæv","иметь","v.","1"],["have to","hæv tu","должен, вынужден","modal v.","1"],["he","hiː","он","pron.","1"],["head","hed","голова, руководитель","n.","1"],["health","helθ","здоровье","n.","1"],["healthy","ˈhelθi","здоровый","adj.","1"],["hear","hɪə(r)","слышать","v.","1"],["hello","həˈləʊ","привет","exclam./n.","1"],["help","help","помогать, помощь","v., n.","1"],["her","hə(r)","ее, ей","pron., det.","1"],["here","hɪə(r)","здесь","adv.","1"],["hey","heɪ","эй","exclam.","1"],["hi","haɪ","привет","exclam.","1"],["high","haɪ","высокий","adj.","1"],["him","hɪm","его, ему","pron.","1"],["his","hɪz","его (чей?)","det.","1"],["history","ˈhɪstri","история","n.","1"],["hobby","ˈhɒbi","хобби","n.","1"],["holiday","ˈhɒlədeɪ","праздник, отпуск","n.","1"],["home","həʊm","дом, домой","n., adv.","1"],["homework","ˈhəʊmwɜːk","домашняя работа","n.","1"],["hope","həʊp","надеяться","v.","1"],["horse","hɔːs","лошадь","n.","1"],["hospital","ˈhɒspɪtl","больница","n.","1"],["hot","hɒt","горячий, жаркий","adj.","1"],["hotel","həʊˈtel","отель","n.","1"],["hour","ˈaʊə(r)","час","n.","1"],["house","haʊs","дом (здание)","n.","1"],["how","haʊ","как","adv.","1"],["however","haʊˈevə(r)","однако","adv.","1"],["hundred","ˈhʌndrəd","сто","number","1"],["hungry","ˈhʌŋɡri","голодный","adj.","1"],["husband","ˈhʌzbənd","муж","n.","1"],["I","aɪ","я","pron.","1"],["ice","aɪs","лед","n.","1"],["ice cream","ˌaɪs ˈkriːm","мороженое","n.","1"],["idea","aɪˈdɪə","идея, мысль","n.","1"],["if","ɪf","если","conj.","1"],["imagine","ɪˈmædʒɪn","представлять, воображать","v.","1"],["important","ɪmˈpɔːtnt","важный","adj.","1"],["improve","ɪmˈpruːv","улучшать","v.","1"],["in","ɪn","в","prep., adv.","1"],["include","ɪnˈkluːd","включать в себя","v.","1"],["information","ˌɪnfəˈmeɪʃn","информация","n.","1"],["interest","ˈɪntrəst","интерес, интересовать","n., v.","1"],["interested","ˈɪntrəstɪd","заинтересованный","adj.","1"],["interesting","ˈɪntrəstɪŋ","интересный","adj.","1"],["internet","ˈɪntənet","интернет","n.","1"],["interview","ˈɪntəvjuː","интервью, брать интервью","n., v.","1"],["into","ˈɪntə","в, внутрь","prep.","1"],["introduce","ˌɪntrəˈdjuːs","представлять, знакомить","v.","1"],["island","ˈaɪlənd","остров","n.","1"],["it","ɪt","он/она/оно (для неодушевл.)","pron.","1"],["its","ɪts","его/ее (неодушевл.)","det.","1"],["jacket","ˈdʒækɪt","куртка, пиджак","n.","1"],["January","ˈdʒænjuəri","январь","n.","1"],["jeans","dʒiːnz","джинсы","n.","1"],["job","dʒɒb","работа, профессия","n.","1"],["join","dʒɔɪn","присоединяться","v.","1"],["journey","ˈdʒɜːni","путешествие, поездка","n.","1"],["juice","dʒuːs","сок","n.","1"],["July","dʒuˈlaɪ","июль","n.","1"],["June","dʒuːn","июнь","n.","1"],["just","dʒʌst","только что, просто","adv.","1"],["keep","kiːp","держать, хранить","v.","1"],["key","kiː","ключ, ключевой","n., adj.","1"],["kilometre","kɪˈlɒmɪtə(r)","километр","n.","1"],["kind","kaɪnd","вид, тип","n.","1"],["kitchen","ˈkɪtʃɪn","кухня","n.","1"],["know","nəʊ","знать","v.","1"],["land","lænd","земля, суша","n.","1"],["language","ˈlæŋɡwɪdʒ","язык","n.","1"],["large","lɑːdʒ","большой, крупный","adj.","1"],["last","lɑːst","последний, прошлый","det.","1"],["late","leɪt","поздний, поздно","adj., adv.","1"],["later","ˈleɪtə(r)","позже","adv.","1"],["laugh","lɑːf","смеяться, смех","v., n.","1"],["learn","lɜːn","учить(ся)","v.","1"],["leave","liːv","покидать, уходить","v.","1"],["left","left","левый, слева","adj., adv., n.","1"],["leg","leɡ","нога (от бедра до ступни)","n.","1"],["lesson","ˈlesn","урок","n.","1"],["let","let","позволять","v.","1"],["letter","ˈletə(r)","письмо, буква","n.","1"],["library","ˈlaɪbrəri","библиотека","n.","1"],["lie","laɪ","лежать","v.","1"],["life","laɪf","жизнь","n.","1"],["light","laɪt","свет, светлый/легкий","n., adj.","1"],["like","laɪk","как, нравиться","prep., v.","1"],["line","laɪn","линия, очередь","n.","1"],["lion","ˈlaɪən","лев","n.","1"],["list","lɪst","список, составлять список","n., v.","1"],["listen","ˈlɪsn","слушать","v.","1"],["little","ˈlɪtl","маленький, немного","adj., det./pron.","1"],["live","lɪv","жить","v.","1"],["local","ˈləʊkl","местный","adj.","1"],["long","lɒŋ","длинный, долго","adj., adv.","1"],["look","lʊk","смотреть, выглядеть","v.","1"],["lose","luːz","терять, проигрывать","v.","1"],["lot","lɒt","много, масса","pron., det., adv.","1"],["love","lʌv","любовь, любить","n., v.","1"],["lunch","lʌntʃ","обед","n.","1"],["machine","məˈʃiːn","машина, механизм","n.","1"],["magazine","ˌmæɡəˈziːn","журнал","n.","1"],["main","meɪn","главный","adj.","1"],["make","meɪk","делать, создавать","v.","1"],["man","mæn","мужчина, человек","n.","1"],["many","ˈmeni","много","det./pron.","1"],["map","mæp","карта","n.","1"],["March","mɑːtʃ","март","n.","1"],["market","ˈmɑːkɪt","рынок","n.","1"],["married","ˈmærid","женатый, замужняя","adj.","1"],["match","mætʃ","матч, сопоставлять","n., v.","1"],["May","meɪ","май","n.","1"],["maybe","ˈmeɪbi","может быть","adv.","1"],["me","miː","мне, меня","pron.","1"],["meal","miːl","еда, прием пищи","n.","1"],["mean","miːn","значить, иметь в виду","v.","1"],["meaning","ˈmiːnɪŋ","значение","n.","1"],["meat","miːt","мясо","n.","1"],["meet","miːt","встречать","v.","1"],["meeting","ˈmiːtɪŋ","встреча","n.","1"],["member","ˈmembə(r)","участник, член (группы)","n.","1"],["menu","ˈmenjuː","меню","n.","1"],["message","ˈmesɪdʒ","сообщение","n.","1"],["metre","ˈmiːtə(r)","метр","n.","1"],["midnight","ˈmɪdnaɪt","полночь","n.","1"],["mile","maɪl","миля","n.","1"],["milk","mɪlk","молоко","n.","1"],["million","ˈmɪljən","миллион","number","1"],["minute","ˈmɪnɪt","минута","n.","1"],["miss","mɪs","скучать, пропускать","v.","1"],["mistake","mɪˈsteɪk","ошибка","n.","1"],["model","ˈmɒdl","модель","n.","1"],["modern","ˈmɒdn","современный","adj.","1"],["moment","ˈməʊmənt","момент","n.","1"],["Monday","ˈmʌndeɪ","понедельник","n.","1"],["money","ˈmʌni","деньги","n.","1"],["month","mʌnθ","месяц","n.","1"],["more","mɔː(r)","больше","det./pron., adv.","1"],["morning","ˈmɔːnɪŋ","утро","n.","1"],["most","məʊst","большинство, наиболее","det./pron., adv.","1"],["mother","ˈmʌðə(r)","мать","n.","1"],["mountain","ˈmaʊntən","гора","n.","1"],["mouse","maʊs","мышь","n.","1"],["mouth","maʊθ","рот","n.","1"],["move","muːv","двигать(ся), переезжать","v.","1"],["movie","ˈmuːvi","фильм (амер.)","n.","1"],["much","mʌtʃ","много","det./pron., adv.","1"],["mum","mʌm","мама","n.","1"],["museum","mjuˈziːəm","музей","n.","1"],["music","ˈmjuːzɪk","музыка","n.","1"],["must","mʌst","должен, обязан","modal v.","1"],["my","maɪ","мой","det.","1"],["name","neɪm","имя, называть","n., v.","1"],["natural","ˈnætʃrəl","природный, естественный","adj.","1"],["near","nɪə(r)","рядом, близко","prep., adj., adv.","1"],["need","niːd","нуждаться","v.","1"],["negative","ˈneɡətɪv","негативный","adj.","1"],["neighbour","ˈneɪbə(r)","сосед","n.","1"],["never","ˈnevə(r)","никогда","adv.","1"],["new","njuː","новый","adj.","1"],["news","njuːz","новости","n.","1"],["newspaper","ˈnjuːzpeɪpə(r)","газета","n.","1"],["next","nekst","следующий","adj., adv.","1"],["next to","nekst tu","рядом с","prep.","1"],["nice","naɪs","милый, хороший","adj.","1"],["night","naɪt","ночь","n.","1"],["nine","naɪn","девять","number","1"],["nineteen","ˌnaɪnˈtiːn","девятнадцать","number","1"],["ninety","ˈnaɪnti","девяно0сто","number","1"],["no","nəʊ","нет, никакой","exclam., det.","1"],["no one","nəʊ wʌn","никто","pron.","1"],["nobody","ˈnəʊbədi","никто","pron.","1"],["north","nɔːθ","север","n., adj., adv.","1"],["nose","nəʊz","нос","n.","1"],["not","nɒt","не","adv.","1"],["note","nəʊt","заметка, записка","n.","1"],["nothing","ˈnʌθɪŋ","ничего","pron.","1"],["November","nəʊˈvembə(r)","ноябрь","n.","1"],["now","naʊ","сейчас","adv.","1"],["number","ˈnʌmbə(r)","число, номер","n.","1"],["nurse","nɜːs","медсестра","n.","1"],["object","ˈɒbdʒɪkt","объект, предмет","n.","1"],["o’clock","əˈklɒk","часов (о времени)","adv.","1"],["October","ɒkˈtəʊbə(r)","октябрь","n.","1"],["of","əv","предлог принадлежности","prep.","1"],["off","ɒf","выключенный, прочь","adv., prep.","1"],["office","ˈɒfɪs","офис","n.","1"],["often","ˈɒfn","часто","adv.","1"],["oh","əʊ","о, ой","exclam.","1"],["OK","ˌəʊˈkeɪ","хорошо, окей","exclam., adj./adv.","1"],["old","əʊld","старый","adj.","1"],["on","ɒn","на","prep., adv.","1"],["once","wʌns","однажды, один раз","adv.","1"],["one","wʌn","один","number/det., pron.","1"],["onion","ˈʌnjən","лук","n.","1"],["online","ˌɒnˈlaɪn","онлайн","adj., adv.","1"],["only","ˈəʊnli","только, единственный","adj., adv.","1"],["open","ˈəʊpən","открытый, открывать","adj., v.","1"],["opinion","əˈpɪnjən","мнение","n.","1"],["opposite","ˈɒpəzɪt","напротив, противоположный","adj., n., prep., adv.","1"],["or","ɔː(r)","или","conj.","1"],["orange","ˈɒrɪndʒ","апельсин, оранжевый","n., adj.","1"],["order","ˈɔːdə(r)","заказ, заказывать","n., v.","1"],["other","ˈʌðə(r)","другой","adj./pron.","1"],["our","ɑː(r)","наш","det.","1"],["out","aʊt","вне, снаружи","adv./prep.","1"],["outside","ˌaʊtˈsaɪd","снаружи, на улице","adv.","1"],["over","ˈəʊvə(r)","над, через","prep., adv.","1"],["own","əʊn","свой, собственный","adj./pron.","1"],["page","peɪdʒ","страница","n.","1"],["paint","peɪnt","красить, краска","v., n.","1"],["painting","ˈpeɪntɪŋ","картина","n.","1"],["pair","peə(r)","пара","n.","1"],["paper","ˈpeɪpə(r)","бумага","n.","1"],["paragraph","ˈpærəɡrɑːf","абзац","n.","1"],["parent","ˈpeərənt","родитель","n.","1"],["park","pɑːk","парк, парковать","n., v.","1"],["part","pɑːt","часть","n.","1"],["partner","ˈpɑːtnə(r)","партнер","n.","1"],["party","ˈpɑːti","вечеринка","n.","1"],["passport","ˈpɑːspɔːt","паспорт","n.","1"],["past","pɑːst","прошлое, мимо","adj., n., prep.","1"],["pay","peɪ","платить","v.","1"],["pen","pen","ручка","n.","1"],["pencil","ˈpensl","карандаш","n.","1"],["people","ˈpiːpl","люди","n.","1"],["pepper","ˈpepə(r)","перец","n.","1"],["perfect","ˈpɜːfɪkt","идеальный","adj.","1"],["period","ˈpɪəriəd","период","n.","1"],["person","ˈpɜːsn","человек","n.","1"],["personal","ˈpɜːsənl","личный","adj.","1"],["phone","fəʊn","телефон, звонить","n., v.","1"],["photo","ˈfəʊtəʊ","фото","n.","1"],["photograph","ˈfəʊtəɡrɑːf","фотография","n.","1"],["phrase","freɪz","фраза","n.","1"],["piano","piˈænəʊ","пианино","n.","1"],["picture","ˈpɪktʃə(r)","картинка","n.","1"],["piece","piːs","кусок","n.","1"],["pig","pɪɡ","свинья","n.","1"],["pink","pɪŋk","розовый","adj., n.","1"],["place","pleɪs","место","n.","1"],["plan","plæn","план, планировать","n., v.","1"],["plane","pleɪn","самолет","n.","1"],["plant","plɑːnt","растение","n.","1"],["play","pleɪ","играть, пьеса","v., n.","1"],["player","ˈpleɪə(r)","игрок","n.","1"],["please","pliːz","пожалуйста","exclam.","1"],["point","pɔɪnt","точка, смысл","n.","1"],["police","pəˈliːs","полиция","n.","1"],["policeman","pəˈliːsmən","полицейский","n.","1"],["pool","puːl","бассейн","n.","1"],["poor","pɔː(r)","бедный","adj.","1"],["popular","ˈpɒpjələ(r)","популярный","adj.","1"],["positive","ˈpɒzətɪv","позитивный","adj.","1"],["possible","ˈpɒsəbl","возможный","adj.","1"],["post","pəʊst","почта, отправлять","n., v.","1"],["potato","pəˈteɪtəʊ","картофель","n.","1"],["pound","paʊnd","фунт","n.","1"],["practice","ˈpræktɪs","практика","n.","1"],["practise","ˈpræktɪs","практиковать","v.","1"],["prefer","prɪˈfɜː(r)","предпочитать","v.","1"],["prepare","prɪˈpeə(r)","готовить(ся)","v.","1"],["present","ˈpreznt","присутствующий, настоящее, подарок","adj., n.","1"],["pretty","ˈprɪti","симпатичный, довольно","adj., adv.","1"],["price","praɪs","цена","n.","1"],["probably","ˈprɒbəbli","возможно, вероятно","adv.","1"],["problem","ˈprɒbləm","проблема","n.","1"],["product","ˈprɒdʌkt","продукт","n.","1"],["programme","ˈprəʊɡræm","программа","n.","1"],["project","ˈprɒdʒekt","проект","n.","1"],["purple","ˈpɜːpl","фиолетовый","adj., n.","1"],["put","pʊt","класть","v.","1"],["quarter","ˈkwɔːtə(r)","четверть","n.","1"],["question","ˈkwestʃən","вопрос","n.","1"],["quick","kwɪk","быстрый","adj.","1"],["quickly","ˈkwɪkli","быстро","adv.","1"],["quiet","ˈkwaɪət","тихий","adj.","1"],["quite","kwaɪt","вполне, довольно","adv.","1"],["radio","ˈreɪdiəʊ","радио","n.","1"],["rain","reɪn","дождь, идти (о дожде)","n., v.","1"],["read","riːd","читать","v.","1"],["reader","ˈriːdə(r)","читатель","n.","1"],["reading","ˈriːdɪŋ","чтение","n.","1"],["ready","ˈredi","готовый","adj.","1"],["real","rɪəl","настоящий, реальный","adj.","1"],["really","ˈrɪəli","действительно","adv.","1"],["reason","ˈriːzn","причина","n.","1"],["red","red","красный","adj., n.","1"],["relax","rɪˈlæks","расслабляться","v.","1"],["remember","rɪˈmembə(r)","помнить","v.","1"],["repeat","rɪˈpiːt","повторять","v.","1"],["report","rɪˈpɔːt","отчет, доклад","n.","1"],["restaurant","ˈrestrɒnt","ресторан","n.","1"],["result","rɪˈzʌlt","результат","n.","1"],["return","rɪˈtɜːn","возвращать(ся), возвращение","v., n.","1"],["rice","raɪs","рис","n.","1"],["rich","rɪtʃ","богатый","adj.","1"],["ride","raɪd","ездить верхом","v.","1"],["right","raɪt","правильный, правый, право","adj., adv., n.","1"],["river","ˈrɪvə(r)","река","n.","1"],["road","rəʊd","дорога","n.","1"],["room","ruːm","комната","n.","1"],["routine","ruːˈtiːn","рутина, распорядок","n.","1"],["rule","ruːl","правило","n.","1"],["run","rʌn","бежать","v.","1"],["sad","sæd","грустный","adj.","1"],["salad","ˈsæləd","салат","n.","1"],["salt","sɔːlt","соль","n.","1"],["same","seɪm","тот же самый","adj., pron., adv.","1"],["sandwich","ˈsænwɪtʃ","сэндвич","n.","1"],["Saturday","ˈsætədeɪ","суббота","n.","1"],["say","seɪ","сказать","v.","1"],["school","skuːl","школа","n.","1"],["science","ˈsaɪəns","наука","n.","1"],["scientist","ˈsaɪəntɪst","ученый","n.","1"],["sea","siː","море","n.","1"],["second","ˈsekənd","второй, секунда","det./number/n.","1"],["section","ˈsekʃn","раздел, часть","n.","1"],["see","siː","видеть","v.","1"],["sell","sel","продавать","v.","1"],["send","send","отправлять","v.","1"],["sentence","ˈsentəns","предложение","n.","1"],["September","sepˈtembə(r)","сентябрь","n.","1"],["seven","ˈsevn","семь","number","1"],["seventeen","ˌsevnˈtiːn","семнадцать","number","1"],["seventy","ˈsevnti","семьдесят","number","1"],["share","ʃeə(r)","делиться","v.","1"],["she","ʃiː","она","pron.","1"],["sheep","ʃiːp","овца","n.","1"],["shirt","ʃɜːt","рубашка","n.","1"],["shoe","ʃuː","туфля, ботинок","n.","1"],["shop","ʃɒp","магазин, делать покупки","n., v.","1"],["shopping","ˈʃɒpɪŋ","покупки","n.","1"],["short","ʃɔːt","короткий","adj.","1"],["should","ʃʊd","следует (совет)","modal v.","1"],["show","ʃəʊ","показывать, шоу","v., n.","1"],["shower","ˈʃaʊə(r)","душ","n.","1"],["sick","sɪk","больной","adj.","1"],["similar","ˈsɪmələ(r)","похожий","adj.","1"],["sing","sɪŋ","петь","v.","1"],["singer","ˈsɪŋə(r)","певец","n.","1"],["sister","ˈsɪstə(r)","сестра","n.","1"],["sit","sɪt","сидеть","v.","1"],["situation","ˌsɪtʃuˈeɪʃn","ситуация","n.","1"],["six","sɪks","шесть","number","1"],["sixteen","ˌsɪksˈtiːn","шестнадцать","number","1"],["sixty","ˈsɪksti","шестьдесят","number","1"],["skill","skɪl","навык","n.","1"],["skirt","skɜːt","юбка","n.","1"],["sleep","sliːp","спать","v.","1"],["slow","sləʊ","медленный","adj.","1"],["small","smɔːl","маленький","adj.","1"],["snake","sneɪk","змея","n.","1"],["snow","snəʊ","снег, идти (о снеге)","n., v.","1"],["so","səʊ","так, поэтому","adv., conj.","1"],["some","sʌm","немного, некоторый","det., pron.","1"],["somebody","ˈsʌmbədi","кто-то","pron.","1"],["someone","ˈsʌmwʌn","кто-то","pron.","1"],["something","ˈsʌmθɪŋ","что-то","pron.","1"],["sometimes","ˈsʌmtaɪmz","иногда","adv.","1"],["son","sʌn","сын","n.","1"],["song","sɒŋ","песня","n.","1"],["soon","suːn","скоро","adv.","1"],["sorry","ˈsɒri","сожалеющий, извините","adj., exclam.","1"],["sound","saʊnd","звук, звучать","n., v.","1"],["soup","suːp","суп","n.","1"],["south","saʊθ","юг","n., adj., adv.","1"],["space","speɪs","пространство, космос","n.","1"],["speak","spiːk","говорить","v.","1"],["special","ˈspeʃl","особенный","adj.","1"],["spell","spel","произносить по буквам","v.","1"],["spelling","ˈspelɪŋ","правописание","n.","1"],["spend","spend","тратить","v.","1"],["sport","spɔːt","спорт","n.","1"],["spring","sprɪŋ","весна","n.","1"],["stand","stænd","стоять","v.","1"],["star","stɑː(r)","звезда","n.","1"],["start","stɑːt","начинать","v.","1"],["statement","ˈsteɪtmənt","заявление, утверждение","n.","1"],["station","ˈsteɪʃn","станция","n.","1"],["stay","steɪ","оставаться","v.","1"],["still","stɪl","все еще","adv.","1"],["stop","stɒp","останавливать(ся), остановка","v., n.","1"],["story","ˈstɔːri","история","n.","1"],["street","striːt","улица","n.","1"],["strong","strɒŋ","сильный","adj.","1"],["student","ˈstjuːdnt","студент","n.","1"],["study","ˈstʌdi","изучение, изучать","n., v.","1"],["style","staɪl","стиль","n.","1"],["subject","ˈsʌbdʒɪkt","предмет, тема","n.","1"],["success","səkˈses","успех","n.","1"],["sugar","ˈʃʊɡə(r)","сахар","n.","1"],["summer","ˈsʌmə(r)","лето","n.","1"],["sun","sʌn","солнце","n.","1"],["Sunday","ˈsʌndeɪ","воскресенье","n.","1"],["supermarket","ˈsuːpəmɑːkɪt","супермаркет","n.","1"],["sure","ʃʊə(r)","уверенный","adj.","1"],["sweater","ˈswetə(r)","свитер","n.","1"],["swim","swɪm","плавать","v.","1"],["swimming","ˈswɪmɪŋ","плавание","n.","1"],["table","ˈteɪbl","стол","n.","1"],["take","teɪk","брать","v.","1"],["talk","tɔːk","разговаривать","v.","1"],["tall","tɔːl","высокий","adj.","1"],["taxi","ˈtæksi","такси","n.","1"],["tea","tiː","чай","n.","1"],["teach","tiːtʃ","учить (кого-то)","v.","1"],["teacher","ˈtiːtʃə(r)","учитель","n.","1"],["team","tiːm","команда","n.","1"],["teenager","ˈtiːneɪdʒə(r)","подросток","n.","1"],["telephone","ˈtelɪfəʊn","телефон, звонить","n., v.","1"],["television","ˈtelɪvɪʒn","телевидение","n.","1"],["tell","tel","рассказывать, говорить","v.","1"],["ten","ten","десять","number","1"],["tennis","ˈtenɪs","теннис","n.","1"],["terrible","ˈterəbl","ужасный","adj.","1"],["test","test","тест, тестировать","n., v.","1"],["text","tekst","текст","n.","1"],["than","ðæn","чем","conj.","1"],["thank","θæŋk","благодарить","v.","1"],["thanks","θæŋks","спасибо","exclam., n.","1"],["that","ðæt","тот, что","det., pron., conj.","1"],["the","ðə","определенный артикль","definite article","1"],["theatre","ˈθɪətə(r)","театр","n.","1"],["their","ðeə(r)","их","det.","1"],["them","ðem","их, им","pron.","1"],["then","ðen","тогда, затем","adv.","1"],["there","ðeə(r)","там","adv.","1"],["they","ðeɪ","они","pron.","1"],["thing","θɪŋ","вещь","n.","1"],["think","θɪŋk","думать","v.","1"],["third","θɜːd","третий","number","1"],["thirsty","ˈθɜːsti","испытывающий жажду","adj.","1"],["thirteen","ˌθɜːˈtiːn","тринадцать","number","1"],["thirty","ˈθɜːti","тридцать","number","1"],["this","ðɪs","этот","det./pron.","1"],["thousand","ˈθaʊznd","тысяча","number","1"],["three","θriː","три","number","1"],["through","θruː","через","prep., adv.","1"],["Thursday","ˈθɜːzdeɪ","четверг","n.","1"],["ticket","ˈtɪkɪt","билет","n.","1"],["time","taɪm","время","n.","1"],["tired","ˈtaɪəd","уставший","adj.","1"],["title","ˈtaɪtl","название, заголовок","n.","1"],["to","tə","в, на (направление)","prep., infinitive marker","1"],["today","təˈdeɪ","сегодня","adv., n.","1"],["together","təˈɡeðə(r)","вместе","adv.","1"],["toilet","ˈtɔɪlət","туалет","n.","1"],["tomato","təˈmɑːtəʊ","помидор","n.","1"],["tomorrow","təˈmɒrəʊ","завтра","adv., n.","1"],["tonight","təˈnaɪt","сегодня вечером","adv., n.","1"],["too","tuː","тоже, слишком","adv.","1"],["tooth","tuːθ","зуб","n.","1"],["topic","ˈtɒpɪk","тема","n.","1"],["tourist","ˈtʊərɪst","турист","n.","1"],["town","taʊn","город (небольшой)","n.","1"],["traffic","ˈtræfɪk","дорожное движение","n.","1"],["train","treɪn","поезд","n.","1"],["travel","ˈtrævl","путешествовать","v., n.","1"],["tree","triː","дерево","n.","1"],["trip","trɪp","поездка","n.","1"],["trousers","ˈtraʊzəz","брюки","n.","1"],["true","truː","верный, правдивый","adj.","1"],["try","traɪ","пробовать, пытаться","v.","1"],["T-shirt","ˈtiː ʃɜːt","футболка","n.","1"],["Tuesday","ˈtjuːzdeɪ","вторник","n.","1"],["turn","tɜːn","поворачивать, очередь/поворот","v., n.","1"],["TV","ˌtiː ˈviː","ТВ","n.","1"],["twelve","twelv","двенадцать","number","1"],["twenty","ˈtwenti","двадцать","number","1"],["twice","twaɪs","дважды","adv.","1"],["two","tuː","два","number","1"],["type","taɪp","тип","n.","1"],["umbrella","ʌmˈbrelə","зонт","n.","1"],["uncle","ˈʌŋkl","дядя","n.","1"],["under","ˈʌndə(r)","под","prep., adv.","1"],["understand","ˌʌndəˈstænd","понимать","v.","1"],["university","ˌjuːnɪˈvɜːsəti","университет","n.","1"],["until","ənˈtɪl","до (тех пор пока)","conj./prep.","1"],["up","ʌp","вверх","adv., prep.","1"],["upstairs","ˌʌpˈsteəz","вверх по лестнице (наверху)","adv.","1"],["us","əs","нам, нас","pron.","1"],["use","juːz","использовать","v.","1"],["useful","ˈjuːsfl","полезный","adj.","1"],["usually","ˈjuːʒuəli","обычно","adv.","1"],["vacation","vəˈkeɪʃn","отпуск, каникулы","n.","1"],["vegetable","ˈvedʒtəbl","овощ","n.","1"],["very","ˈveri","очень","adv.","1"],["video","ˈvɪdiəʊ","видео","n.","1"],["village","ˈvɪlɪdʒ","деревня","n.","1"],["visit","ˈvɪzɪt","посещать, визит","v., n.","1"],["visitor","ˈvɪzɪtə(r)","посетитель","n.","1"],["wait","weɪt","ждать","v.","1"],["waiter","ˈweɪtə(r)","официант","n.","1"],["wake","weɪk","просыпаться","v.","1"],["walk","wɔːk","гулять, прогулка","v., n.","1"],["wall","wɔːl","стена","n.","1"],["want","wɒnt","хотеть","v.","1"],["warm","wɔːm","теплый","adj.","1"],["wash","wɒʃ","мыть","v.","1"],["watch","wɒtʃ","смотреть, часы (наручные)","v., n.","1"],["water","ˈwɔːtə(r)","вода","n.","1"],["way","weɪ","путь, способ","n.","1"],["we","wiː","мы","pron.","1"],["wear","weə(r)","носить (одежду)","v.","1"],["weather","ˈweðə(r)","погода","n.","1"],["website","ˈwebsaɪt","веб-сайт","n.","1"],["Wednesday","ˈwenzdeɪ","среда","n.","1"],["week","wiːk","неделя","n.","1"],["weekend","ˌwiːkˈend","выходные","n.","1"],["welcome","ˈwelkəm","добро пожаловать","exclam., v., adj.","1"],["well","wel","хорошо","adv., adj., exclam.","1"],["west","west","запад","n., adj., adv.","1"],["what","wɒt","что, какой","pron./det.","1"],["when","wen","когда","adv., pron., conj.","1"],["where","weə(r)","где, куда","adv., conj.","1"],["which","wɪtʃ","который","pron./det.","1"],["white","waɪt","белый","adj., n.","1"],["who","huː","кто","pron.","1"],["why","waɪ","почему","adv.","1"],["wife","waɪf","жена","n.","1"],["will","wɪl","будет (будущее время)","modal v.","1"],["win","wɪn","побеждать","v.","1"],["window","ˈwɪndəʊ","окно","n.","1"],["wine","waɪn","вино","n.","1"],["winter","ˈwɪntə(r)","зима","n.","1"],["with","wɪð","с","prep.","1"],["without","wɪðˈaʊt","без","prep.","1"],["woman","ˈwʊmən","женщина","n.","1"],["wonderful","ˈwʌndəfl","чудесный","adj.","1"],["word","wɜːd","слово","n.","1"],["work","wɜːk","работать, работа","v., n.","1"],["worker","ˈwɜːkə(r)","рабочий","n.","1"],["world","wɜːld","мир","n.","1"],["would","wʊd","бы (условие)","modal v.","1"],["write","raɪt","писать","v.","1"],["writer","ˈraɪtə(r)","писатель","n.","1"],["writing","ˈraɪtɪŋ","письмо (процесс)","n.","1"],["wrong","rɒŋ","неправильный","adj.","1"],["yeah","jeə","да (разг.)","exclam.","1"],["year","jɪə(r)","год","n.","1"],["yellow","ˈjeləʊ","желтый","adj., n.","1"],["yes","jes","да","exclam.","1"],["yesterday","ˈjestədeɪ","вчера","adv., n.","1"],["you","juː","ты, вы","pron.","1"],["young","jʌŋ","молодой","adj.","1"],["your","jɔː(r)","твой, ваш","det.","1"],["yourself","jɔːˈself","себя, сам","pron.","1"]
+];
+
+const VERB_FORMS = {
+    "add": "added, added", "agree": "agreed, agreed", "answer": "answered, answered", 
+    "arrive": "arrived, arrived", "ask": "asked, asked", "be": "was/were, been", 
+    "become": "became, become", "begin": "began, begun", "believe": "believed, believed", 
+    "break": "broke, broken", "bring": "brought, brought", "build": "built, built", 
+    "buy": "bought, bought", "call": "called, called", "can": "could, —", 
+    "change": "changed, changed", "check": "checked, checked", "choose": "chose, chosen", 
+    "clean": "cleaned, cleaned", "climb": "climbed, climbed", "close": "closed, closed", 
+    "come": "came, come", "compare": "compared, compared", "complete": "completed, completed", 
+    "cook": "cooked, cooked", "correct": "corrected, corrected", "cost": "cost, cost", 
+    "create": "created, created", "cut": "cut, cut", "dance": "danced, danced", 
+    "decide": "decided, decided", "describe": "described, described", "design": "designed, designed", 
+    "die": "died, died", "discuss": "discussed, discussed", "do": "did, done", 
+    "draw": "drew, drawn", "dress": "dressed, dressed", "drink": "drank, drunk", 
+    "drive": "drove, driven", "eat": "ate, eaten", "email": "emailed, emailed", 
+    "end": "ended, ended", "enjoy": "enjoyed, enjoyed", "exercise": "exercised, exercised", 
+    "explain": "explained, explained", "fall": "fell, fallen", "feel": "felt, felt", 
+    "fill": "filled, filled", "find": "found, found", "finish": "finished, finished", 
+    "fly": "flew, flown", "follow": "followed, followed", "forget": "forgot, forgotten", 
+    "form": "formed, formed", "get": "got, got", "give": "gave, given", 
+    "go": "went, gone", "grow": "grew, grown", "guess": "guessed, guessed", 
+    "happen": "happened, happened", "hate": "hated, hated", "have": "had, had", 
+    "have to": "had to, —", "hear": "heard, heard", "help": "helped, helped", 
+    "hope": "hoped, hoped", "imagine": "imagined, imagined", "improve": "improved, improved", 
+    "include": "included, included", "interest": "interested, interested", "interview": "interviewed, interviewed", 
+    "introduce": "introduced, introduced", "join": "joined, joined", "keep": "kept, kept", 
+    "know": "knew, known", "laugh": "laughed, laughed", "learn": "learnt, learnt", 
+    "leave": "left, left", "let": "let, let", "lie": "lay, lain", 
+    "like": "liked, liked", "list": "listed, listed", "listen": "listened, listened", 
+    "live": "lived, lived", "look": "looked, looked", "lose": "lost, lost", 
+    "love": "loved, loved", "make": "made, made", "match": "matched, matched", 
+    "mean": "meant, meant", "meet": "met, met", "miss": "missed, missed", 
+    "move": "moved, moved", "name": "named, named", "need": "needed, needed", 
+    "open": "opened, opened", "order": "ordered, ordered", "paint": "painted, painted", 
+    "park": "parked, parked", "pay": "paid, paid", "phone": "phoned, phoned", 
+    "plan": "planned, planned", "play": "played, played", "post": "posted, posted", 
+    "practise": "practised, practised", "prefer": "preferred, preferred", "prepare": "prepared, prepared", 
+    "read": "read, read", "rain": "rained, rained", "relax": "relaxed, relaxed", 
+    "remember": "remembered, remembered", "repeat": "repeated, repeated", "return": "returned, returned", 
+    "ride": "rode, ridden", "run": "ran, run", "say": "said, said", 
+    "see": "saw, seen", "sell": "sold, sold", "send": "sent, sent", 
+    "share": "shared, shared", "shop": "shopped, shopped", "show": "showed, shown", 
+    "sing": "sang, sung", "sit": "sat, sat", "sleep": "slept, slept", 
+    "snow": "snowed, snowed", "sound": "sounded, sounded", "speak": "spoke, spoken", 
+    "spell": "spelt, spelt", "spend": "spent, spent", "start": "started, started", 
+    "stay": "stayed, stayed", "stop": "stopped, stopped", "stand": "stood, stood", 
+    "study": "studied, studied", "swim": "swam, swum", "take": "took, taken", 
+    "talk": "talked, talked", "teach": "taught, taught", "telephone": "telephoned, telephoned", 
+    "tell": "told, told", "test": "tested, tested", "thank": "thanked, thanked", 
+    "travel": "travelled, travelled", "try": "tried, tried", "turn": "turned, turned", 
+    "understand": "understood, understood", "use": "used, used", "visit": "visited, visited", 
+    "wait": "waited, waited", "wake": "woke, woken", "walk": "walked, walked", 
+    "want": "wanted, wanted", "wash": "washed, washed", "watch": "watched, watched", 
+    "wear": "wore, worn", "welcome": "welcomed, welcomed", "win": "won, won", 
+    "work": "worked, worked", "write": "wrote, written"
+};
+
+const IRREGULAR_VERBS = [
+  ["arise", "arose", "arisen", "возникать", " /əˈraɪz/ ", " /əˈrəʊz/ ", " /əˈrɪzən/ "],
+  ["awake", "awoke", "awoken", "просыпаться", " /əˈweɪk/ ", " /əˈwəʊk/ ", " /əˈwəʊkən/ "],
+  ["be", "was/were", "been", "быть", " /biː/ ", " /wɒz/ /wɜː(r)/ ", " /bɪn/ "],
+  ["become", "became", "become", "становиться", " /bɪˈkʌm/ ", " /bɪˈkeɪm/ ", " /bɪˈkʌm/ "],
+  ["begin", "began", "begun", "начинать", " /bɪˈɡɪn/ ", " /bɪˈɡæn/ ", " /bɪˈɡʌn/ "],
+  ["bend", "bent", "bent", "гнуть", " /bend/ ", " /bent/ ", " /bent/ "],
+  ["bet", "bet", "bet", "делать ставку", " /bet/ ", " /bet/ ", " /bet/ "],
+  ["bid", "bid", "bid", "предлагать (цену)", " /bɪd/ ", " /bɪd/ ", " /bɪd/ "],
+  ["bite", "bit", "bitten", "кусать", " /baɪt/ ", " /bɪt/ ", " /ˈbɪtən/ "],
+  ["bleed", "bled", "bled", "кровоточить", " /bliːd/ ", " /bled/ ", " /bled/ "],
+  ["blow", "blew", "blown", "дуть; взорвать", " /bləʊ/ ", " /bluː/ ", " /bləʊn/ "],
+  ["break", "broke", "broken", "ломать", " /breɪk/ ", " /brəʊk/ ", " /ˈbrəʊkən/ "],
+  ["bring", "brought", "brought", "приносить", " /brɪŋ/ ", " /brɔːt/ ", " /brɔːt/ "],
+  ["build", "built", "built", "строить", " /bɪld/ ", " /bɪlt/ ", " /bɪlt/ "],
+  ["burn", "burnt", "burnt", "гореть; сжигать", " /bɜːn/ ", " /bɜːnt/ ", " /bɜːnt/ "],
+  ["buy", "bought", "bought", "покупать", " /baɪ/ ", " /bɔːt/ ", " /bɔːt/ "],
+  ["can", "could", "been able", "мочь", " /kæn/ ", " /kʊd/ ", " /biːn ˈeɪbəl/ "],
+  ["cast", "cast", "cast", "бросать; отливать", " /kɑːst/ ", " /kɑːst/ ", " /kɑːst/ "],
+  ["catch", "caught", "caught", "ловить", " /kætʃ/ ", " /kɔːt/ ", " /kɔːt/ "],
+  ["choose", "chose", "chosen", "выбирать", " /tʃuːz/ ", " /tʃəʊz/ ", " /ˈtʃəʊzən/ "],
+  ["come", "came", "come", "приходить", " /kʌm/ ", " /keɪm/ ", " /kʌm/ "],
+  ["cost", "cost", "cost", "стоить", " /kɒst/ ", " /kɒst/ ", " /kɒst/ "],
+  ["cut", "cut", "cut", "резать", " /kʌt/ ", " /kʌt/ ", " /kʌt/ "],
+  ["deal", "dealt", "dealt", "раздавать; иметь дело", " /diːl/ ", " /delt/ ", " /delt/ "],
+  ["dig", "dug", "dug", "копать", " /dɪɡ/ ", " /dʌɡ/ ", " /dʌɡ/ "],
+  ["dive", "dove", "dived", "нырять", " /daɪv/ ", " /dəʊv/ ", " /daɪvd/ "],
+  ["do", "did", "done", "делать", " /duː/ ", " /dɪd/ ", " /dʌn/ "],
+  ["draw", "drew", "drawn", "рисовать; тянуть", " /drɔː/ ", " /druː/ ", " /drɔːn/ "],
+  ["dream", "dreamt", "dreamt", "мечтать; видеть сны", " /driːm/ ", " /dremt/ ", " /dremt/ "],
+  ["drive", "drove", "driven", "водить", " /draɪv/ ", " /drəʊv/ ", " /ˈdrɪvən/ "],
+  ["drink", "drank", "drunk", "пить", " /drɪŋk/ ", " /dræŋk/ ", " /drʌŋk/ "],
+  ["eat", "ate", "eaten", "есть", " /iːt/ ", " /eɪt/ ", " /ˈiːtən/ "],
+  ["fall", "fell", "fallen", "падать", " /fɔːl/ ", " /fel/ ", " /ˈfɔːlən/ "],
+  ["feed", "fed", "fed", "кормить", " /fiːd/ ", " /fed/ ", " /fed/ "],
+  ["feel", "felt", "felt", "чувствовать", " /fiːl/ ", " /felt/ ", " /felt/ "],
+  ["fight", "fought", "fought", "сражаться", " /faɪt/ ", " /fɔːt/ ", " /fɔːt/ "],
+  ["find", "found", "found", "находить", " /faɪnd/ ", " /faʊnd/ ", " /faʊnd/ "],
+  ["flee", "fled", "fled", "бежать", " /fliː/ ", " /fled/ ", " /fled/ "],
+  ["fly", "flew", "flown", "летать", " /flaɪ/ ", " /fluː/ ", " /fləʊn/ "],
+  ["forbid", "forbade", "forbidden", "запрещать", " /fərˈbɪd/ ", " /fəˈbæd/ ", " /fərˈbɪdən/ "],
+  ["forgive", "forgave", "forgiven", "прощать", " /fəˈɡɪv/ ", " /fəˈɡeɪv/ ", " /fərˈɡɪvən/ "],
+  ["forget", "forgot", "forgotten", "забывать", " /fəˈɡet/ ", " /fɒˈɡɒt/ ", " /fəˈɡɒtn/ "],
+  ["freeze", "froze", "frozen", "замерзать", " /friːz/ ", " /frəʊz/ ", " /ˈfrəʊzən/ "],
+  ["get", "got", "got", "получать", " /ɡet/ ", " /ɡɒt/ ", " /ɡɒt/ "],
+  ["give", "gave", "given", "давать", " /ɡɪv/ ", " /ɡeɪv/ ", " /ˈɡɪvən/ "],
+  ["go", "went", "gone", "идти", " /ɡəʊ/ ", " /went/ ", " /ɡɒn/ "],
+  ["grind", "ground", "ground", "молоть; размалывать", " /ɡraɪnd/ ", " /ɡraʊnd/ ", " /ɡraʊnd/ "],
+  ["grow", "grew", "grown", "расти", " /ɡrəʊ/ ", " /ɡruː/ ", " /ɡrəʊn/ "],
+  ["hang", "hung", "hung", "висеть", " /hæŋ/ ", " /hʌŋ/ ", " /hʌŋ/ "],
+  ["have", "had", "had", "иметь", " /hæv/ ", " /hæd/ ", " /hæd/ "],
+  ["hear", "heard", "heard", "слышать", " /hɪə(r)/ ", " /hɜːd/ ", " /hɜːd/ "],
+  ["hide", "hid", "hidden", "прятать", " /haɪd/ ", " /hɪd/ ", " /ˈhɪdən/ "],
+  ["hold", "held", "held", "держать", " /həʊld/ ", " /held/ ", " /held/ "],
+  ["hit", "hit", "hit", "ударять", " /hɪt/ ", " /hɪt/ ", " /hɪt/ "],
+  ["hurt", "hurt", "hurt", "ранить; причинять боль", " /hɜːt/ ", " /hɜːt/ ", " /hɜːt/ "],
+  ["keep", "kept", "kept", "хранить", " /kiːp/ ", " /kept/ ", " /kept/ "],
+  ["kneel", "knelt", "knelt", "преклонять колени", " /niːl/ ", " /nelt/ ", " /nelt/ "],
+  ["know", "knew", "known", "знать", " /nəʊ/ ", " /njuː/ ", " /nəʊn/ "],
+  ["lay", "laid", "laid", "класть", " /leɪ/ ", " /leɪd/ ", " /leɪd/ "],
+  ["lead", "led", "led", "вести", " /liːd/ ", " /led/ ", " /led/ "],
+  ["learn", "learnt", "learnt", "учить", " /lɜːn/ ", " /lɜːnt/ ", " /lɜːnt/ "],
+  ["leave", "left", "left", "покидать", " /liːv/ ", " /left/ ", " /left/ "],
+  ["lend", "lent", "lent", "давать взаймы", " /lend/ ", " /lent/ ", " /lent/ "],
+  ["let", "let", "let", "позволять", " /let/ ", " /let/ ", " /let/ "],
+  ["lie", "lay", "lain", "лежать", " /laɪ/ ", " /leɪ/ ", " /leɪn/ "],
+  ["light", "lit", "lit", "зажигать", " /laɪt/ ", " /lɪt/ ", " /lɪt/ "],
+  ["lose", "lost", "lost", "терять", " /luːz/ ", " /lɒst/ ", " /lɒst/ "],
+  ["make", "made", "made", "делать", " /meɪk/ ", " /meɪd/ ", " /meɪd/ "],
+  ["mean", "meant", "meant", "значить", " /miːn/ ", " /ment/ ", " /ment/ "],
+  ["meet", "met", "met", "встречать", " /miːt/ ", " /met/ ", " /met/ "],
+  ["mislead", "misled", "misled", "вводить в заблуждение", " /ˌmɪsˈliːd/ ", " /ˌmɪsˈlɛd/ ", " /ˌmɪsˈlɛd/ "],
+  ["overcome", "overcame", "overcome", "преодолевать", " /ˌəʊvəˈkʌm/ ", " /ˌəʊvəˈkeɪm/ ", " /ˌəʊvəˈkʌm/ "],
+  ["overdo", "overdid", "overdone", "перегибать", " /ˌəʊvəˈduː/ ", " /ˌəʊvəˈdɪd/ ", " /ˌəʊvəˈdʌn/ "],
+  ["overtake", "overtook", "overtaken", "догонять", " /ˌəʊvəˈteɪk/ ", " /ˌəʊvəˈtʊk/ ", " /ˌəʊvəˈteɪkən/ "],
+  ["pay", "paid", "paid", "платить", " /peɪ/ ", " /peɪd/ ", " /peɪd/ "],
+  ["prove", "proved", "proven", "доказывать", " /pruːv/ ", " /pruːvd/ ", " /ˈpruːvən/ "],
+  ["put", "put", "put", "класть", " /pʊt/ ", " /pʊt/ ", " /pʊt/ "],
+  ["read", "read", "read", "читать", " /riːd/ ", " /red/ ", " /red/ "],
+  ["ring", "rang", "rung", "звонить", " /rɪŋ/ ", " /ræŋ/ ", " /rʌŋ/ "],
+  ["rise", "rose", "risen", "подниматься", " /raɪz/ ", " /rəʊz/ ", " /ˈrɪzən/ "],
+  ["ride", "rode", "ridden", "ездить", " /raɪd/ ", " /rəʊd/ ", " /ˈrɪdən/ "],
+  ["run", "ran", "run", "бежать", " /rʌn/ ", " /ræn/ ", " /rʌn/ "],
+  ["say", "said", "said", "сказать", " /seɪ/ ", " /sed/ ", " /sed/ "],
+  ["see", "saw", "seen", "видеть", " /siː/ ", " /sɔː/ ", " /siːn/ "],
+  ["sell", "sold", "sold", "продавать", " /sel/ ", " /səʊld/ ", " /səʊld/ "],
+  ["send", "sent", "sent", "отправлять", " /send/ ", " /sent/ ", " /sent/ "],
+  ["show", "showed", "shown", "показывать", " /ʃəʊ/ ", " /ʃəʊd/ ", " /ʃəʊn/ "],
+  ["sing", "sang", "sung", "петь", " /sɪŋ/ ", " /sæŋ/ ", " /sʌŋ/ "],
+  ["sit", "sat", "sat", "сидеть", " /sɪt/ ", " /sæt/ ", " /sæt/ "],
+  ["sleep", "slept", "slept", "спать", " /sliːp/ ", " /slept/ ", " /slept/ "],
+  ["speak", "spoke", "spoken", "говорить", " /spiːk/ ", " /spəʊk/ ", " /ˈspəʊkən/ "],
+  ["spend", "spent", "spent", "тратить", " /spend/ ", " /spent/ ", " /spent/ "],
+  ["swim", "swam", "swum", "плавать", " /swɪm/ ", " /swæm/ ", " /swʌm/ "],
+  ["take", "took", "taken", "брать", " /teɪk/ ", " /tʊk/ ", " /ˈteɪkən/ "],
+  ["teach", "taught", "taught", "учить", " /tiːtʃ/ ", " /tɔːt/ ", " /tɔːt/ "],
+  ["tell", "told", "told", "рассказывать", " /tel/ ", " /təʊld/ ", " /təʊld/ "],
+  ["think", "thought", "thought", "думать", " /θɪŋk/ ", " /θɔːt/ ", " /θɔːt/ "],
+  ["understand", "understood", "understood", "понимать", " /ˌʌndəˈstænd/ ", " /ˌʌndərˈstʊd/ ", " /ˌʌndərˈstʊd/ "],
+  ["write", "wrote", "written", "писать", " /raɪt/ ", " /rəʊt/ ", " /ˈrɪtən/ "]
+];
+
+let learned=new Set(JSON.parse(localStorage.getItem('vocab5learned')||'[]'));let offsetDay=parseInt(localStorage.getItem('vocab5day')||'0',10);let card=0,flipped=false;
+function seededShuffle(arr,seed=20260815){const a=arr.map((w,i)=>({w,i}));let x=seed>>>0;for(let i=a.length-1;i>0;i--){x=(1664525*x+1013904223)>>>0;const j=x%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
+const SHUFFLED=seededShuffle(WORDS);
+const $=id=>document.getElementById(id);const size=()=>+$('size').value;const start=()=>offsetDay*size();const dayWords=()=>SHUFFLED.slice(start(),start()+size());const days=()=>Math.ceil(WORDS.length/size());
+function save(){localStorage.setItem('vocab5learned',JSON.stringify([...learned]));localStorage.setItem('vocab5day',offsetDay)}
+function stats(){$('total').textContent=WORDS.length;$('learned').textContent=learned.size;$('left').textContent=WORDS.length-learned.size;$('days').textContent=days();let p=Math.round(learned.size/WORDS.length*100);$('pct').textContent=p+'%';$('progress').style.width=p+'%'}
+
+function render(){
+    let ws=dayWords();
+    $('dayHead').textContent='День '+(offsetDay+1);
+    $('range').textContent=ws.length?`Слова ${start()+1}–${start()+ws.length} из ${WORDS.length}`: 'Курс завершён';
+    let tb=$('tbody');
+    tb.innerHTML=ws.map((item,i)=>{
+        let w=item.w,gi=item.i,on=learned.has(gi);
+        let forms = (w[3].includes('v.') && VERB_FORMS[w[0]]) ? VERB_FORMS[w[0]] : '—';
+        return `<tr>
+            <td><button class="check ${on?'on':''}" onclick="toggle(${gi})">${on?'✓':''}</button></td>
+            <td class="word">${esc(w[0])} <button class="speak" onclick="speakWord('${escAttr(w[0])}')">🔊</button></td>
+            <td class="ipa">[${esc(w[1])}]</td>
+            <td class="vforms">${esc(forms)}</td>
+            <td>${esc(w[2])}</td>
+            <td>${esc(w[3])}</td>
+        </tr>`
+    }).join('');
+    
+    let irb=$('irregularBody');
+    irb.innerHTML=IRREGULAR_VERBS.map(v=>`
+      <tr>
+        <td>
+          <div class="tts-formcell">
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <b>${v[0]}</b>
+              <span style="font-size:0.82em;color:#64748b;line-height:1;">${v[4]}</span>
+            </div>
+            <button class="tts-btn" type="button" disabled onclick='speakVerbForm(${JSON.stringify(v[0])})' title="Произнести V1">🔊</button>
+          </div>
+        </td>
+        <td>
+          <div class="tts-formcell">
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <b>${v[1]}</b>
+              <span style="font-size:0.82em;color:#64748b;line-height:1;">${v[5]}</span>
+            </div>
+            <button class="tts-btn" type="button" disabled onclick='speakVerbForm(${JSON.stringify(v[1])})' title="Произнести V2">🔊</button>
+          </div>
+        </td>
+        <td>
+          <div class="tts-formcell">
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <b>${v[2]}</b>
+              <span style="font-size:0.82em;color:#64748b;line-height:1;">${v[6]}</span>
+            </div>
+            <button class="tts-btn" type="button" disabled onclick='speakVerbForm(${JSON.stringify(v[2])})' title="Произнести V3">🔊</button>
+          </div>
+        </td>
+        <td>${v[3]}</td>
+      </tr>
+    `).join('');
+
+    if(card>=ws.length)card=Math.max(0,ws.length-1);
+    showCard();
+    stats()
+}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function escAttr(s){return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;')}
+function toggle(i){learned.has(i)?learned.delete(i):learned.add(i);save();render()}
+function markCurrent(){let i=dayWords()[card].i;learned.add(i);save();render();if(card<dayWords().length-1)cardMove(1)}
+function prevDay(){offsetDay=Math.max(0,offsetDay-1);card=0;flipped=false;save();render()}
+function nextDay(){offsetDay=Math.min(days()-1,offsetDay+1);card=0;flipped=false;save();render()}
+function today(){let epoch=Math.floor(new Date().setHours(0,0,0,0)/86400000);let base=parseInt(localStorage.getItem('vocab5base')||epoch,10);localStorage.setItem('vocab5base',base);let d=Math.max(0,epoch-base);offsetDay=Math.min(d,days()-1);card=0;flipped=false;save();render()}
+
+function mode(m){
+    $('listMode').classList.toggle('hidden',m!=='list');
+    $('cardsMode').classList.toggle('hidden',m!=='cards');
+    $('testMode').classList.toggle('hidden',m!=='test');
+    
+    $('btnList').className = m==='list'?'primary':'soft';
+    $('btnCards').className = m==='cards'?'primary':'soft';
+    $('btnTest').className = m==='test'?'primary':'soft';
+    
+    if(m==='cards') showCard();
+    if(m==='test') resetTestSetup();
+}
+
+function showCard(){
+    let w=dayWords()[card];
+    if(!w){$('cardText').textContent='—';return}
+    let forms=(w.w[3].includes('v.')&&VERB_FORMS[w.w[0]])?VERB_FORMS[w.w[0]]:'';
+    $('cardText').textContent=flipped?w.w[2]:w.w[0];
+    $('cardLabel').textContent=flipped?'РУССКИЙ':'ENGLISH';
+    $('cardIpa').textContent=flipped?'':'['+w.w[1]+']';
+    $('cardForms').textContent=flipped?'':forms;
+    $('cardPos').textContent=(card+1)+'/'+dayWords().length
+}
+function flip(){flipped=!flipped;showCard()}
+function cardMove(d){let n=dayWords().length;card=Math.max(0,Math.min(n-1,card+d));flipped=false;showCard()}
+
+/* Логика тестов */
+let testQueue=[], testIdx=0, testScore=0, testDir='en-ru', testType='closed', testActive=false;
+
+function resetTestSetup(){
+    $('testSetup').classList.remove('hidden');
+    $('testActive').classList.add('hidden');
+    testActive = false;
+}
+
+function startTest(){
+    let scope = $('testScope').value;
+    testDir = $('testDir').value;
+    testType = $('testType').value;
+    
+    let pool = scope==='day' ? dayWords().map(x=>x.w) : WORDS;
+    if(!pool.length) return alert('Нет слов для тестирования!');
+    
+    testQueue = [...pool].sort(()=>Math.random()-0.5);
+    testIdx = 0; testScore = 0; testActive = true;
+    
+    $('testSetup').classList.add('hidden');
+    $('testActive').classList.remove('hidden');
+    renderTestQuestion();
+}
+
+function renderTestQuestion(){
+    $('testProgress').textContent = `Вопрос ${testIdx+1} из ${testQueue.length} | Счёт: ${testScore}`;
+    let w = testQueue[testIdx];
+    $('testQuestion').textContent = testDir==='en-ru' ? w[0] : w[2];
+    $('testResult').textContent = '';
+    
+    if(testType === 'open') {
+        $('testInput').classList.remove('hidden');
+        $('testOptions').classList.add('hidden');
+        $('testInput').value = '';
+        $('testInput').focus();
+        
+        let btn = $('testActionBtn');
+        btn.textContent = 'Проверить';
+        btn.classList.replace('soft', 'primary');
+        btn.classList.remove('hidden');
+    } else {
+        $('testInput').classList.add('hidden');
+        $('testOptions').classList.remove('hidden');
+        $('testActionBtn').classList.add('hidden'); // Скрываем кнопку проверки до выбора варианта
+        
+        let correctStr = testDir==='en-ru' ? w[2] : w[0];
+        let opts = [correctStr];
+        
+        while(opts.length < 4) {
+            let rnd = WORDS[Math.floor(Math.random() * WORDS.length)];
+            let wrongStr = testDir==='en-ru' ? rnd[2] : rnd[0];
+            if(!opts.includes(wrongStr)) opts.push(wrongStr);
+        }
+        opts = opts.sort(() => Math.random() - 0.5);
+        
+        $('testOptions').innerHTML = opts.map(o => 
+            `<button class="test-opt" onclick="checkClosedTest(this, '${escAttr(o)}')">${esc(o)}</button>`
+        ).join('');
+    }
+}
+
+function testBtnAction(){
+    let btn = $('testActionBtn');
+    if(btn.textContent === 'Проверить') { checkOpenTest(); }
+    else { nextTest(); }
+}
+
+function checkOpenTest(){
+    let w = testQueue[testIdx];
+    let ans = $('testInput').value.trim().toLowerCase();
+    if(!ans) return;
+    
+    let correctStr = testDir==='en-ru' ? w[2].toLowerCase() : w[0].toLowerCase();
+    let parts = correctStr.split(',').map(s=>s.trim());
+    let isRight = parts.some(p => p === ans || (ans.length > 3 && p.includes(ans)));
+    
+    if(isRight){
+        testScore++;
+        $('testResult').textContent = '✅ Верно!';
+        $('testResult').style.color = 'var(--ok)';
+    } else {
+        $('testResult').innerHTML = `❌ Ошибка. Правильно: <b>${correctStr}</b>`;
+        $('testResult').style.color = '#b42318';
+    }
+    
+    let btn = $('testActionBtn');
+    btn.textContent = 'Дальше ➡';
+    btn.classList.replace('primary', 'soft');
+    $('testProgress').textContent = `Вопрос ${testIdx+1} из ${testQueue.length} | Счёт: ${testScore}`;
+}
+
+function checkClosedTest(btnEl, ans){
+    let w = testQueue[testIdx];
+    let correctStr = testDir==='en-ru' ? w[2] : w[0];
+    let isRight = (ans === correctStr);
+
+    if(isRight) {
+        testScore++;
+        btnEl.classList.add('correct');
+        $('testResult').textContent = '✅ Верно!';
+        $('testResult').style.color = 'var(--ok)';
+    } else {
+        btnEl.classList.add('wrong');
+        $('testResult').innerHTML = `❌ Ошибка. Правильно: <b>${correctStr}</b>`;
+        $('testResult').style.color = '#b42318';
+        Array.from($('testOptions').children).forEach(b => {
+            if(b.textContent === correctStr) b.classList.add('correct');
+        });
+    }
+
+    // Отключаем все кнопки
+    Array.from($('testOptions').children).forEach(b => { b.disabled = true; b.style.cursor = 'default'; });
+
+    // Показываем кнопку перехода к следующему вопросу
+    let nextBtn = $('testActionBtn');
+    nextBtn.textContent = 'Дальше ➡';
+    nextBtn.classList.replace('primary', 'soft');
+    nextBtn.classList.remove('hidden');
+    $('testProgress').textContent = `Вопрос ${testIdx+1} из ${testQueue.length} | Счёт: ${testScore}`;
+}
+
+function nextTest(){
+    testIdx++;
+    if(testIdx>=testQueue.length){
+        alert(`Тест завершён!\nВаш результат: ${testScore} из ${testQueue.length} (${Math.round((testScore/testQueue.length)*100)}%)`);
+        resetTestSetup();
+    } else {
+        renderTestQuestion();
+    }
+}
+
+let voice=null;function initVoice(){if(!('speechSynthesis'in window))return;let load=()=>{let vs=speechSynthesis.getVoices();voice=vs.find(v=>/^en[-_]/i.test(v.lang))||vs[0]};load();speechSynthesis.onvoiceschanged=load}
+function speakWord(t){if(!('speechSynthesis'in window))return alert('Браузер не поддерживает озвучивание');speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(String(t));u.lang='en-US';u.rate=.9;if(voice)u.voice=voice;speechSynthesis.speak(u)}
+function speakCurrent(){let w=dayWords()[card];if(w)speakWord(w.w[0])}
+function speakDay(){let ws=dayWords();if(ws.length)speakWord(ws.map(w=>w.w[0]).join('. '))}
+
+let ttsEnabled = false;
+function toggleTTS() {
+  ttsEnabled = !ttsEnabled;
+  const btn = document.getElementById('ttsToggle');
+  btn.setAttribute('aria-pressed', String(ttsEnabled));
+  btn.textContent = ttsEnabled ? '🔊 Озвучивание: ВКЛ' : '🔊 Озвучивание: ВЫКЛ';
+  document.querySelectorAll('.irregular-table .tts-btn').forEach(b => {
+    b.disabled = !ttsEnabled;
+  });
+}
+function getTtsUrl(text) {
+  return `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${encodeURIComponent('en-GB')}&q=${encodeURIComponent(text)}`;
+}
+function speakVerbForm(rawText) {
+  if (!ttsEnabled) return;
+  const audio = document.getElementById('ttsAudio');
+  const parts = String(rawText).split('/').map(s => s.trim()).filter(Boolean);
+  let i = 0;
+  const playNext = () => {
+    if (i >= parts.length) return;
+    const part = parts[i++];
+    audio.src = getTtsUrl(part);
+    audio.play().catch(() => { playNext(); });
+    audio.onended = () => playNext();
+  };
+  playNext();
+}
+
+function csv(rows){
+    let s='English;IPA;Формы глагола;Перевод;Часть речи;Часть учебника;Выучено\n';
+    rows.forEach(item=>{
+        let w=item.w||item,i=item.i??WORDS.indexOf(w);
+        let forms=(w[3].includes('v.')&&VERB_FORMS[w[0]])?VERB_FORMS[w[0]]:'';
+        s+=`"${w[0].replaceAll('"','""')}";"${w[1]}";"${forms}";"${w[2].replaceAll('"','""')}";"${w[3]}";${w[4]};${learned.has(i)?'да':'нет'}\n`
+    });
+    return '\ufeff'+s
+}
+function download(name,data,type){let b=new Blob([data],{type}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+function exportDayCsv(){let s=start();download('oxford_3000_a1_day_'+(offsetDay+1)+'.csv',csv(dayWords().map((w,i)=>w)), 'text/csv;charset=utf-8')}
+function exportAllCsv(){download('oxford_3000_a1_all.csv',csv(WORDS),'text/csv;charset=utf-8')}
+
+function resetAll(){if(confirm('Сбросить весь прогресс?')){learned.clear();save();render()}}
+ $('size').addEventListener('change',()=>{offsetDay=Math.min(offsetDay,days()-1);card=0;flipped=false;save();render()});initVoice();if(!localStorage.getItem('vocab5base'))localStorage.setItem('vocab5base',Math.floor(new Date().setHours(0,0,0,0)/86400000));render();
+</script>
+</body>
+</html>
