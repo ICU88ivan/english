@@ -98,6 +98,34 @@
     background: linear-gradient(135deg, #fff, #f8faff);
     border-color: var(--p);
   }
+
+  /* Переключатель По порядку / Вразнобой */
+  .order-toggle {
+    display: flex;
+    justify-content: center;
+    background: #eef2ff;
+    border-radius: 12px;
+    padding: 6px;
+    width: fit-content;
+    margin: 0 auto 20px auto;
+  }
+  
+  .order-toggle button {
+    margin: 0;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--p);
+    box-shadow: none;
+    transition: all 0.2s;
+  }
+  
+  .order-toggle button.active {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-weight: 800;
+  }
   
   input[type="text"], input[type="number"] {
     font-size: 2rem;
@@ -217,7 +245,6 @@
     100% { transform: scale(1); opacity: 1; }
   }
   .anim-bounce { animation: bounceIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
-
 
   /* --- ВЫСКАКИВАЮЩИЕ УВЕДОМЛЕНИЯ (TOAST) --- */
   .toast-container {
@@ -351,12 +378,9 @@
   /* --- СТИЛИ ДЛЯ ПЕЧАТИ (ПРИНТЕР) --- */
   @media print {
     body { background: #fff !important; }
-    /* Скрываем весь интерфейс приложения */
     header, #loginScreen, #menuScreen, #appScreen, #resultScreen, footer, .toast-container, .ref-summary, .print-toolbar { 
       display: none !important; 
     }
-    
-    /* Оставляем только саму таблицу */
     main { max-width: 100%; padding: 0; margin: 0; }
     .ref-panel { 
       display: block !important; 
@@ -366,21 +390,16 @@
       padding: 0 !important;
       background: #fff !important;
     }
-    
-    /* Принудительно строим 5 колонок на листе бумаги */
     .ref-grid { 
       grid-template-columns: repeat(5, 1fr) !important; 
       gap: 10px !important; 
       padding: 0 !important; 
       background: #fff !important;
     }
-    
     .ref-col { 
       border: 1px solid #ddd; 
       page-break-inside: avoid;
     }
-    
-    /* Включаем цветную печать фонов (работает в Chrome/Edge/Safari) */
     .ref-col h3 { 
       -webkit-print-color-adjust: exact; 
       print-color-adjust: exact; 
@@ -416,14 +435,15 @@
   <section id="menuScreen" class="panel hidden">
     <h2 id="welcomeMsg">Выбери тренировку</h2>
     <div class="tiles-grid">
-      <button class="tile" onclick="startTraining(2)">X 2</button>
-      <button class="tile" onclick="startTraining(3)">X 3</button>
-      <button class="tile" onclick="startTraining(4)">X 4</button>
-      <button class="tile" onclick="startTraining(5)">X 5</button>
-      <button class="tile" onclick="startTraining(6)">X 6</button>
-      <button class="tile" onclick="startTraining(7)">X 7</button>
-      <button class="tile" onclick="startTraining(8)">X 8</button>
-      <button class="tile" onclick="startTraining(9)">X 9</button>
+      <button class="tile" onclick="startTraining(2)">× 2</button>
+      <button class="tile" onclick="startTraining(3)">× 3</button>
+      <button class="tile" onclick="startTraining(4)">× 4</button>
+      <button class="tile" onclick="startTraining(5)">× 5</button>
+      <button class="tile" onclick="startTraining(6)">× 6</button>
+      <button class="tile" onclick="startTraining(7)">× 7</button>
+      <button class="tile" onclick="startTraining(8)">× 8</button>
+      <button class="tile" onclick="startTraining(9)">× 9</button>
+      <button class="tile" onclick="startTraining(10)">× 10</button>
       <button class="tile test-mode" onclick="startTest()">🏆 Итоговый тест (20 вопросов)</button>
     </div>
     <div style="margin-top: 20px; text-align: left;">
@@ -434,10 +454,15 @@
   <section id="appScreen" class="panel hidden">
     <div class="top-bar">
       <button class="soft" style="padding: 6px 12px; font-size:0.9rem;" onclick="showMenu()">⬅ Назад</button>
-      <span class="mode-badge" id="modeBadge">Тренировка: 2</span>
+      <span class="mode-badge" id="modeBadge">Тренировка: × 2</span>
       <span style="font-weight: bold; color: var(--muted);" id="progressTracker">0/20</span>
     </div>
     
+    <div id="orderToggle" class="order-toggle hidden">
+      <button id="btnSequential" onclick="setOrder('sequential')">По порядку</button>
+      <button id="btnRandom" onclick="setOrder('random')">Вразнобой</button>
+    </div>
+
     <div class="problem" id="problemEl">? × ?</div>
     
     <input type="number" id="answerInput" placeholder="Ответ" onkeydown="if(event.key==='Enter') checkAnswer()">
@@ -483,6 +508,9 @@
   let startTime = 0;
   let correctStreak = 0; 
 
+  let trainingOrder = 'sequential'; 
+  let sequentialIndex = 1;
+
   const loginScreen = document.getElementById('loginScreen');
   const menuScreen = document.getElementById('menuScreen');
   const appScreen = document.getElementById('appScreen');
@@ -498,6 +526,7 @@
   const feedbackEl = document.getElementById('feedbackEl');
   const actionBtn = document.getElementById('actionBtn');
   const toastContainer = document.getElementById('toastContainer');
+  const orderToggle = document.getElementById('orderToggle');
 
   const successPhrases = [
     "Отлично!", "Супер!", "Здорово!", "Умница!", "Гениально!", "Так держать!"
@@ -526,11 +555,9 @@
 
   function generateReferenceTable() {
     let html = '';
-    // Цикл от 1 до 10 (как на картинке)
     for (let i = 1; i <= 10; i++) {
       html += `<div class="ref-col"><h3>× ${i}</h3><div style="padding: 0 5px;">`;
       for (let j = 1; j <= 10; j++) {
-        // Формат строки с фиолетовым выделением первого числа
         html += `<span class="highlight">${i}</span> × ${j} = ${i * j}<br>`;
       }
       html += `</div></div>`;
@@ -538,9 +565,7 @@
     document.getElementById('referenceGrid').innerHTML = html;
   }
 
-  // Функция для печати таблицы
   function printTable() {
-    // Убеждаемся, что справочник открыт перед печатью
     referenceSection.open = true;
     window.print();
   }
@@ -576,6 +601,26 @@
     referenceSection.classList.remove('hidden'); 
   }
 
+  function setOrder(order) {
+    trainingOrder = order;
+    if (order === 'sequential') {
+      document.getElementById('btnSequential').classList.add('active');
+      document.getElementById('btnRandom').classList.remove('active');
+      sequentialIndex = 1;
+    } else {
+      document.getElementById('btnRandom').classList.add('active');
+      document.getElementById('btnSequential').classList.remove('active');
+    }
+    
+    // Сбрасываем поля перед генерацией
+    answerInput.value = '';
+    feedbackEl.innerHTML = '';
+    feedbackEl.className = 'feedback';
+    answerInput.classList.remove('anim-error', 'anim-success');
+    
+    generateProblem();
+  }
+
   function startTraining(num) {
     currentMode = 'training';
     targetNum = num;
@@ -583,13 +628,16 @@
     testCorrect = 0;
     correctStreak = 0; 
     
-    modeBadge.textContent = `Тренировка: на ${num}`;
+    modeBadge.textContent = `Тренировка: × ${num}`;
     progressTracker.textContent = '∞'; 
     
     hideAll();
     appScreen.classList.remove('hidden');
     referenceSection.classList.remove('hidden'); 
-    generateProblem();
+    orderToggle.classList.remove('hidden');
+    
+    // По умолчанию включаем режим "По порядку"
+    setOrder('sequential');
   }
 
   function startTest() {
@@ -601,6 +649,7 @@
     correctStreak = 0; 
     
     modeBadge.textContent = `Итоговый тест`;
+    orderToggle.classList.add('hidden');
     hideAll();
     appScreen.classList.remove('hidden');
     referenceSection.classList.add('hidden'); 
@@ -611,11 +660,17 @@
   function generateProblem() {
     if (currentMode === 'training') {
       currentA = targetNum;
-      currentB = Math.floor(Math.random() * 8) + 2;
-      if(Math.random() > 0.5) [currentA, currentB] = [currentB, currentA];
+      if (trainingOrder === 'sequential') {
+        currentB = sequentialIndex;
+      } else {
+        // Режим Вразнобой (от 1 до 10)
+        currentB = Math.floor(Math.random() * 10) + 1;
+        if(Math.random() > 0.5) [currentA, currentB] = [currentB, currentA];
+      }
     } else {
-      currentA = Math.floor(Math.random() * 8) + 2;
-      currentB = Math.floor(Math.random() * 8) + 2;
+      // Итоговый тест (от 1 до 10)
+      currentA = Math.floor(Math.random() * 10) + 1;
+      currentB = Math.floor(Math.random() * 10) + 1;
     }
     
     if (currentMode === 'test') {
@@ -677,6 +732,12 @@
     if (userAnswer === correctAnswer) {
       if (currentMode === 'test') testCorrect++;
       correctStreak++;
+
+      // Логика режима "По порядку" - переходим к следующему
+      if (currentMode === 'training' && trainingOrder === 'sequential') {
+        sequentialIndex++;
+        if (sequentialIndex > 10) sequentialIndex = 1; // Зацикливаем бесконечно
+      }
 
       answerInput.classList.add('anim-success');
 
