@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
 <title>Таблица умножения — Интерактивный тренажер</title>
-<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=69aah0H3Z16O4WoXMpDDKDxQEhWSdcgMbfUlgsOPLAt6etW3uZ2eGmYasmrZn3xMaPAOA_IQvMcepsE9CB2IganHndxZFVmG8hiy50xVW7S2Y7OWH9hFePDrBRZ0SgpYcPJpO9DQkvYTuulu8KB5mwZ1f8KXL1a5L0PZbIkLekayziNhultWHTDZyVCZ5ZiUIFIjnk1Vil45cy0Wm6YX41txYfW6EtN-CeC82AUHaasR9aOhX8ywk56vOth-sta-l-Hyq8fcAl7GsG9XjipH6tYbDJ3Y6IjtmVHNzD1VF-NLH06-RP76e5CY9wKn9MtlBbd9sQtUAML30dPO--tV8_XXV5pFK5jsed1Bv06hj1oNApQU_GRBMec6P3MB1DUA3v8yX83bHqpiTVkcuZSYwv9U9SKy_6GhCMY5iEGtk_ADqUGkJUpCNHv15hZsUtynPTD6FmUzYaQ3R_0lNB7h5Mw9dNhje6cPZbgMtcQ6pj1A5-zVv_aYlV97uLuWIVohSQgqSHPzN4DH7oJVlzwp_A" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jaGF0Z3B0LmNvbS9iYWNrZW5kLWFwaS9lc3R1YXJ5L2NvbnRlbnQ_aWQ9ZmlsZV8wMDAwMDAwMGUzZTQ4MWY1OGM5N2Y2YTc1YjgwM2FiMiZmbj0lRDAlQTIlRDAlQjAlRDAlQjElRDAlQkIlRDAlQjglRDElODYlRDAlQjBfJUQxJTgzJUQwJUJDJUQwJUJEJUQwJUJFJUQwJUI2JUQwJUI1JUQwJUJEJUQwJUI4JUQxJThGXyVEMCVCOCVEMSU4MSVEMCVCRiVEMSU4MCVEMCVCMCVEMCVCMiVEMCVCQiVEMCVCNSVEMCVCRCVEMCVCRCVEMCVCMCVEMSU4Ri5odG1sJmNkPWF0dGFjaG1lbnQmdHM9NDk2NjgwJnA9ZnMmY2lkPTEmc2lnPTgyMTNjYmY5ZDlhM2QyODdiZThkZmMzZTBlMmI4MTVmNDU4YjE2ODk4YjVmMmVkYjFlNDIzYmQxNjhmODBhOGEmdj0w"/><style>
+<style>
   :root {
     --p: #4f67d8;
     --p-hover: #3a4eb5;
@@ -118,8 +118,10 @@
     box-shadow: 0 0 10px rgba(79, 103, 216, 0.2); 
   }
 
-  input:disabled {
+  /* Исправление для iOS/Safari */
+  input[readonly] {
     opacity: 1;
+    cursor: default;
     -webkit-text-fill-color: currentcolor;
   }
   
@@ -161,7 +163,7 @@
     font-weight: bold;
   }
   
-  .problem { font-size: 4rem; font-weight: 800; color: var(--text); margin: 20px 0; }
+  .problem { font-size: clamp(3rem, 12vw, 4rem); font-weight: 800; color: var(--text); margin: 20px 0; }
   
   .feedback {
     min-height: 4rem;
@@ -181,7 +183,7 @@
   .feedback.success { color: var(--ok); background: #e6f6ec; border: 2px solid #b7ebd0; }
   .feedback.error { color: var(--error); background: #fff1f1; border: 2px solid #fbdcdb; }
 
-  /* --- АНИМАЦИИ ВВОДА --- */
+  /* --- АНИМАЦИИ --- */
   @keyframes shakeHard {
     0%, 100% { transform: translateX(0); }
     15%, 45%, 75% { transform: translateX(-12px) rotate(-2deg); }
@@ -219,26 +221,27 @@
   /* --- ВЫСКАКИВАЮЩИЕ УВЕДОМЛЕНИЯ (TOAST) --- */
   .toast-container {
     position: fixed;
-    top: 20px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     pointer-events: none;
+    width: 90%;
+    align-items: center;
   }
 
   .toast {
     background: var(--toast-bg);
     color: var(--toast-text);
-    padding: 13px 24px;
+    padding: 12px 20px;
     border-radius: 50px;
     font-weight: 900;
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.25;
     text-align: center;
-    max-width: min(92vw, 520px);
     box-shadow: 0 8px 20px rgba(255, 219, 88, 0.5);
     animation: toastPop 2.5s ease-in-out forwards;
   }
@@ -262,8 +265,8 @@
     overflow: hidden;
   }
   .ref-summary {
-    padding: 18px;
-    font-size: 1.2rem;
+    padding: 16px;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--p);
     cursor: pointer;
@@ -287,19 +290,38 @@
   .ref-col {
     border: 1px solid var(--bd);
     border-radius: 12px;
-    padding: 12px 10px;
+    padding: 12px 8px;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.6;
     background: #fcfcfd;
   }
-  .ref-col h3 { margin: 0 0 10px 0; color: var(--text); border-bottom: 2px dashed var(--bd); padding-bottom: 8px; font-size: 1.2rem; }
+  .ref-col h3 { margin: 0 0 10px 0; color: var(--text); border-bottom: 2px dashed var(--bd); padding-bottom: 8px; font-size: 1.1rem; }
   
   footer {
     text-align: center;
     color: #8b93a1;
     font-size: 0.85rem;
     padding: 20px 16px;
+  }
+
+  /* --- МОБИЛЬНАЯ АДАПТАЦИЯ --- */
+  @media (max-width: 500px) {
+    header { padding: 20px 14px 45px; }
+    main { padding: 0 10px 30px; }
+    .panel { padding: 20px 15px; margin-bottom: 15px; }
+    
+    .tiles-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .tile { padding: 15px 8px; font-size: 1.1rem; }
+    
+    input[type="text"], input[type="number"] { max-width: 100%; font-size: 1.8rem; }
+    
+    /* Кнопки на всю ширину на мобилках */
+    #loginScreen button, #actionBtn, .success-btn { width: 100%; margin: 5px 0; }
+    
+    .top-bar { flex-wrap: wrap; gap: 10px; }
+    
+    .ref-grid { grid-template-columns: repeat(2, 1fr); padding: 15px 10px; gap: 8px; }
   }
 </style>
 </head>
@@ -361,7 +383,7 @@
     <p id="resultMsg" style="font-size: 1.1rem; margin-bottom: 25px;"></p>
     
     <button class="success-btn" onclick="shareResults()">📤 Поделиться результатом</button>
-    <button class="soft" onclick="showMenu()">Вернуться в меню</button>
+    <button class="soft" onclick="showMenu()" style="width: 100%; margin-top: 10px;">Вернуться в меню</button>
   </section>
 
   <details id="referenceSection" class="ref-panel hidden">
@@ -386,25 +408,23 @@
   let testCurrent = 0;
   let testCorrect = 0;
   let startTime = 0;
-  
-  // Счетчик серии правильных ответов
   let correctStreak = 0; 
 
-  const loginScreen = $('loginScreen');
-  const menuScreen = $('menuScreen');
-  const appScreen = $('appScreen');
-  const resultScreen = $('resultScreen');
-  const referenceSection = $('referenceSection');
+  const loginScreen = document.getElementById('loginScreen');
+  const menuScreen = document.getElementById('menuScreen');
+  const appScreen = document.getElementById('appScreen');
+  const resultScreen = document.getElementById('resultScreen');
+  const referenceSection = document.getElementById('referenceSection');
   
-  const studentNameInput = $('studentNameInput');
-  const welcomeMsg = $('welcomeMsg');
-  const modeBadge = $('modeBadge');
-  const progressTracker = $('progressTracker');
-  const problemEl = $('problemEl');
-  const answerInput = $('answerInput');
-  const feedbackEl = $('feedbackEl');
-  const actionBtn = $('actionBtn');
-  const toastContainer = $('toastContainer');
+  const studentNameInput = document.getElementById('studentNameInput');
+  const welcomeMsg = document.getElementById('welcomeMsg');
+  const modeBadge = document.getElementById('modeBadge');
+  const progressTracker = document.getElementById('progressTracker');
+  const problemEl = document.getElementById('problemEl');
+  const answerInput = document.getElementById('answerInput');
+  const feedbackEl = document.getElementById('feedbackEl');
+  const actionBtn = document.getElementById('actionBtn');
+  const toastContainer = document.getElementById('toastContainer');
 
   const successPhrases = [
     "Отлично!", "Супер!", "Здорово!", "Умница!", "Гениально!", "Так держать!"
@@ -419,8 +439,6 @@
     "Так держать! 🎯",
     "Невероятно! ✨"
   ];
-
-  function $(id) { return document.getElementById(id); }
 
   window.onload = () => {
     generateReferenceTable(); 
@@ -442,7 +460,7 @@
       }
       html += `</div>`;
     }
-    $('referenceGrid').innerHTML = html;
+    document.getElementById('referenceGrid').innerHTML = html;
   }
 
   function login() {
@@ -481,7 +499,7 @@
     targetNum = num;
     testCurrent = 0;
     testCorrect = 0;
-    correctStreak = 0; // Сбрасываем стрик
+    correctStreak = 0; 
     
     modeBadge.textContent = `Тренировка: на ${num}`;
     progressTracker.textContent = '∞'; 
@@ -498,7 +516,7 @@
     testCorrect = 0;
     testTotal = 20; 
     startTime = Date.now();
-    correctStreak = 0; // Сбрасываем стрик
+    correctStreak = 0; 
     
     modeBadge.textContent = `Итоговый тест`;
     hideAll();
@@ -524,7 +542,9 @@
 
     problemEl.textContent = `${currentA} × ${currentB}`;
     answerInput.value = '';
-    answerInput.disabled = false;
+    
+    // ВАЖНО: Разблокируем через readOnly
+    answerInput.readOnly = false;
     
     answerInput.classList.remove('anim-error', 'anim-success');
     feedbackEl.className = 'feedback'; 
@@ -542,9 +562,8 @@
     toast.textContent = text;
     toastContainer.appendChild(toast);
     
-    // Удаляем элемент после завершения анимации (2.5 сек)
     setTimeout(() => {
-      toast.remove();
+      if (toast.parentNode) toast.remove();
     }, 2500);
   }
 
@@ -566,10 +585,12 @@
     }
 
     const correctAnswer = currentA * currentB;
-    answerInput.disabled = true;
+    
+    // ВАЖНО: Блокируем через readOnly, чтобы браузер не отменил CSS-анимации
+    answerInput.readOnly = true;
 
     answerInput.classList.remove('anim-error', 'anim-success');
-    feedbackEl.classList.remove('anim-bounce');
+    feedbackEl.classList.remove('show', 'success', 'error', 'anim-bounce');
     void answerInput.offsetWidth;
     void feedbackEl.offsetWidth;
 
@@ -579,8 +600,7 @@
 
       answerInput.classList.add('anim-success');
 
-      const randomPhrase =
-        successPhrases[Math.floor(Math.random() * successPhrases.length)];
+      const randomPhrase = successPhrases[Math.floor(Math.random() * successPhrases.length)];
 
       feedbackEl.innerHTML =
         `<div style="font-size:1.4rem;font-weight:900;">✅ Правильно!</div>
@@ -589,17 +609,11 @@
          </div>`;
       feedbackEl.className = 'feedback success show anim-bounce';
 
-      // Мотивация работает и в тренировке, и в итоговом тесте.
-      const shouldShowMotivation =
-        correctStreak >= 2 || Math.random() < 0.35;
+      const shouldShowMotivation = correctStreak >= 2 || Math.random() < 0.35;
 
       if (shouldShowMotivation) {
-        const popupText =
-          popupMotivations[Math.floor(Math.random() * popupMotivations.length)];
-
-        const streakText =
-          correctStreak >= 2 ? `Серия: ${correctStreak}! ` : '';
-
+        const popupText = popupMotivations[Math.floor(Math.random() * popupMotivations.length)];
+        const streakText = correctStreak >= 2 ? `Серия: ${correctStreak}! ` : '';
         showPopUpMotivation(`${streakText}${popupText}`);
       }
 
@@ -621,9 +635,7 @@
         'Не сдавайся! Следующий пример получится! 🚀'
       ];
 
-      const retryText =
-        retryMessages[Math.floor(Math.random() * retryMessages.length)];
-
+      const retryText = retryMessages[Math.floor(Math.random() * retryMessages.length)];
       showPopUpMotivation(retryText);
     }
 
@@ -645,7 +657,7 @@
     resultScreen.classList.remove('hidden');
     referenceSection.classList.remove('hidden'); 
     
-    $('finalScore').textContent = `${testCorrect} / ${testTotal}`;
+    document.getElementById('finalScore').textContent = `${testCorrect} / ${testTotal}`;
     
     let msg = '';
     let pct = testCorrect / testTotal;
@@ -654,7 +666,7 @@
     else if (pct >= 0.5) msg = 'Хорошо, но есть куда расти. Повтори слабые места! 📚';
     else msg = 'Нужно еще потренироваться. Начни с отдельных чисел в меню! 💪';
     
-    $('resultMsg').textContent = msg;
+    document.getElementById('resultMsg').textContent = msg;
   }
 
   async function shareResults() {
