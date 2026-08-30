@@ -17,6 +17,8 @@
     --bd: #e2e6ee;
     --toast-bg: #ffdb58;
     --toast-text: #b85c00;
+    --ref-header: #9a94f0; /* Цвет шапки таблицы как на фото */
+    --ref-num: #6a1b9a;    /* Цвет цифр таблицы как на фото */
   }
   
   * { box-sizing: border-box; }
@@ -44,7 +46,7 @@
   
   main {
     flex: 1;
-    max-width: 650px;
+    max-width: 800px;
     width: 100%;
     margin: -30px auto 0;
     padding: 0 14px 40px;
@@ -118,7 +120,6 @@
     box-shadow: 0 0 10px rgba(79, 103, 216, 0.2); 
   }
 
-  /* Исправление для iOS/Safari */
   input[readonly] {
     opacity: 1;
     cursor: default;
@@ -256,8 +257,9 @@
 
   .result-score { font-size: 3rem; font-weight: 900; color: var(--p); margin: 10px 0;}
   
+  /* --- СТИЛИ СПРАВОЧНИКА (ПОД КАРТИНКУ) --- */
   .ref-panel {
-    background: var(--card);
+    background: #f4f4f8;
     border: 1px solid var(--bd);
     border-radius: 22px;
     box-shadow: 0 5px 24px rgba(79, 103, 216, 0.1);
@@ -266,37 +268,56 @@
   }
   .ref-summary {
     padding: 16px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--p);
     cursor: pointer;
     text-align: center;
     list-style: none;
-    background: #eef2ff;
+    background: #fff;
     transition: background 0.2s;
     margin: 0;
+    border-bottom: 1px solid var(--bd);
   }
-  .ref-summary:hover { background: #e0e7ff; }
+  .ref-summary:hover { background: #f8faff; }
   .ref-summary::-webkit-details-marker { display: none; }
   
+  .print-toolbar {
+    text-align: right;
+    padding: 15px 20px 0;
+    background: #f4f4f8;
+  }
+
   .ref-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 12px;
-    padding: 20px;
-    background: #fff;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    padding: 15px;
+    background: #f4f4f8;
   }
   
   .ref-col {
-    border: 1px solid var(--bd);
+    background: #fff;
     border-radius: 12px;
-    padding: 12px 8px;
     text-align: center;
-    font-size: 1rem;
-    line-height: 1.6;
-    background: #fcfcfd;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+    overflow: hidden;
+    padding-bottom: 12px;
   }
-  .ref-col h3 { margin: 0 0 10px 0; color: var(--text); border-bottom: 2px dashed var(--bd); padding-bottom: 8px; font-size: 1.1rem; }
+  .ref-col h3 { 
+    margin: 0 0 12px 0; 
+    background: var(--ref-header); 
+    color: #fff; 
+    padding: 8px; 
+    font-size: 1.25rem; 
+    font-weight: 800;
+  }
+  .ref-col .highlight {
+    color: var(--ref-num);
+    font-weight: 900;
+  }
   
   footer {
     text-align: center;
@@ -306,6 +327,9 @@
   }
 
   /* --- МОБИЛЬНАЯ АДАПТАЦИЯ --- */
+  @media (max-width: 700px) {
+    .ref-grid { grid-template-columns: repeat(3, 1fr); }
+  }
   @media (max-width: 500px) {
     header { padding: 20px 14px 45px; }
     main { padding: 0 10px 30px; }
@@ -316,12 +340,58 @@
     
     input[type="text"], input[type="number"] { max-width: 100%; font-size: 1.8rem; }
     
-    /* Кнопки на всю ширину на мобилках */
     #loginScreen button, #actionBtn, .success-btn { width: 100%; margin: 5px 0; }
-    
     .top-bar { flex-wrap: wrap; gap: 10px; }
     
-    .ref-grid { grid-template-columns: repeat(2, 1fr); padding: 15px 10px; gap: 8px; }
+    .ref-grid { grid-template-columns: repeat(2, 1fr); padding: 10px; gap: 10px; }
+    .ref-col { font-size: 1rem; }
+    .print-toolbar { text-align: center; }
+  }
+
+  /* --- СТИЛИ ДЛЯ ПЕЧАТИ (ПРИНТЕР) --- */
+  @media print {
+    body { background: #fff !important; }
+    /* Скрываем весь интерфейс приложения */
+    header, #loginScreen, #menuScreen, #appScreen, #resultScreen, footer, .toast-container, .ref-summary, .print-toolbar { 
+      display: none !important; 
+    }
+    
+    /* Оставляем только саму таблицу */
+    main { max-width: 100%; padding: 0; margin: 0; }
+    .ref-panel { 
+      display: block !important; 
+      box-shadow: none !important; 
+      border: none !important; 
+      margin: 0 !important; 
+      padding: 0 !important;
+      background: #fff !important;
+    }
+    
+    /* Принудительно строим 5 колонок на листе бумаги */
+    .ref-grid { 
+      grid-template-columns: repeat(5, 1fr) !important; 
+      gap: 10px !important; 
+      padding: 0 !important; 
+      background: #fff !important;
+    }
+    
+    .ref-col { 
+      border: 1px solid #ddd; 
+      page-break-inside: avoid;
+    }
+    
+    /* Включаем цветную печать фонов (работает в Chrome/Edge/Safari) */
+    .ref-col h3 { 
+      -webkit-print-color-adjust: exact; 
+      print-color-adjust: exact; 
+      background-color: var(--ref-header) !important; 
+      color: #fff !important; 
+    }
+    .ref-col .highlight { 
+      -webkit-print-color-adjust: exact; 
+      print-color-adjust: exact; 
+      color: var(--ref-num) !important; 
+    }
   }
 </style>
 </head>
@@ -388,6 +458,9 @@
 
   <details id="referenceSection" class="ref-panel hidden">
     <summary class="ref-summary">📖 Справочник: Вся таблица умножения ▼</summary>
+    <div class="print-toolbar">
+      <button class="soft" onclick="printTable()">🖨️ Распечатать таблицу</button>
+    </div>
     <div class="ref-grid" id="referenceGrid"></div>
   </details>
 </main>
@@ -453,14 +526,23 @@
 
   function generateReferenceTable() {
     let html = '';
-    for (let i = 2; i <= 9; i++) {
-      html += `<div class="ref-col"><h3>На ${i}</h3>`;
-      for (let j = 2; j <= 9; j++) {
-        html += `${i} × ${j} = <b>${i * j}</b><br>`;
+    // Цикл от 1 до 10 (как на картинке)
+    for (let i = 1; i <= 10; i++) {
+      html += `<div class="ref-col"><h3>× ${i}</h3><div style="padding: 0 5px;">`;
+      for (let j = 1; j <= 10; j++) {
+        // Формат строки с фиолетовым выделением первого числа
+        html += `<span class="highlight">${i}</span> × ${j} = ${i * j}<br>`;
       }
-      html += `</div>`;
+      html += `</div></div>`;
     }
     document.getElementById('referenceGrid').innerHTML = html;
+  }
+
+  // Функция для печати таблицы
+  function printTable() {
+    // Убеждаемся, что справочник открыт перед печатью
+    referenceSection.open = true;
+    window.print();
   }
 
   function login() {
@@ -543,7 +625,6 @@
     problemEl.textContent = `${currentA} × ${currentB}`;
     answerInput.value = '';
     
-    // ВАЖНО: Разблокируем через readOnly
     answerInput.readOnly = false;
     
     answerInput.classList.remove('anim-error', 'anim-success');
@@ -586,7 +667,6 @@
 
     const correctAnswer = currentA * currentB;
     
-    // ВАЖНО: Блокируем через readOnly, чтобы браузер не отменил CSS-анимации
     answerInput.readOnly = true;
 
     answerInput.classList.remove('anim-error', 'anim-success');
