@@ -290,7 +290,7 @@ tr.highlight-row td {
   transition: background-color 0.8s ease;
 }
 
-/* Чекбокс как на скриншоте */
+/* Чекбокс */
 .check-btn {
   width: 22px;
   height: 22px;
@@ -653,10 +653,11 @@ footer {
 <audio id="ttsAudio" preload="none"></audio>
 
 <header>
-  <h1>Об авторе</h2>
-<p><b>Материалы подготовил: Бабков Иван Леонидович</b></p>
-<p>✉ <a href="mailto:i@ibabkow.ru">i@ibabkow.ru</a></p>
-<p style="font-size:0.9rem;margin-top:20px;">Все данные хранятся локально в вашем браузере. Никакая информация о прогрессе не отправляется на серверы.</p>
+  <h1>Бабков Иван Леонидович </h1>
+  <p>Неправильные глаголы английского языка (UK) • 150+ глаголов, Справочник, Карточки и Тренажер</p>
+  <div style="margin-top: 10px;">
+    <a href="https://www.bsmu.by/personalii/babkov-ivan-leonidovich/" target="_blank">Профиль на сайте БГМУ</a>
+  </div>
 </header>
 
 <main>
@@ -1148,6 +1149,7 @@ footer {
         <button class="btn-soft" onclick="prevCard()">⬅ Назад</button>
         <span id="cardCounter" style="font-weight:700; color:var(--muted); min-width:85px;">1 / 152</span>
         <button class="btn-soft" onclick="nextCard()">Вперед ➡</button>
+        <button id="btnShuffleCards" class="btn-soft" onclick="toggleShuffleCards()" title="Перемешать карточки в случайном порядке">🔀 Вразнобой</button>
         <button class="btn-primary" onclick="speakCard()">🔊 Озвучить</button>
         <button class="btn-green" onclick="markCardLearned()">✓ Знаю</button>
       </div>
@@ -1410,6 +1412,8 @@ let learnedSet = new Set(JSON.parse(localStorage.getItem('verbs_learned_set') ||
 let currentCardIndex = 0;
 let cardFlipped = false;
 let currentStreak = 0;
+let cardDeck = ALL_VERBS.map((_, i) => i);
+let isCardShuffled = false;
 
 // Инициализация при загрузке
 window.addEventListener('DOMContentLoaded', () => {
@@ -1488,7 +1492,7 @@ function speakAllThree(v1, v2, v3) {
   speakWord(`${v1}, ${v2}, ${v3}`);
 }
 
-// Рендер основной таблицы в полном соответствии со скриншотом
+// Рендер основной таблицы
 function renderMainTable() {
   const tbody = document.getElementById('verbsTableBody');
   tbody.innerHTML = ALL_VERBS.map(v => {
@@ -1588,7 +1592,7 @@ function renderGroupTables() {
   }
 }
 
-// Поиск и автоматический скролл
+// Поиск и скролл
 function filterAndScrollVerbs() {
   const q = document.getElementById('searchInput').value.trim().toLowerCase();
   if (!q) {
@@ -1652,9 +1656,10 @@ function updateStats() {
   document.getElementById('statStreak').textContent = `${currentStreak} 🔥`;
 }
 
-// Логика Карточек
+// Логика Карточек с поддержкой режима «Вразнобой»
 function updateCardUI() {
-  const v = ALL_VERBS[currentCardIndex];
+  const actualIndex = cardDeck[currentCardIndex] !== undefined ? cardDeck[currentCardIndex] : currentCardIndex;
+  const v = ALL_VERBS[actualIndex];
   if (!v) return;
 
   const cardTag = document.getElementById('cardTag');
@@ -1678,6 +1683,31 @@ function updateCardUI() {
   counter.textContent = `${currentCardIndex + 1} / ${ALL_VERBS.length}`;
 }
 
+function toggleShuffleCards() {
+  isCardShuffled = !isCardShuffled;
+  const btn = document.getElementById('btnShuffleCards');
+
+  if (isCardShuffled) {
+    // Алгоритм Фишера — Йетса для перемешивания индексов
+    for (let i = cardDeck.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cardDeck[i], cardDeck[j]] = [cardDeck[j], cardDeck[i]];
+    }
+    btn.className = 'btn-primary';
+    btn.innerHTML = '🔀 Вразнобой (вкл)';
+    showToast('Карточки перемешаны вразнобой! 🔀');
+  } else {
+    cardDeck = ALL_VERBS.map((_, i) => i);
+    btn.className = 'btn-soft';
+    btn.innerHTML = '🔀 Вразнобой';
+    showToast('Карточки возвращены по порядку 📋');
+  }
+
+  currentCardIndex = 0;
+  cardFlipped = false;
+  updateCardUI();
+}
+
 function flipCard() {
   cardFlipped = !cardFlipped;
   updateCardUI();
@@ -1696,7 +1726,8 @@ function nextCard() {
 }
 
 function speakCard() {
-  const v = ALL_VERBS[currentCardIndex];
+  const actualIndex = cardDeck[currentCardIndex] !== undefined ? cardDeck[currentCardIndex] : currentCardIndex;
+  const v = ALL_VERBS[actualIndex];
   if (!v) return;
   if (!cardFlipped) {
     speakWord(v[0]);
@@ -1706,7 +1737,8 @@ function speakCard() {
 }
 
 function markCardLearned() {
-  const v = ALL_VERBS[currentCardIndex];
+  const actualIndex = cardDeck[currentCardIndex] !== undefined ? cardDeck[currentCardIndex] : currentCardIndex;
+  const v = ALL_VERBS[actualIndex];
   if (v) {
     learnedSet.add(v[0]);
     localStorage.setItem('verbs_learned_set', JSON.stringify([...learnedSet]));
