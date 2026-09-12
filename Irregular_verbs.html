@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Неправильные глаголы английского языка (UK) | 150+ глаголов, Справочник и Тренажер</title>
+<style>
+:root {
+  --p: #4f67d8;
+  --p-hover: #3b50ba;
+  --p-soft: #eef2ff;
+  --p2: #3449a8;
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --ok: #25a96a;
+  --ok-bg: #e6f6ec;
+  --error: #dc2626;
+  --error-bg: #fef2f2;
+  --bd: #e2e8f0;
+  --toast-bg: #ffdb58;
+  --toast-text: #b85c00;
+  --accent: #f59e0b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  color: #fff;
+  padding: 30px 16px 65px;
+  text-align: center;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 4vw, 2.1rem);
+  font-weight: 800;
+}
+
+header p {
+  margin: 8px 0 0;
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+header a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px dashed #93c5fd;
+  transition: opacity 0.2s;
+}
+header a:hover { opacity: 0.8; }
+
+main {
+  max-width: 1120px;
+  margin: -40px auto 0;
+  padding: 0 14px 40px;
+  position: relative;
+}
+
+/* Статистика */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 16px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(79, 103, 216, 0.08);
+}
+
+.stat-num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--p);
+}
+
+.stat-lbl {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Навигация режимов */
+.nav-panel {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 18px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(79, 103, 216, 0.06);
+  flex-wrap: wrap;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+button:active { transform: scale(0.98); }
+
+.btn-primary { background: var(--p); color: #fff; }
+.btn-primary:hover { background: var(--p-hover); }
+.btn-soft { background: var(--p-soft); color: var(--p); }
+.btn-soft:hover { background: #e0e7ff; }
+.btn-green { background: var(--ok); color: #fff; }
+.btn-green:hover { background: #1f8a56; }
+
+/* Контентные панели */
+.panel {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 5px 24px rgba(79, 103, 216, 0.08);
+  margin-bottom: 20px;
+}
+
+.hidden { display: none !important; }
+
+/* Скрываемое оглавление (Accordion / Details) */
+details.toc-box {
+  background: var(--p-soft);
+  border: 1px solid #c7d2fe;
+  border-radius: 16px;
+  padding: 14px 20px;
+  margin-bottom: 24px;
+  transition: all 0.2s ease;
+}
+
+details.toc-box[open] {
+  padding-bottom: 18px;
+}
+
+summary.toc-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--p2);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+summary.toc-title::-webkit-details-marker {
+  display: none;
+}
+
+summary.toc-title::after {
+  content: '▼';
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--p);
+  transition: transform 0.25s ease;
+}
+
+details[open] summary.toc-title::after {
+  transform: rotate(180deg);
+}
+
+.toc-list {
+  margin: 14px 0 0;
+  padding-left: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 6px 20px;
+}
+
+.toc-list li a {
+  color: var(--p);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.toc-list li a:hover {
+  text-decoration: underline;
+}
+
+/* Поиск */
+.search-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+  background: var(--p-soft);
+  padding: 10px 14px;
+  border-radius: 14px;
+}
+
+.search-input {
+  flex: 1;
+  font-size: 1.05rem;
+  padding: 10px 14px;
+  border: 2px solid var(--bd);
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: var(--p);
+}
+
+/* Таблицы */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid var(--bd);
+  margin: 12px 0 20px;
+  background: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--bd);
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  background: #f8fafc;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+tr:hover td { background-color: #f8fafc; }
+tr.highlight-row td {
+  background-color: #fef08a !important;
+  transition: background-color 0.8s ease;
+}
+
+/* Чекбокс как на скриншоте */
+.check-btn {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  color: transparent;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  transition: all 0.15s ease;
+}
+.check-btn:hover {
+  border-color: var(--p);
+}
+.check-btn.on {
+  background: var(--ok);
+  border-color: var(--ok);
+  color: #fff;
+}
+
+/* Ячейка формы глагола с кнопкой озвучки */
+.tts-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tts-cell-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.verb-word {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 1.02rem;
+}
+
+.verb-ipa {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin-top: 1px;
+}
+
+/* Кнопки воспроизведения аудио */
+.tts-btn {
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.tts-btn:hover {
+  background: var(--p-soft);
+  border-color: #c7d2fe;
+  color: var(--p);
+}
+.tts-btn:active {
+  transform: scale(0.95);
+}
+
+.tts-btn-all {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: var(--p);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 8px;
+  gap: 6px;
+  white-space: nowrap;
+}
+.tts-btn-all:hover {
+  background: var(--p-soft);
+  border-color: #c7d2fe;
+}
+
+.verb-translation {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Карточки */
+.cards-wrap {
+  max-width: 600px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.flashcard {
+  min-height: 280px;
+  background: #fff;
+  border: 2px solid var(--bd);
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(79, 103, 216, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.flashcard:hover {
+  border-color: var(--p);
+  transform: translateY(-2px);
+}
+
+.flashcard .tag {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.flashcard .main-text {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--p);
+  margin: 10px 0;
+}
+
+.flashcard .sub-text {
+  font-size: 1.15rem;
+  color: #334155;
+  margin-top: 6px;
+}
+
+.flashcard .ipa-text {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.flashcard .hint {
+  position: absolute;
+  bottom: 14px;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* Тренажер и Проверка */
+.trainer-container {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.test-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.test-opt {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--bd);
+  border-radius: 12px;
+  background: #fff;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text);
+}
+.test-opt:hover:not(:disabled) {
+  border-color: var(--p);
+  background: var(--p-soft);
+}
+.test-opt.correct {
+  background: var(--ok);
+  color: #fff;
+  border-color: var(--ok);
+}
+.test-opt.wrong {
+  background: #fee2e2;
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.test-input {
+  font-size: 1.3rem;
+  padding: 12px 16px;
+  width: 100%;
+  max-width: 420px;
+  margin: 15px auto;
+  border: 2px solid var(--bd);
+  border-radius: 12px;
+  outline: none;
+  text-align: center;
+  font-weight: 700;
+  display: block;
+}
+.test-input:focus { border-color: var(--p); }
+
+.feedback-box {
+  min-height: 4rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 15px 0;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.feedback-box.show { opacity: 1; }
+.feedback-box.success { color: var(--ok); background: var(--ok-bg); border: 2px solid #a7f3d0; }
+.feedback-box.error { color: var(--error); background: var(--error-bg); border: 2px solid #fecaca; }
+
+/* Анимации */
+@keyframes shakeHard {
+  0%, 100% { transform: translateX(0); }
+  15%, 45%, 75% { transform: translateX(-10px); }
+  30%, 60%, 90% { transform: translateX(10px); }
+}
+.anim-error {
+  animation: shakeHard 0.5s both;
+  border-color: var(--error) !important;
+  background-color: var(--error-bg) !important;
+}
+
+@keyframes jelly {
+  0%, 100% { transform: scale(1, 1); }
+  25% { transform: scale(1.08, 0.92); }
+  50% { transform: scale(0.95, 1.05); }
+  75% { transform: scale(1.03, 0.97); }
+}
+.anim-success {
+  animation: jelly 0.5s both;
+  border-color: var(--ok) !important;
+  background-color: var(--ok-bg) !important;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.anim-bounce { animation: bounceIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+/* Тосты */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+  width: 90%;
+  max-width: 450px;
+  align-items: center;
+}
+
+.toast {
+  background: var(--toast-bg);
+  color: var(--toast-text);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+  animation: toastPop 2.6s ease-in-out forwards;
+}
+
+@keyframes toastPop {
+  0% { transform: translateY(-40px) scale(0.85); opacity: 0; }
+  15% { transform: translateY(0) scale(1.05); opacity: 1; }
+  25% { transform: translateY(0) scale(1); opacity: 1; }
+  80% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-30px) scale(0.9); opacity: 0; }
+}
+
+/* Статьи и карточки */
+.article-section {
+  border-bottom: 1px solid var(--bd);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+.article-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.article-title {
+  color: var(--p2);
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.example-box {
+  background: #f8fafc;
+  border-left: 4px solid var(--p);
+  padding: 12px 16px;
+  border-radius: 0 12px 12px 0;
+  margin: 12px 0;
+}
+
+.group-card {
+  border: 1px solid var(--bd);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+.group-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--p2);
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 20px 16px 40px;
+}
+
+@media(max-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  th:nth-child(5), td:nth-child(5) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="toast-container" id="toastContainer"></div>
+<audio id="ttsAudio" preload="none"></audio>
+
+<header>
+  <h1>Об авторе</h2>
+<p><b>Материалы подготовил: Бабков Иван Леонидович</b></p>
+<p>✉ <a href="mailto:i@ibabkow.ru">i@ibabkow.ru</a></p>
+<p style="font-size:0.9rem;margin-top:20px;">Все данные хранятся локально в вашем браузере. Никакая информация о прогрессе не отправляется на серверы.</p>
+</header>
+
+<main>
+  <!-- Статистика -->
+  <section class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-num" id="statTotal">152</div>
+      <div class="stat-lbl">Всего глаголов</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="statLearned" style="color: var(--ok);">0</div>
+      <div class="stat-lbl">Выучено</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="statRemaining">152</div>
+      <div class="stat-lbl">Осталось</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="statStreak" style="color: var(--accent);">0 🔥</div>
+      <div class="stat-lbl">Серия ответов</div>
+    </div>
+  </section>
+
+  <!-- Панель навигации -->
+  <section class="nav-panel">
+    <div class="tab-buttons">
+      <button id="tabListBtn" class="btn-primary" onclick="switchTab('list')">📋 Все глаголы (150+)</button>
+      <button id="tabSkillboxBtn" class="btn-soft" onclick="switchTab('skillbox')">📘 Топ-140</button>
+      <button id="tabGroupsBtn" class="btn-soft" onclick="switchTab('groups')">💡 90+ по группам</button>
+      <button id="tabCardsBtn" class="btn-soft" onclick="switchTab('cards')">🃏 Карточки</button>
+      <button id="tabTestBtn" class="btn-soft" onclick="switchTab('test')">📝 Тренажер</button>
+    </div>
+  </section>
+
+  <!-- Вкладка 1: Полный список (152 глагола) -->
+  <section id="panelList" class="panel">
+    <div class="search-box">
+      <span style="font-size: 1.3rem;">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Поиск по любой форме (Infinitive, V2, V3) или русскому переводу..." oninput="filterAndScrollVerbs()">
+      <button class="btn-soft" onclick="clearSearch()">Очистить</button>
+    </div>
+    
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 36px; text-align: center;">✓</th>
+            <th>V1 (Infinitive)</th>
+            <th>V2 (Past Simple)</th>
+            <th>V3 (Past Participle)</th>
+            <th>Перевод</th>
+            <th style="text-align: center; width: 120px;">🔊 Все 3 формы</th>
+          </tr>
+        </thead>
+        <tbody id="verbsTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Вкладка 2: Топ-140 -->
+  <section id="panelSkillbox" class="panel hidden">
+    <h2 style="margin-top:0; color:var(--p2);">Irregular verbs — неправильные глаголы английского языка (Топ-140)</h2>
+    <p style="color:var(--muted); margin-bottom: 20px;">
+      Неправильные глаголы английского языка — это глаголы, которые не спрягаются по классическим правилам (без добавления стандартного окончания <i>-ed</i>). Ниже представлена подробная классификация, практические примеры и интерактивная таблица.
+    </p>
+
+    <!-- Скрываемое содержание для Топ-140 -->
+    <details class="toc-box">
+      <summary class="toc-title">📑 Содержание раздела:</summary>
+      <ol class="toc-list">
+        <li><a href="#sb-table">Топ-140 неправильных глаголов: таблица</a></li>
+        <li><a href="#sb-what-to-know">Regular and irregular verbs — что нужно о них знать?</a></li>
+        <li><a href="#sb-how-many">Irregular verbs — сколько нужно знать и какие виды существуют?</a></li>
+        <li><a href="#sb-type1">Вид 1: Все три формы глагола совпадают</a></li>
+        <li><a href="#sb-type2">Вид 2: Первая и третья формы совпадают</a></li>
+        <li><a href="#sb-type3">Вид 3: Окончание -n в третьей форме</a></li>
+        <li><a href="#sb-type4">Вид 4: Чередование гласных и звуков</a></li>
+        <li><a href="#sb-type5">Вид 5: Окончание -ell меняется на -old</a></li>
+        <li><a href="#sb-type6">Вид 6: Окончания -ought и -aught во 2-й и 3-й формах</a></li>
+        <li><a href="#sb-different-vowels">Разные гласные во всех формах</a></li>
+        <li><a href="#sb-other-cases">Остальные случаи</a></li>
+        <li><a href="#sb-lifehacks">Как быстро выучить неправильные глаголы: лайфхаки для запоминания</a></li>
+      </ol>
+    </details>
+
+    <!-- 1. Топ-140 неправильных глаголов: таблица -->
+    <div id="sb-table" class="article-section">
+      <h3 class="article-title">📊 Топ-140 неправильных глаголов: таблица</h3>
+      <p style="color:var(--muted);">
+        В таблице собраны ключевые неправильные глаголы английского языка с транскрипцией, расширенным переводом и произношением при клике на 🔊.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>1-я форма (Infinitive)</th>
+              <th>2-я форма (Past Simple)</th>
+              <th>3-я форма (Past Participle)</th>
+              <th>Перевод</th>
+              <th style="text-align: center; width: 120px;">Озвучить</th>
+            </tr>
+          </thead>
+          <tbody id="skillboxTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 2. Regular and irregular verbs -->
+    <div id="sb-what-to-know" class="article-section">
+      <h3 class="article-title">📌 Regular and irregular verbs — что нужно о них знать?</h3>
+      <p>
+        Правильные глаголы (regular) спрягаются по типичной схеме: к базовой форме просто прибавляется окончание <b>-ed</b>.
+      </p>
+      <div class="example-box">
+        <b>dance — danced — danced</b> (танцевать)<br>
+        <b>play — played — played</b> (играть)
+      </div>
+      <p>
+        У неправильных глаголов (irregular) единого классического правила нет — они меняют корневые гласные, согласные или вовсе не меняются:
+      </p>
+      <div class="example-box">
+        <b>drive — drove — driven</b> (водить машину)<br>
+        <b>hide — hid — hidden</b> (прятать)<br>
+        <i>Пример:</i> He <b>hid</b> in the closet. — Он спрятался в шкафу.<br>
+        <i>Пример:</i> He had <b>hidden</b> in the closet several times before. — Он уже несколько раз прятался в шкафу.
+      </div>
+    </div>
+
+    <!-- 3. Irregular verbs — сколько нужно знать -->
+    <div id="sb-how-many" class="article-section">
+      <h3 class="article-title">📚 Irregular verbs — сколько нужно знать и какие виды существуют?</h3>
+      <p>
+        В английском языке насчитывается свыше 400 неправильных глаголов, однако для уверенного понимания литературы, фильмов и повседневного общения достаточно освоить от <b>140 до 200 глаголов</b>.
+      </p>
+      <p>
+        Зубрёжка по алфавиту утомительна. Намного эффективнее учить глаголы по схожим типам словообразования (паттернам), которые сгруппированы ниже.
+      </p>
+    </div>
+
+    <!-- 4. Вид 1 -->
+    <div id="sb-type1" class="article-section">
+      <h3 class="article-title">🎯 Вид 1: Все три формы глагола совпадают</h3>
+      <p>
+        Некоторые глаголы не меняют форму: инфинитив, простое прошедшее время и причастие пишутся совершенно одинаково:
+      </p>
+      <div class="example-box">
+        <b>bet — bet — bet</b> (делать ставку, спорить)<br>
+        <b>cost — cost — cost</b> (стоить, обходиться)<br>
+        <b>cut — cut — cut</b> (резать, стричь)<br>
+        <b>hit — hit — hit</b> (ударять, бить)<br>
+        <b>let — let — let</b> (позволять, разрешать)<br>
+        <b>put — put — put</b> (класть, ставить)<br>
+        <b>set — set — set</b> (устанавливать, настраивать)<br>
+        <b>spread — spread — spread</b> (распространять, расстилать)<br>
+        <b>read — read — read</b> (<i>внимание: пишется одинаково, но произносится как [riːd] — [red] — [red]</i>)
+      </div>
+    </div>
+
+    <!-- 5. Вид 2 -->
+    <div id="sb-type2" class="article-section">
+      <h3 class="article-title">🔄 Вид 2: Первая и третья формы совпадают</h3>
+      <p>
+        У таких глаголов совпадают инфинитив (V1) и Past Participle (V3), а форма Past Simple (V2) меняется:
+      </p>
+      <div class="example-box">
+        <b>become — became — become</b> (становиться, делаться)<br>
+        <b>come — came — come</b> (приходить, приезжать)<br>
+        <b>run — ran — run</b> (бежать, руководить)
+      </div>
+    </div>
+
+    <!-- 6. Вид 3 -->
+    <div id="sb-type3" class="article-section">
+      <h3 class="article-title">🔤 Вид 3: Окончание -n в третьей форме</h3>
+      <p>
+        Это одна из самых популярных групп: в 3-й форме появляется характерное окончание <b>-n / -en</b>. Внутри выделяются разновидности:
+      </p>
+      <ul>
+        <li><b>Буква «o» только во 2-й форме:</b><br>
+          <i>drive — drove — driven</i> | <i>ride — rode — ridden</i> | <i>rise — rose — risen</i> | <i>write — wrote — written</i>
+        </li>
+        <li style="margin-top: 8px;"><b>Буква «o» во 2-й и 3-й формах:</b><br>
+          <i>choose — chose — chosen</i> | <i>freeze — froze — frozen</i> | <i>speak — spoke — spoken</i> | <i>steal — stole — stolen</i> | <i>wake — woke — woken</i>
+        </li>
+        <li style="margin-top: 8px;"><b>Окончание -ew во 2-й форме, -own в 3-й:</b><br>
+          <i>blow — blew — blown</i> | <i>fly — flew — flown</i> | <i>grow — grew — grown</i> | <i>know — knew — known</i> | <i>throw — threw — thrown</i>
+        </li>
+        <li style="margin-top: 8px;"><b>Другие глаголы с окончанием -n:</b><br>
+          <i>bite — bit — bitten</i> | <i>eat — ate — eaten</i> | <i>give — gave — given</i> | <i>see — saw — seen</i> | <i>sow — sowed — sown</i>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 7. Вид 4 -->
+    <div id="sb-type4" class="article-section">
+      <h3 class="article-title">🔁 Вид 4: Чередование гласных и звуков</h3>
+      <p>
+        Вторая и третья формы глагола совпадают (V2 = V3), но внутри корня меняется гласный звук:
+      </p>
+      <div class="example-box">
+        • Долгий [iː] меняется на краткий [e]: <b>lead — led — led</b>, <b>keep — kept — kept</b>, <b>bleed — bled — bled</b>, <b>feel — felt — felt</b><br>
+        • Буквосочетание «ea» читается как [e]: <b>mean [miːn] — meant [ment] — meant [ment]</b>, <b>deal — dealt — dealt</b><br>
+        • Дифтонг [aɪ] меняется на [aʊ]: <b>find — found — found</b>, <b>bind — bound — bound</b>, <b>wind — wound — wound</b><br>
+        • Звук [ɪ] заменяется на [ʌ]: <b>dig — dug — dug</b>, <b>spin — spun — spun</b>, <b>stick — stuck — stuck</b>, <b>swing — swung — swung</b>
+      </div>
+    </div>
+
+    <!-- 8. Вид 5 -->
+    <div id="sb-type5" class="article-section">
+      <h3 class="article-title">✨ Вид 5: Окончание -ell меняется на -old</h3>
+      <div class="example-box">
+        <b>sell — sold — sold</b> (продавать, торговать)<br>
+        <b>tell — told — told</b> (говорить, рассказывать)
+      </div>
+    </div>
+
+    <!-- 9. Вид 6 -->
+    <div id="sb-type6" class="article-section">
+      <h3 class="article-title">💡 Вид 6: Окончания -ought и -aught во 2-й и 3-й формах</h3>
+      <p>
+        Оба окончания произносятся одинаково: как длинный гласный звук <b>[ɔːt]</b>:
+      </p>
+      <div class="example-box">
+        <b>bring — brought — brought</b> (приносить, приводить)<br>
+        <b>buy — bought — bought</b> (покупать, приобретать)<br>
+        <b>catch — caught — caught</b> (ловить, успевать)<br>
+        <b>fight — fought — fought</b> (сражаться, драться)<br>
+        <b>teach — taught — taught</b> (учить, обучать)<br>
+        <b>think — thought — thought</b> (думать, полагать)
+      </div>
+    </div>
+
+    <!-- 10. Разные гласные -->
+    <div id="sb-different-vowels" class="article-section">
+      <h3 class="article-title">🔀 Разные гласные во всех формах (Паттерн I – A – U)</h3>
+      <p>
+        Корневая гласная последовательно сменяется тремя звуками: [ɪ] → [æ] → [ʌ]:
+      </p>
+      <div class="example-box">
+        <b>begin — began — begun</b> (начинать, приступать)<br>
+        <b>drink — drank — drunk</b> (пить, выпивать)<br>
+        <b>ring — rang — rung</b> (звонить, звенеть)<br>
+        <b>sing — sang — sung</b> (петь, напевать)<br>
+        <b>sink — sank — sunk</b> (тонуть, опускаться)<br>
+        <b>swim — swam — swum</b> (плавать, плыть)
+      </div>
+    </div>
+
+    <!-- 11. Остальные случаи -->
+    <div id="sb-other-cases" class="article-section">
+      <h3 class="article-title">⚙️ Остальные случаи (включая модальные глаголы)</h3>
+      <p>
+        Особые случаи словоизменения, где формы имеют уникальные корни или не имеют третьей формы:
+      </p>
+      <div class="example-box">
+        <b>be — was/were — been</b> (быть, являться)<br>
+        <b>go — went — gone</b> (идти, ехать)<br>
+        <b>have — had — had</b> (иметь, обладать)<br>
+        <b>make — made — made</b> (делать, производить)<br>
+        <b>can — could — (been able)</b> (мочь, уметь)<br>
+        <b>shall — should — —</b> (быть должным, 3-й формы нет)<br>
+        <b>may — might — —</b> (мочь, 3-й формы нет)
+      </div>
+    </div>
+
+    <!-- 12. Лайфхаки -->
+    <div id="sb-lifehacks" class="article-section">
+      <h3 class="article-title">🚀 Как быстро выучить неправильные глаголы: лайфхаки для запоминания</h3>
+      <ul>
+        <li>
+          <b>1. Систематизация по группам:</b> Учите глаголы не по алфавиту, а по рифме и типам (например, сначала все глаголы с одинаковыми формами, затем группу <i>-ought / -aught</i>).
+        </li>
+        <li>
+          <b>2. Придумывайте рифмовки и песенки:</b> Мозг отлично запоминает забавные стихи:<br>
+          <i>«The boss lose-lost-lost his honey. It cost-cost-cost him a lot of money!»</i>
+        </li>
+        <li>
+          <b>3. Игровые карточки и тренажеры:</b> Используйте встроенные в наш сервис режимы <b>«Карточки»</b> и <b>«Тренажер»</b>, чтобы интервально повторять сложные слова каждый день.
+        </li>
+        <li>
+          <b>4. Изучайте в живом контексте:</b> Как только вы узнали новое слово, сразу составьте с ним 2–3 собственных предложения о себе и своей жизни.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Вкладка 3: 90+ глаголов по группам -->
+  <section id="panelGroups" class="panel hidden">
+    <h2 style="margin-top:0; color:var(--p2);">Легко выучите 90+ неправильных глаголов по группам</h2>
+    <p style="color:var(--muted); margin-bottom: 20px;">
+      Логическая группировка глаголов по типам образования и паттернам. Переходите в нужный раздел через оглавление ниже:
+    </p>
+
+    <!-- Скрываемое содержание для 90+ -->
+    <details class="toc-box">
+      <summary class="toc-title">📑 Содержание групп глаголов:</summary>
+      <ol class="toc-list">
+        <li><a href="#grp-1">Группа 1: Все 3 формы совпадают (V1 = V2 = V3)</a></li>
+        <li><a href="#grp-2">Группа 2: V1 и V3 совпадают (V1 = V3 ≠ V2)</a></li>
+        <li><a href="#grp-3">Группа 3: Форма V3 заканчивается на «-N» или «-EN»</a>
+          <ul style="margin:4px 0 0; padding-left:18px; font-size:0.9rem;">
+            <li><a href="#grp-3-1">3.1. Гласная «O» в V2 и V3</a></li>
+            <li><a href="#grp-3-2">3.2. Гласная «O» только в Past Simple (V2)</a></li>
+            <li><a href="#grp-3-3">3.3. V2 на «-EW», а V3 на «-OWN»</a></li>
+            <li><a href="#grp-3-4">3.4. Другие глаголы с причастием на «-N / -EN»</a></li>
+          </ul>
+        </li>
+        <li><a href="#grp-4">Группа 4: Изменение гласных при одинаковых V2 и V3 (V2 = V3)</a>
+          <ul style="margin:4px 0 0; padding-left:18px; font-size:0.9rem;">
+            <li><a href="#grp-4-1">4.1. Долгий [iː] переходит в краткий [e]</a></li>
+            <li><a href="#grp-4-2">4.2. Буквосочетание «EA» читается как [e]</a></li>
+            <li><a href="#grp-4-3">4.3. Дифтонг [aɪ] переходит в [aʊ]</a></li>
+            <li><a href="#grp-4-4">4.4. Краткий [ɪ] заменяется на [ʌ] («-u-»)</a></li>
+            <li><a href="#grp-4-5">4.5. «-ELL» переходит в «-OLD»</a></li>
+            <li><a href="#grp-4-6">4.6. Окончания «-OUGHT» и «-AUGHT» [ɔːt]</a></li>
+          </ul>
+        </li>
+        <li><a href="#grp-5">Группа 5: Чередование трёх гласных: [ɪ] → [æ] → [ʌ] (I – A – U)</a></li>
+        <li><a href="#grp-6">Группа 6: Особые и самые частые глаголы</a></li>
+      </ol>
+    </details>
+
+    <!-- Группа 1 -->
+    <div id="grp-1" class="group-card">
+      <h3 class="group-title">🎯 Группа 1: Все 3 формы совпадают (V1 = V2 = V3)</h3>
+      <div class="group-desc">
+        Глаголы не меняются ни во 2-й, ни в 3-й форме.<br>
+        <i>Примечание: глагол <b>read</b> пишется одинаково, но во 2-й и 3-й форме произносится как [red].</i>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>V1 (Infinitive)</th><th>V2 (Past Simple)</th><th>V3 (Past Participle)</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr>
+          </thead>
+          <tbody id="group1Body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Группа 2 -->
+    <div id="grp-2" class="group-card">
+      <h3 class="group-title">🔄 Группа 2: V1 и V3 совпадают (V1 = V3 ≠ V2)</h3>
+      <div class="group-desc">
+        1-я и 3-я формы совпадают, а во 2-й форме меняется корневая гласная.
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>V1 (Infinitive)</th><th>V2 (Past Simple)</th><th>V3 (Past Participle)</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr>
+          </thead>
+          <tbody id="group2Body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Группа 3 -->
+    <div id="grp-3" class="group-card">
+      <h3 class="group-title">🔤 Группа 3: Форма V3 заканчивается на «-N» или «-EN»</h3>
+      
+      <h4 id="grp-3-1" style="color:var(--p); margin:14px 0 6px;">3.1. Гласная «O» в V2 и V3</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>V1</th><th>V2</th><th>V3</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr></thead>
+          <tbody id="group3_1Body"></tbody>
+        </table>
+      </div>
+
+      <h4 id="grp-3-2" style="color:var(--p); margin:14px 0 6px;">3.2. Гласная «O» только в Past Simple (V2)</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>V1</th><th>V2</th><th>V3</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr></thead>
+          <tbody id="group3_2Body"></tbody>
+        </table>
+      </div>
+
+      <h4 id="grp-3-3" style="color:var(--p); margin:14px 0 6px;">3.3. V2 на «-EW», а V3 на «-OWN» / «-AWN»</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>V1</th><th>V2</th><th>V3</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr></thead>
+          <tbody id="group3_3Body"></tbody>
+        </table>
+      </div>
+
+      <h4 id="grp-3-4" style="color:var(--p); margin:14px 0 6px;">3.4. Другие глаголы с причастием на «-N / -EN»</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>V1</th><th>V2</th><th>V3</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr></thead>
+          <tbody id="group3_4Body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Группа 4 -->
+    <div id="grp-4" class="group-card">
+      <h3 class="group-title">🔁 Группа 4: Изменение гласных при одинаковых V2 и V3 (V2 = V3)</h3>
+
+      <h4 id="grp-4-1" style="color:var(--p); margin:14px 0 6px;">4.1. Долгий звук [iː] переходит в краткий [e] («-ee-» → «-e-»)</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>V1</th><th>V2</th><th>V3</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr></thead>
+          <tbody id="group4_1Body"></tbody>
+        </table>
+      </div>
+
+      <h4 id="grp-4-2" style="color:var(--p); margin:14px 0 6px;">4.2. Буквосочетание «EA» произносится как [e] в V2 и V3</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>V1</th><th>V2</th><th>V3</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr></thead>
+          <tbody id="group4_2Body"></tbody>
+        </table>
+      </div>
+
+      <h4 id="grp-4-3" style="color:var(--p); margin:14px 0 6px;">4.3. Долгий звук [aɪ] переходит в дифтонг [aʊ] («-ou-» / «-oun-»)</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>V1</th><th>V2</th><th>V3</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr></thead>
+          <tbody id="group4_3Body"></tbody>
+        </table>
+      </div>
+
+      <h4 id="grp-4-4" style="color:var(--p); margin:14px 0 6px;">4.4. Краткий звук [ɪ] заменяется на [ʌ] («-u-»)</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>V1</th><th>V2</th><th>V3</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr></thead>
+          <tbody id="group4_4Body"></tbody>
+        </table>
+      </div>
+
+      <h4 id="grp-4-5" style="color:var(--p); margin:14px 0 6px;">4.5. «-ELL» переходит в «-OLD»</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>V1</th><th>V2</th><th>V3</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr></thead>
+          <tbody id="group4_5Body"></tbody>
+        </table>
+      </div>
+
+      <h4 id="grp-4-6" style="color:var(--p); margin:14px 0 6px;">4.6. Окончания «-OUGHT» и «-AUGHT» [ɔːt]</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>V1</th><th>V2</th><th>V3</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr></thead>
+          <tbody id="group4_6Body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Группа 5 -->
+    <div id="grp-5" class="group-card">
+      <h3 class="group-title">🔀 Группа 5: Чередование трёх гласных: [ɪ] → [æ] → [ʌ] (I – A – U)</h3>
+      <div class="group-desc">
+        Классический паттерн «Sing – Sang – Sung».
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>V1 (Infinitive)</th><th>V2 (Past Simple)</th><th>V3 (Past Participle)</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr>
+          </thead>
+          <tbody id="group5Body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Группа 6 -->
+    <div id="grp-6" class="group-card">
+      <h3 class="group-title">⭐ Группа 6: Особые и самые частые глаголы</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>V1 (Infinitive)</th><th>V2 (Past Simple)</th><th>V3 (Past Participle)</th><th>Перевод</th><th style="text-align:center; width: 120px;">Озвучить</th></tr>
+          </thead>
+          <tbody id="group6Body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Вкладка 4: Карточки (Flashcards) -->
+  <section id="panelCards" class="panel hidden">
+    <div class="cards-wrap">
+      <div class="flashcard" id="flashCard" onclick="flipCard()">
+        <button class="tts-btn" style="position:absolute; right:16px; top:16px;" onclick="event.stopPropagation(); speakCard();" title="Озвучить слово">🔊</button>
+        <div class="tag" id="cardTag">INFINITIVE (V1)</div>
+        <div class="main-text" id="cardMain">—</div>
+        <div class="ipa-text" id="cardIpa"></div>
+        <div class="sub-text" id="cardSub"></div>
+        <div class="hint">Нажмите на карточку, чтобы перевернуть ↺</div>
+      </div>
+      
+      <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-top:20px; flex-wrap:wrap;">
+        <button class="btn-soft" onclick="prevCard()">⬅ Назад</button>
+        <span id="cardCounter" style="font-weight:700; color:var(--muted); min-width:85px;">1 / 152</span>
+        <button class="btn-soft" onclick="nextCard()">Вперед ➡</button>
+        <button class="btn-primary" onclick="speakCard()">🔊 Озвучить</button>
+        <button class="btn-green" onclick="markCardLearned()">✓ Знаю</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Вкладка 5: Тренажер и Проверка -->
+  <section id="panelTest" class="panel hidden">
+    <div class="trainer-container">
+      <div id="testSetupScreen">
+        <h2 style="margin-top:0; color:var(--p);">Тренажер проверки знаний</h2>
+        <p style="color:var(--muted);">Настройте параметры проверки и приступайте к практике:</p>
+        
+        <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:20px 0;">
+          <input type="text" id="userNameInput" placeholder="Ваше имя..." class="search-input" style="max-width:240px;">
+          <select id="testScopeSelect" class="search-input" style="max-width:240px;">
+            <option value="all">Все 152 глагола</option>
+            <option value="top90">90+ основных глаголов</option>
+            <option value="unlearned">Только невыученные глаголы</option>
+          </select>
+          <select id="testTypeSelect" class="search-input" style="max-width:240px;">
+            <option value="quiz">Выбор из 4 вариантов (Тест)</option>
+            <option value="inputForms">Ввод V2 и V3 (через запятую)</option>
+            <option value="inputRu">Ввод перевода на русском</option>
+          </select>
+        </div>
+        <button class="btn-primary" style="font-size:1.15rem; padding:12px 32px;" onclick="startTraining()">▶ Начать тренировку</button>
+      </div>
+
+      <div id="testActiveScreen" class="hidden">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--bd); padding-bottom:10px;">
+          <button class="btn-soft" onclick="exitTraining()">⬅ В меню</button>
+          <span style="font-weight:700; color:var(--muted);" id="testProgressInfo">Вопрос 1 из 20</span>
+          <span style="font-weight:800; color:var(--ok);" id="testScoreInfo">Счет: 0</span>
+        </div>
+
+        <div id="testPrompt" style="font-size:2.3rem; font-weight:800; color:var(--p); margin:25px 0 10px;">—</div>
+        <div id="testHint" style="color:var(--muted); font-size:1rem; margin-bottom:15px;"></div>
+
+        <!-- Тест с 4 вариантами -->
+        <div id="testQuizOptions" class="test-options"></div>
+
+        <!-- Поле текстового ввода -->
+        <input type="text" id="testTextInput" class="test-input hidden" placeholder="Введите ответ..." onkeydown="if(event.key==='Enter') submitTestInput()">
+
+        <div style="margin-top:15px;">
+          <button id="testCheckBtn" class="btn-primary" onclick="submitTestInput()">Проверить</button>
+          <button id="testNextBtn" class="btn-soft hidden" onclick="nextTestQuestion()">Дальше ➡</button>
+        </div>
+
+        <div id="feedbackBox" class="feedback-box"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Прогресс сохраняется локально в вашем браузере.<br>
+  Материалы подготовил: <b>© 2026. Бабков Иван Леонидович</b>
+</footer>
+
+<script>
+// Полный массив из 152 неправильных глаголов с 2-3 вариантами перевода
+// [0: V1, 1: V2, 2: V3, 3: Перевод, 4: IPA_V1, 5: IPA_V2, 6: IPA_V3, 7: Группа]
+const ALL_VERBS = [
+  ["arise", "arose", "arisen", "возникать, появляться, происходить", "/əˈraɪz/", "/əˈrəʊz/", "/əˈrɪzən/", "3.2"],
+  ["awake", "awoke", "awoken", "просыпаться, будить, пробуждать", "/əˈweɪk/", "/əˈwəʊk/", "/əˈwəʊkən/", "3.1"],
+  ["be", "was/were", "been", "быть, являться, находиться", "/biː/", "/wɒz/, /wɜː/", "/bɪn/", "6"],
+  ["bear", "bore", "born(e)", "носить, терпеть, рождать", "/beə/", "/bɔː/", "/bɔːn/", "3.1"],
+  ["beat", "beat", "beaten", "бить, колотить, побеждать", "/biːt/", "/biːt/", "/ˈbiːtn/", "3.4"],
+  ["become", "became", "become", "становиться, делаться, годиться", "/bɪˈkʌm/", "/bɪˈkeɪm/", "/bɪˈkʌm/", "2"],
+  ["befall", "befell", "befallen", "случаться, приключаться, постигать", "/bɪˈfɔːl/", "/bɪˈfel/", "/bɪˈfɔːlən/", "3.4"],
+  ["begin", "began", "begun", "начинать, приступать, зарождаться", "/bɪˈɡɪn/", "/bɪˈɡæn/", "/bɪˈɡʌn/", "5"],
+  ["bend", "bent", "bent", "гнуть, сгибать, наклоняться", "/bend/", "/bent/", "/bent/", "4.1"],
+  ["bet", "bet", "bet", "делать ставку, спорить, держать пари", "/bet/", "/bet/", "/bet/", "1"],
+  ["bid", "bid", "bid", "предлагать цену, велеть, просить", "/bɪd/", "/bɪd/", "/bɪd/", "1"],
+  ["bind", "bound", "bound", "связывать, скреплять, обязывать", "/baɪnd/", "/baʊnd/", "/baʊnd/", "4.3"],
+  ["bite", "bit", "bitten", "кусать, укусить, жалить", "/baɪt/", "/bɪt/", "/ˈbɪtn/", "3.4"],
+  ["bleed", "bled", "bled", "истекать кровью, кровоточить, обескровливать", "/bliːd/", "/bled/", "/bled/", "4.1"],
+  ["blow", "blew", "blown", "дуть, веять, взрывать", "/bləʊ/", "/bluː/", "/bləʊn/", "3.3"],
+  ["break", "broke", "broken", "ломать, разбивать, разрушать", "/breɪk/", "/brəʊk/", "/ˈbrəʊkən/", "3.1"],
+  ["breed", "bred", "bred", "разводить, выращивать, порождать", "/briːd/", "/bred/", "/bred/", "4.1"],
+  ["bring", "brought", "brought", "приносить, приводить, доставлять", "/brɪŋ/", "/brɔːt/", "/brɔːt/", "4.6"],
+  ["broadcast", "broadcast", "broadcast", "вещать, транслировать, распространять", "/ˈbrɔːdkɑːst/", "/ˈbrɔːdkɑːst/", "/ˈbrɔːdkɑːst/", "1"],
+  ["build", "built", "built", "строить, сооружать, создавать", "/bɪld/", "/bɪlt/", "/bɪlt/", "6"],
+  ["burn", "burnt/burned", "burnt/burned", "жечь, гореть, пылать", "/bɜːn/", "/bɜːnt/", "/bɜːnt/", "4.1"],
+  ["burst", "burst", "burst", "разрываться, взрываться, лопаться", "/bɜːst/", "/bɜːst/", "/bɜːst/", "1"],
+  ["buy", "bought", "bought", "покупать, приобретать, подкупать", "/baɪ/", "/bɔːt/", "/bɔːt/", "4.6"],
+  ["can", "could", "been able", "мочь, уметь, быть в состоянии", "/kæn/", "/kʊd/", "/biːn ˈeɪbl/", "6"],
+  ["cast", "cast", "cast", "бросать, отливать, распределять роли", "/kɑːst/", "/kɑːst/", "/kɑːst/", "1"],
+  ["catch", "caught", "caught", "ловить, поймать, успевать", "/kætʃ/", "/kɔːt/", "/kɔːt/", "4.6"],
+  ["choose", "chose", "chosen", "выбирать, избирать, предпочитать", "/tʃuːz/", "/tʃəʊz/", "/ˈtʃəʊzn/", "3.1"],
+  ["cling", "clung", "clung", "цепляться, держаться, липнуть", "/klɪŋ/", "/klʌŋ/", "/klʌŋ/", "4.4"],
+  ["come", "came", "come", "приходить, приезжать, наступать", "/kʌm/", "/keɪm/", "/kʌm/", "2"],
+  ["cost", "cost", "cost", "стоить, обходиться, оценивать", "/kɒst/", "/kɒst/", "/kɒst/", "1"],
+  ["creep", "crept", "crept", "ползать, подкрадываться, красться", "/kriːp/", "/krept/", "/krept/", "4.1"],
+  ["cut", "cut", "cut", "резать, стричь, сокращать", "/kʌt/", "/kʌt/", "/kʌt/", "1"],
+  ["deal", "dealt", "dealt", "иметь дело, распределять, торговать", "/diːl/", "/delt/", "/delt/", "4.2"],
+  ["dig", "dug", "dug", "копать, рыть, разыскивать", "/dɪɡ/", "/dʌɡ/", "/dʌɡ/", "4.4"],
+  ["dive", "dove/dived", "dived", "нырять, погружаться, бросаться вниз", "/daɪv/", "/dəʊv/", "/daɪvd/", "6"],
+  ["do", "did", "done", "делать, выполнять, поступать", "/duː/", "/dɪd/", "/dʌn/", "6"],
+  ["draw", "drew", "drawn", "рисовать, тянуть, чертить", "/drɔː/", "/druː/", "/drɔːn/", "3.3"],
+  ["dream", "dreamt/dreamed", "dreamt/dreamed", "мечтать, сниться, грезить", "/driːm/", "/dremt/", "/dremt/", "4.2"],
+  ["drink", "drank", "drunk", "пить, выпивать, поглощать", "/drɪŋk/", "/dræŋk/", "/drʌŋk/", "5"],
+  ["drive", "drove", "driven", "водить (машину), гнать, управлять", "/draɪv/", "/drəʊv/", "/ˈdrɪvn/", "3.2"],
+  ["eat", "ate", "eaten", "есть, кушать, поглощать", "/iːt/", "/et/", "/ˈiːtn/", "3.4"],
+  ["fall", "fell", "fallen", "падать, опадать, снижаться", "/fɔːl/", "/fel/", "/ˈfɔːlən/", "3.4"],
+  ["feed", "fed", "fed", "кормить, питаться, снабжать", "/fiːd/", "/fed/", "/fed/", "4.1"],
+  ["feel", "felt", "felt", "чувствовать, осязать, ощущать", "/fiːl/", "/felt/", "/felt/", "4.1"],
+  ["fight", "fought", "fought", "драться, сражаться, бороться", "/faɪt/", "/fɔːt/", "/fɔːt/", "4.6"],
+  ["find", "found", "found", "находить, обнаруживать, признавать", "/faɪnd/", "/faʊnd/", "/faʊnd/", "4.3"],
+  ["flee", "fled", "fled", "убегать, спасаться, бежать", "/fliː/", "/fled/", "/fled/", "4.1"],
+  ["fly", "flew", "flown", "летать, порхать, спешить", "/flaɪ/", "/fluː/", "/fləʊn/", "3.3"],
+  ["forbid", "forbade", "forbidden", "запрещать, возбранять, препятствовать", "/fəˈbɪd/", "/fəˈbæd/", "/fəˈbɪdn/", "3.4"],
+  ["forget", "forgot", "forgotten", "забывать, пренебрегать, упускать", "/fəˈɡet/", "/fəˈɡɒt/", "/fəˈɡɒtn/", "3.1"],
+  ["forgive", "forgave", "forgiven", "прощать, извинять, отпускать", "/fəˈɡɪv/", "/fəˈɡeɪv/", "/fəˈɡɪvn/", "3.4"],
+  ["freeze", "froze", "frozen", "замораживать, мерзнуть, застывать", "/friːz/", "/frəʊz/", "/ˈfrəʊzn/", "3.1"],
+  ["get", "got", "got", "получать, доставать, становиться", "/ɡet/", "/ɡɒt/", "/ɡɒt/", "3.1"],
+  ["give", "gave", "given", "отдавать, давать, предоставлять", "/ɡɪv/", "/ɡeɪv/", "/ˈɡɪvn/", "3.4"],
+  ["go", "went", "gone", "идти, ехать, двигаться", "/ɡəʊ/", "/went/", "/ɡɒn/", "6"],
+  ["grind", "ground", "ground", "молоть, точить, перемалывать", "/ɡraɪnd/", "/ɡraʊnd/", "/ɡraʊnd/", "4.3"],
+  ["grow", "grew", "grown", "расти, выращивать, увеличиваться", "/ɡrəʊ/", "/ɡruː/", "/ɡrəʊn/", "3.3"],
+  ["hang", "hung", "hung", "висеть, вешать, развешивать", "/hæŋ/", "/hʌŋ/", "/hʌŋ/", "4.4"],
+  ["have", "had", "had", "иметь, обладать, содержать", "/hæv/", "/hæd/", "/hæd/", "6"],
+  ["hear", "heard", "heard", "слышать, слушать, узнавать", "/hɪə/", "/hɜːd/", "/hɜːd/", "4.2"],
+  ["hide", "hid", "hidden", "прятать, скрывать, прятаться", "/haɪd/", "/hɪd/", "/ˈhɪdn/", "3.4"],
+  ["hit", "hit", "hit", "ударять, бить, попадать", "/hɪt/", "/hɪt/", "/hɪt/", "1"],
+  ["hold", "held", "held", "держать, удерживать, проводить", "/həʊld/", "/held/", "/held/", "6"],
+  ["hurt", "hurt", "hurt", "ранить, причинять боль, болеть", "/hɜːt/", "/hɜːt/", "/hɜːt/", "1"],
+  ["keep", "kept", "kept", "хранить, сохранять, продолжать", "/kiːp/", "/kept/", "/kept/", "4.1"],
+  ["kneel", "knelt", "knelt", "становиться на колени, преклонять колени", "/niːl/", "/nelt/", "/nelt/", "4.1"],
+  ["know", "knew", "known", "знать, узнавать, понимать", "/nəʊ/", "/njuː/", "/nəʊn/", "3.3"],
+  ["lay", "laid", "laid", "класть, положить, накрывать", "/leɪ/", "/leɪd/", "/leɪd/", "6"],
+  ["lead", "led", "led", "вести за собой, руководить, приводить", "/liːd/", "/led/", "/led/", "4.1"],
+  ["lean", "leant/leaned", "leant/leaned", "наклоняться, прислоняться, опираться", "/liːn/", "/lent/", "/lent/", "4.1"],
+  ["learn", "learnt/learned", "learnt/learned", "учить, изучать, узнавать", "/lɜːn/", "/lɜːnt/", "/lɜːnt/", "6"],
+  ["leave", "left", "left", "покидать, оставлять, уходить", "/liːv/", "/left/", "/left/", "4.1"],
+  ["lend", "lent", "lent", "одалживать, давать взаймы, ссужать", "/lend/", "/lent/", "/lent/", "6"],
+  ["lie", "lay", "lain", "лежать, находиться, простираться", "/laɪ/", "/leɪ/", "/leɪn/", "6"],
+  ["light", "lit/lighted", "lit/lighted", "зажигать, освещать, загораться", "/laɪt/", "/lɪt/", "/lɪt/", "6"],
+  ["lose", "lost", "lost", "терять, проигрывать, утрачивать", "/luːz/", "/lɒst/", "/lɒst/", "6"],
+  ["make", "made", "made", "делать, создавать, производить", "/meɪk/", "/meɪd/", "/meɪd/", "6"],
+  ["may", "might", "been allowed", "мочь, иметь разрешение, выражать вероятность", "/meɪ/", "/maɪt/", "/biːn əˈlaʊd/", "6"],
+  ["mean", "meant", "meant", "означать, иметь в виду, намереваться", "/miːn/", "/ment/", "/ment/", "4.2"],
+  ["meet", "met", "met", "встречать, знакомиться, собираться", "/miːt/", "/met/", "/met/", "4.1"],
+  ["mislead", "misled", "misled", "вводить в заблуждение, сбивать с толку", "/ˌmɪsˈliːd/", "/ˌmɪsˈled/", "/ˌmɪsˈled/", "4.1"],
+  ["mow", "mowed", "mown", "косить, скашивать, стричь газон", "/məʊ/", "/məʊd/", "/məʊn/", "3.3"],
+  ["must", "had to", "had to", "быть должным, быть обязанным", "/mʌst/", "/hæd tuː/", "/hæd tuː/", "6"],
+  ["overcome", "overcame", "overcome", "преодолевать, побеждать, справляться", "/ˌəʊvəˈkʌm/", "/ˌəʊvəˈkeɪm/", "/ˌəʊvəˈkʌm/", "2"],
+  ["overdo", "overdid", "overdone", "перебарщивать, перестараться, утрировать", "/ˌəʊvəˈduː/", "/ˌəʊvəˈdɪd/", "/ˌəʊvəˈdʌn/", "6"],
+  ["overtake", "overtook", "overtaken", "обгонять, настигать, перегонять", "/ˌəʊvəˈteɪk/", "/ˌəʊvəˈtʊk/", "/ˌəʊvəˈteɪkən/", "3.4"],
+  ["pay", "paid", "paid", "платить, оплачивать, рассчитываться", "/peɪ/", "/peɪd/", "/peɪd/", "6"],
+  ["prove", "proved", "proven/proved", "доказывать, подтверждать, оказываться", "/pruːv/", "/pruːvd/", "/ˈpruːvn/", "3.4"],
+  ["put", "put", "put", "класть, ставить, помещать", "/pʊt/", "/pʊt/", "/pʊt/", "1"],
+  ["quit", "quit", "quit", "бросать, прекращать, увольняться", "/kwɪt/", "/kwɪt/", "/kwɪt/", "1"],
+  ["read", "read", "read", "читать, прочитывать, гласить", "/riːd/", "/red/", "/red/", "4.2"],
+  ["ride", "rode", "ridden", "ехать верхом, кататься, управлять", "/raɪd/", "/rəʊd/", "/ˈrɪdn/", "3.2"],
+  ["ring", "rang", "rung", "звонить, звенеть, окружать", "/rɪŋ/", "/ræŋ/", "/rʌŋ/", "5"],
+  ["rise", "rose", "risen", "подниматься, вставать, возрастать", "/raɪz/", "/rəʊz/", "/ˈrɪzn/", "3.2"],
+  ["run", "ran", "run", "бежать, руководить, запускать", "/rʌn/", "/ræn/", "/rʌn/", "2"],
+  ["saw", "sawed", "sawn/sawed", "пилить, распиливать", "/sɔː/", "/sɔːd/", "/sɔːn/", "3.3"],
+  ["say", "said", "said", "говорить, сказать, утверждать", "/seɪ/", "/sed/", "/sed/", "6"],
+  ["see", "saw", "seen", "видеть, смотреть, понимать", "/siː/", "/sɔː/", "/siːn/", "3.4"],
+  ["seek", "sought", "sought", "искать, разыскивать, стремиться", "/siːk/", "/sɔːt/", "/sɔːt/", "4.6"],
+  ["sell", "sold", "sold", "продавать, торговать, сбывать", "/sel/", "/səʊld/", "/səʊld/", "4.5"],
+  ["send", "sent", "sent", "отправлять, посылать, отсылать", "/send/", "/sent/", "/sent/", "6"],
+  ["set", "set", "set", "ставить, устанавливать, настраивать", "/set/", "/set/", "/set/", "1"],
+  ["sew", "sewed", "sewn/sewed", "шить, пришивать, сшивать", "/səʊ/", "/səʊd/", "/səʊn/", "3.3"],
+  ["shake", "shook", "shaken", "трясти, встряхивать, дрожать", "/ʃeɪk/", "/ʃʊk/", "/ˈʃeɪkən/", "3.4"],
+  ["shall", "should", "—", "быть должным, выражать будущее действие", "/ʃæl/", "/ʃʊd/", "—", "6"],
+  ["shed", "shed", "shed", "сбрасывать, проливать, ронять", "/ʃed/", "/ʃed/", "/ʃed/", "1"],
+  ["shine", "shone", "shone", "сиять, светить, блестеть", "/ʃaɪn/", "/ʃɒn/", "/ʃɒn/", "4.4"],
+  ["shoot", "shot", "shot", "стрелять, снимать (на камеру), нестись", "/ʃuːt/", "/ʃɒt/", "/ʃɒt/", "4.1"],
+  ["show", "showed", "shown", "показывать, демонстрировать, проявлять", "/ʃəʊ/", "/ʃəʊd/", "/ʃəʊn/", "3.3"],
+  ["shrink", "shrank", "shrunk", "сжиматься, уменьшаться, сокращаться", "/ʃrɪŋk/", "/ʃræŋk/", "/ʃrʌŋk/", "5"],
+  ["shut", "shut", "shut", "закрывать, запирать, захлопывать", "/ʃʌt/", "/ʃʌt/", "/ʃʌt/", "1"],
+  ["sing", "sang", "sung", "петь, напевать, звенеть", "/sɪŋ/", "/sæŋ/", "/sʌŋ/", "5"],
+  ["sink", "sank", "sunk", "тонуть, погружаться, опускаться", "/sɪŋk/", "/sæŋk/", "/sʌŋk/", "5"],
+  ["sit", "sat", "sat", "сидеть, садиться, заседать", "/sɪt/", "/sæt/", "/sæt/", "6"],
+  ["sleep", "slept", "slept", "спать, ночевать, покоиться", "/sliːp/", "/slept/", "/slept/", "4.1"],
+  ["slide", "slid", "slid", "скользить, кататься, сдвигать", "/slaɪd/", "/slɪd/", "/slɪd/", "4.4"],
+  ["smell", "smelt/smelled", "smelt/smelled", "пахнуть, нюхать, чуять", "/smel/", "/smelt/", "/smelt/", "4.1"],
+  ["sow", "sowed", "sown/sowed", "сеять, засевать, сеять сомнения", "/səʊ/", "/səʊd/", "/səʊn/", "3.3"],
+  ["speak", "spoke", "spoken", "говорить, разговаривать, высказываться", "/spiːk/", "/spəʊk/", "/ˈspəʊkən/", "3.1"],
+  ["spell", "spelt/spelled", "spelt/spelled", "произносить по буквам, писать грамотно, означать", "/spel/", "/spelt/", "/spelt/", "4.1"],
+  ["spend", "spent", "spent", "тратить, расходовать, проводить (время)", "/spend/", "/spent/", "/spent/", "6"],
+  ["spill", "spilt/spilled", "spilt/spilled", "проливать, рассыпать, разливаться", "/spɪl/", "/spɪlt/", "/spɪlt/", "4.1"],
+  ["spin", "spun", "spun", "вращать, прясть, кружиться", "/spɪn/", "/spʌn/", "/spʌn/", "4.4"],
+  ["spit", "spat", "spat", "плевать, плеваться, насаживать", "/spɪt/", "/spæt/", "/spæt/", "6"],
+  ["split", "split", "split", "раскалывать, делить, расщеплять", "/splɪt/", "/splɪt/", "/splɪt/", "1"],
+  ["spread", "spread", "spread", "распространять, расстилать, намазывать", "/spred/", "/spred/", "/spred/", "1"],
+  ["spring", "sprang", "sprung", "прыгать, возникать, пружинить", "/sprɪŋ/", "/spræŋ/", "/sprʌŋ/", "5"],
+  ["stand", "stood", "stood", "стоять, выдерживать, находиться", "/stænd/", "/stʊd/", "/stʊd/", "6"],
+  ["steal", "stole", "stolen", "красть, воровать, похищать", "/stiːl/", "/stəʊl/", "/ˈstəʊlən/", "3.1"],
+  ["stick", "stuck", "stuck", "приклеивать, втыкать, застревать", "/stɪk/", "/stʌk/", "/stʌk/", "4.4"],
+  ["sting", "stung", "stung", "жалить, жечь, причинять острую боль", "/stɪŋ/", "/stʌŋ/", "/stʌŋ/", "4.4"],
+  ["stink", "stank", "stunk", "вонять, дурно пахнуть, смердеть", "/stɪŋk/", "/stæŋk/", "/stʌŋk/", "5"],
+  ["strike", "struck", "struck", "ударять, поражать, бастовать", "/straɪk/", "/strʌk/", "/strʌk/", "4.4"],
+  ["swear", "swore", "sworn", "клясться, присягать, ругаться", "/sweə/", "/swɔː/", "/swɔːn/", "3.1"],
+  ["sweep", "swept", "swept", "подметать, сметать, мчаться", "/swiːp/", "/swept/", "/swept/", "4.1"],
+  ["swell", "swelled", "swollen/swelled", "набухать, раздуваться, увеличиваться", "/swel/", "/sweld/", "/ˈswəʊlən/", "3.4"],
+  ["swim", "swam", "swum", "плавать, плыть, кружиться", "/swɪm/", "/swæm/", "/swʌm/", "5"],
+  ["swing", "swung", "swung", "качаться, раскачивать, махать", "/swɪŋ/", "/swʌŋ/", "/swʌŋ/", "4.4"],
+  ["take", "took", "taken", "брать, взять, принимать", "/teɪk/", "/tʊk/", "/ˈteɪkən/", "3.4"],
+  ["teach", "taught", "taught", "учить, обучать, преподавать", "/tiːtʃ/", "/tɔːt/", "/tɔːt/", "4.6"],
+  ["tear", "tore", "torn", "рвать, разрывать, мчаться", "/teə/", "/tɔː/", "/tɔːn/", "3.1"],
+  ["tell", "told", "told", "говорить, рассказывать, велеть", "/tel/", "/təʊld/", "/təʊld/", "4.5"],
+  ["think", "thought", "thought", "думать, мыслить, полагать", "/θɪŋk/", "/θɔːt/", "/θɔːt/", "4.6"],
+  ["throw", "threw", "thrown", "бросать, кидать, метать", "/θrəʊ/", "/θruː/", "/θrəʊn/", "3.3"],
+  ["understand", "understood", "understood", "понимать, осознавать, постигать", "/ˌʌndəˈstænd/", "/ˌʌndəˈstʊd/", "/ˌʌndəˈstʊd/", "6"],
+  ["wake", "woke", "woken", "будить, просыпаться, пробуждаться", "/weɪk/", "/wəʊk/", "/ˈwəʊkən/", "3.1"],
+  ["wear", "wore", "worn", "носить (одежду), изнашивать, одевать", "/weə/", "/wɔː/", "/wɔːn/", "3.1"],
+  ["weep", "wept", "wept", "плакать, рыдать, оплакивать", "/wiːp/", "/wept/", "/wept/", "4.1"],
+  ["will", "would", "—", "желать, намереваться, выражать будущее", "/wɪl/", "/wʊd/", "—", "6"],
+  ["win", "won", "won", "побеждать, выигрывать, завоевывать", "/wɪn/", "/wʌn/", "/wʌn/", "6"],
+  ["wind", "wound", "wound", "крутить, заводить, извиваться", "/waɪnd/", "/waʊnd/", "/waʊnd/", "4.3"],
+  ["write", "wrote", "written", "писать, записывать, сочинять", "/raɪt/", "/rəʊt/", "/ˈrɪtn/", "3.2"]
+];
+
+// Фразы поощрения
+const successPhrases = [
+  "Отлично!", "Супер!", "Здорово!", "Умница!", "Гениально!", "Так держать!", 
+  "Блестяще!", "Круто!", "Класс!", "Мощно!", "Восторг!", "Браво!", 
+  "Огонь!", "Идеально!", "Безупречно!", "Превосходно!", "Потрясающе!", 
+  "Великолепно!", "Мастер!", "Профи!", "Мудро!", "Талантливо!", "В точку!"
+];
+
+const popupMotivations = [
+  "Молодец! Продолжай! 🚀", 
+  "Отличный темп! ⚡", 
+  "Ты на коне! 🐎", 
+  "Превосходно! 🌟", 
+  "Машина! 🤖", 
+  "Так держать! 🎯",
+  "Невероятно! ✨",
+  "Высший пилотаж! ✈️",
+  "Только вперед! 🏃‍♂️",
+  "Ты можешь всё! 💪",
+  "Полный вперед! 🚢",
+  "Чистая магия! 🪄",
+  "Просто космос! 🌌",
+  "Успех близко! 🏆"
+];
+
+const retryMessages = [
+  "Ничего страшного! Запомни формы и повтори! 💪",
+  "Ошибки помогают учиться! Продолжай! 🌱",
+  "Почти! Зафиксируй этот глагол в памяти! ⭐",
+  "Не сдавайся! Следующий глагол покорится! 🚀",
+  "Каждая попытка делает тебя сильнее! 📈",
+  "Опыт складывается из повторения. Вперёд! 🧩",
+  "Ты учишься, а это главное! Давай дальше! ⚡",
+  "Маленькая пауза перед большим рывком! 🌠",
+  "Твой английский прокачивается прямо сейчас! 🧠",
+  "Споткнулся — вставай и продолжай! 🏆"
+];
+
+// Состояние
+let learnedSet = new Set(JSON.parse(localStorage.getItem('verbs_learned_set') || '[]'));
+let currentCardIndex = 0;
+let cardFlipped = false;
+let currentStreak = 0;
+
+// Инициализация при загрузке
+window.addEventListener('DOMContentLoaded', () => {
+  renderMainTable();
+  renderSkillboxTable();
+  renderGroupTables();
+  updateStats();
+  updateCardUI();
+
+  const savedName = localStorage.getItem('verbs_user_name');
+  if (savedName) {
+    document.getElementById('userNameInput').value = savedName;
+  }
+});
+
+// Переключение вкладок
+function switchTab(tabId) {
+  const tabs = ['list', 'skillbox', 'groups', 'cards', 'test'];
+  tabs.forEach(t => {
+    document.getElementById('panel' + capitalize(t)).classList.add('hidden');
+    document.getElementById('tab' + capitalize(t) + 'Btn').className = 'btn-soft';
+  });
+
+  document.getElementById('panel' + capitalize(tabId)).classList.remove('hidden');
+  document.getElementById('tab' + capitalize(tabId) + 'Btn').className = 'btn-primary';
+
+  if (tabId === 'cards') updateCardUI();
+  if (tabId === 'test') resetTest();
+}
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+// Озвучивание
+function getGoogleTtsUrl(text) {
+  return 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en-GB&q=' + encodeURIComponent(text);
+}
+
+function speakWord(text) {
+  if (!text || text === '—') return;
+
+  const parts = String(text).split('/').map(s => s.trim()).filter(Boolean);
+
+  if ('speechSynthesis' in window) {
+    try { window.speechSynthesis.cancel(); } catch(e){}
+    let idx = 0;
+    const playNext = () => {
+      if (idx >= parts.length) return;
+      const u = new SpeechSynthesisUtterance(parts[idx++]);
+      u.lang = 'en-GB';
+      u.rate = 0.95;
+      u.pitch = 1;
+      u.onend = playNext;
+      window.speechSynthesis.speak(u);
+    };
+    playNext();
+    return;
+  }
+
+  const audio = document.getElementById('ttsAudio');
+  if (!audio) return;
+  let audioIdx = 0;
+  audio.onended = () => {
+    audioIdx++;
+    if (audioIdx < parts.length) {
+      audio.src = getGoogleTtsUrl(parts[audioIdx]);
+      audio.play().catch(()=>{});
+    }
+  };
+  audio.src = getGoogleTtsUrl(parts[0]);
+  audio.play().catch(()=>{});
+}
+
+function speakAllThree(v1, v2, v3) {
+  speakWord(`${v1}, ${v2}, ${v3}`);
+}
+
+// Рендер основной таблицы в полном соответствии со скриншотом
+function renderMainTable() {
+  const tbody = document.getElementById('verbsTableBody');
+  tbody.innerHTML = ALL_VERBS.map(v => {
+    const isLearned = learnedSet.has(v[0]);
+    return `
+      <tr id="verb-row-${v[0].toLowerCase()}">
+        <td style="text-align: center; width: 36px;">
+          <button class="check-btn ${isLearned ? 'on' : ''}" onclick="toggleLearned('${v[0]}')">${isLearned ? '✓' : ''}</button>
+        </td>
+        <td>
+          <div class="tts-cell">
+            <div class="tts-cell-info">
+              <span class="verb-word">${v[0]}</span>
+              <span class="verb-ipa">${v[4]}</span>
+            </div>
+            <button class="tts-btn" onclick="speakWord('${v[0]}')" title="Озвучить V1">🔊</button>
+          </div>
+        </td>
+        <td>
+          <div class="tts-cell">
+            <div class="tts-cell-info">
+              <span class="verb-word">${v[1]}</span>
+              <span class="verb-ipa">${v[5]}</span>
+            </div>
+            <button class="tts-btn" onclick="speakWord('${v[1]}')" title="Озвучить V2">🔊</button>
+          </div>
+        </td>
+        <td>
+          <div class="tts-cell">
+            <div class="tts-cell-info">
+              <span class="verb-word">${v[2]}</span>
+              <span class="verb-ipa">${v[6]}</span>
+            </div>
+            <button class="tts-btn" onclick="speakWord('${v[2]}')" title="Озвучить V3">🔊</button>
+          </div>
+        </td>
+        <td class="verb-translation">${v[3]}</td>
+        <td style="text-align: center; width: 120px;">
+          <button class="tts-btn tts-btn-all" onclick="speakAllThree('${v[0]}', '${v[1]}', '${v[2]}')" title="Все 3 формы">🔊 1-2-3</button>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+// Рендер таблицы Топ-140
+function renderSkillboxTable() {
+  const tbody = document.getElementById('skillboxTableBody');
+  if (!tbody) return;
+  tbody.innerHTML = ALL_VERBS.map(v => `
+    <tr>
+      <td><b>${v[0]}</b> <span class="verb-ipa">${v[4]}</span></td>
+      <td><b>${v[1]}</b> <span class="verb-ipa">${v[5]}</span></td>
+      <td><b>${v[2]}</b> <span class="verb-ipa">${v[6]}</span></td>
+      <td>${v[3]}</td>
+      <td style="text-align: center;">
+        <button class="tts-btn tts-btn-all" onclick="speakAllThree('${v[0]}', '${v[1]}', '${v[2]}')" title="Озвучить все 3 формы">🔊 1-2-3</button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+// Рендер таблиц по группам
+function renderGroupTables() {
+  const mapGroup = {
+    '1': 'group1Body',
+    '2': 'group2Body',
+    '3.1': 'group3_1Body',
+    '3.2': 'group3_2Body',
+    '3.3': 'group3_3Body',
+    '3.4': 'group3_4Body',
+    '4.1': 'group4_1Body',
+    '4.2': 'group4_2Body',
+    '4.3': 'group4_3Body',
+    '4.4': 'group4_4Body',
+    '4.5': 'group4_5Body',
+    '4.6': 'group4_6Body',
+    '5': 'group5Body',
+    '6': 'group6Body'
+  };
+
+  for (const [grp, tbodyId] of Object.entries(mapGroup)) {
+    const el = document.getElementById(tbodyId);
+    if (!el) continue;
+    const groupVerbs = ALL_VERBS.filter(v => v[7] === grp);
+    el.innerHTML = groupVerbs.map(v => `
+      <tr>
+        <td><b>${v[0]}</b> <span class="verb-ipa">${v[4]}</span></td>
+        <td><b>${v[1]}</b> <span class="verb-ipa">${v[5]}</span></td>
+        <td><b>${v[2]}</b> <span class="verb-ipa">${v[6]}</span></td>
+        <td>${v[3]}</td>
+        <td style="text-align:center;">
+          <button class="tts-btn tts-btn-all" onclick="speakAllThree('${v[0]}', '${v[1]}', '${v[2]}')" title="Озвучить все три формы">🔊 1-2-3</button>
+        </td>
+      </tr>
+    `).join('');
+  }
+}
+
+// Поиск и автоматический скролл
+function filterAndScrollVerbs() {
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  if (!q) {
+    document.querySelectorAll('#verbsTableBody tr').forEach(r => {
+      r.style.display = '';
+      r.classList.remove('highlight-row');
+    });
+    return;
+  }
+
+  let firstMatchRow = null;
+
+  ALL_VERBS.forEach(v => {
+    const row = document.getElementById('verb-row-' + v[0].toLowerCase());
+    if (!row) return;
+
+    const matches = v[0].toLowerCase().includes(q) ||
+                    v[1].toLowerCase().includes(q) ||
+                    v[2].toLowerCase().includes(q) ||
+                    v[3].toLowerCase().includes(q);
+
+    if (matches) {
+      row.style.display = '';
+      if (!firstMatchRow) firstMatchRow = row;
+    } else {
+      row.style.display = 'none';
+    }
+  });
+
+  if (firstMatchRow) {
+    firstMatchRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    firstMatchRow.classList.add('highlight-row');
+    setTimeout(() => {
+      firstMatchRow.classList.remove('highlight-row');
+    }, 2000);
+  }
+}
+
+function clearSearch() {
+  document.getElementById('searchInput').value = '';
+  filterAndScrollVerbs();
+}
+
+// Управление выученными
+function toggleLearned(verb) {
+  if (learnedSet.has(verb)) {
+    learnedSet.delete(verb);
+  } else {
+    learnedSet.add(verb);
+    showToast(`Глагол «${verb}» добавлен в выученные! ⭐`);
+  }
+  localStorage.setItem('verbs_learned_set', JSON.stringify([...learnedSet]));
+  renderMainTable();
+  updateStats();
+}
+
+function updateStats() {
+  document.getElementById('statTotal').textContent = ALL_VERBS.length;
+  document.getElementById('statLearned').textContent = learnedSet.size;
+  document.getElementById('statRemaining').textContent = ALL_VERBS.length - learnedSet.size;
+  document.getElementById('statStreak').textContent = `${currentStreak} 🔥`;
+}
+
+// Логика Карточек
+function updateCardUI() {
+  const v = ALL_VERBS[currentCardIndex];
+  if (!v) return;
+
+  const cardTag = document.getElementById('cardTag');
+  const cardMain = document.getElementById('cardMain');
+  const cardIpa = document.getElementById('cardIpa');
+  const cardSub = document.getElementById('cardSub');
+  const counter = document.getElementById('cardCounter');
+
+  if (!cardFlipped) {
+    cardTag.textContent = 'INFINITIVE (V1)';
+    cardMain.textContent = v[0];
+    cardIpa.textContent = v[4];
+    cardSub.textContent = 'Нажмите, чтобы увидеть формы V2, V3 и перевод';
+  } else {
+    cardTag.textContent = 'ФОРМЫ И ПЕРЕВОД';
+    cardMain.textContent = `${v[1]} • ${v[2]}`;
+    cardIpa.textContent = `${v[5]}  |  ${v[6]}`;
+    cardSub.textContent = `Значение: ${v[3]}`;
+  }
+
+  counter.textContent = `${currentCardIndex + 1} / ${ALL_VERBS.length}`;
+}
+
+function flipCard() {
+  cardFlipped = !cardFlipped;
+  updateCardUI();
+}
+
+function prevCard() {
+  currentCardIndex = (currentCardIndex - 1 + ALL_VERBS.length) % ALL_VERBS.length;
+  cardFlipped = false;
+  updateCardUI();
+}
+
+function nextCard() {
+  currentCardIndex = (currentCardIndex + 1) % ALL_VERBS.length;
+  cardFlipped = false;
+  updateCardUI();
+}
+
+function speakCard() {
+  const v = ALL_VERBS[currentCardIndex];
+  if (!v) return;
+  if (!cardFlipped) {
+    speakWord(v[0]);
+  } else {
+    speakAllThree(v[0], v[1], v[2]);
+  }
+}
+
+function markCardLearned() {
+  const v = ALL_VERBS[currentCardIndex];
+  if (v) {
+    learnedSet.add(v[0]);
+    localStorage.setItem('verbs_learned_set', JSON.stringify([...learnedSet]));
+    updateStats();
+    showToast(`Вы выучили: ${v[0]} — ${v[1]} — ${v[2]}! 🎉`);
+    nextCard();
+  }
+}
+
+// Тренажер
+let testQueue = [];
+let testIndex = 0;
+let testScore = 0;
+let currentTestType = 'quiz';
+let studentName = '';
+
+function showToast(text) {
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = text;
+  container.appendChild(toast);
+  setTimeout(() => {
+    if (toast.parentNode) toast.remove();
+  }, 2600);
+}
+
+function resetTest() {
+  exitTraining();
+}
+
+function startTraining() {
+  const nameInput = document.getElementById('userNameInput').value.trim();
+  studentName = nameInput || 'Ученик';
+  localStorage.setItem('verbs_user_name', studentName);
+
+  const scope = document.getElementById('testScopeSelect').value;
+  currentTestType = document.getElementById('testTypeSelect').value;
+
+  let pool = [...ALL_VERBS];
+  if (scope === 'top90') {
+    pool = ALL_VERBS.filter(v => v[7] !== '6' && v[7] !== '');
+  } else if (scope === 'unlearned') {
+    pool = ALL_VERBS.filter(v => !learnedSet.has(v[0]));
+    if (pool.length === 0) {
+      alert('Поздравляем! Вы уже выучили все глаголы! Переключаем на весь список.');
+      pool = [...ALL_VERBS];
+    }
+  }
+
+  testQueue = pool.sort(() => Math.random() - 0.5).slice(0, 20);
+  testIndex = 0;
+  testScore = 0;
+  currentStreak = 0;
+  updateStats();
+
+  document.getElementById('testSetupScreen').classList.add('hidden');
+  document.getElementById('testActiveScreen').classList.remove('hidden');
+
+  renderTestQuestion();
+}
+
+function exitTraining() {
+  document.getElementById('testActiveScreen').classList.add('hidden');
+  document.getElementById('testSetupScreen').classList.remove('hidden');
+}
+
+function renderTestQuestion() {
+  const v = testQueue[testIndex];
+  if (!v) return;
+
+  document.getElementById('testProgressInfo').textContent = `Вопрос ${testIndex + 1} из ${testQueue.length}`;
+  document.getElementById('testScoreInfo').textContent = `Счет: ${testScore}`;
+
+  const promptEl = document.getElementById('testPrompt');
+  const hintEl = document.getElementById('testHint');
+  const quizBox = document.getElementById('testQuizOptions');
+  const inputEl = document.getElementById('testTextInput');
+  const checkBtn = document.getElementById('testCheckBtn');
+  const nextBtn = document.getElementById('testNextBtn');
+  const feedbackEl = document.getElementById('feedbackBox');
+
+  feedbackEl.className = 'feedback-box';
+  feedbackEl.innerHTML = '';
+  checkBtn.classList.remove('hidden');
+  nextBtn.classList.add('hidden');
+  inputEl.classList.remove('anim-error', 'anim-success');
+
+  if (currentTestType === 'quiz') {
+    inputEl.classList.add('hidden');
+    checkBtn.classList.add('hidden');
+    quizBox.classList.remove('hidden');
+
+    promptEl.textContent = v[0];
+    hintEl.textContent = `Транскрипция: ${v[4]} | Выберите правильные формы (V2, V3) и перевод:`;
+
+    const correctAns = `${v[1]} • ${v[2]} (${v[3]})`;
+    const options = [correctAns];
+
+    while (options.length < 4) {
+      const randV = ALL_VERBS[Math.floor(Math.random() * ALL_VERBS.length)];
+      const candidate = `${randV[1]} • ${randV[2]} (${randV[3]})`;
+      if (!options.includes(candidate)) {
+        options.push(candidate);
+      }
+    }
+    options.sort(() => Math.random() - 0.5);
+
+    quizBox.innerHTML = options.map(opt => `
+      <button class="test-opt" onclick="checkQuizAnswer(this, '${escapeAttr(opt)}', '${escapeAttr(correctAns)}')">${escapeHtml(opt)}</button>
+    `).join('');
+
+  } else if (currentTestType === 'inputForms') {
+    quizBox.classList.add('hidden');
+    inputEl.classList.remove('hidden');
+    inputEl.value = '';
+    inputEl.placeholder = 'например: broke, broken';
+    inputEl.focus();
+
+    promptEl.textContent = `${v[0]} — ${v[3]}`;
+    hintEl.textContent = 'Напишите форму V2 (Past Simple) и V3 (Past Participle) через запятую или пробел:';
+
+  } else if (currentTestType === 'inputRu') {
+    quizBox.classList.add('hidden');
+    inputEl.classList.remove('hidden');
+    inputEl.value = '';
+    inputEl.placeholder = 'например: ломать';
+    inputEl.focus();
+
+    promptEl.textContent = `${v[0]} (V2: ${v[1]}, V3: ${v[2]})`;
+    hintEl.textContent = 'Напишите перевод глагола на русский язык:';
+  }
+}
+
+function checkQuizAnswer(btnEl, selectedAns, correctAns) {
+  const isCorrect = (selectedAns === correctAns);
+  const v = testQueue[testIndex];
+
+  document.querySelectorAll('#testQuizOptions button').forEach(b => {
+    b.disabled = true;
+    if (b.textContent === correctAns) b.classList.add('correct');
+  });
+
+  if (isCorrect) {
+    btnEl.classList.add('correct');
+    handleAnswerSuccess();
+  } else {
+    btnEl.classList.add('wrong');
+    handleAnswerFailure(`${v[1]} • ${v[2]} (${v[3]})`);
+  }
+
+  document.getElementById('testNextBtn').classList.remove('hidden');
+}
+
+function submitTestInput() {
+  const inputEl = document.getElementById('testTextInput');
+  const ans = inputEl.value.trim().toLowerCase();
+  const v = testQueue[testIndex];
+  if (!ans) return;
+
+  let isCorrect = false;
+  let correctDisplay = '';
+
+  if (currentTestType === 'inputForms') {
+    const v2 = v[1].toLowerCase().replace('/', ' ');
+    const v3 = v[2].toLowerCase().replace('/', ' ');
+    correctDisplay = `${v[1]}, ${v[2]}`;
+
+    const cleanedUser = ans.replace(/[,;]/g, ' ').replace(/\s+/g, ' ');
+    const parts = cleanedUser.split(' ');
+    
+    if (parts.length >= 2) {
+      const userV2 = parts[0];
+      const userV3 = parts[1];
+      if ((v2.includes(userV2) || userV2 === v2) && (v3.includes(userV3) || userV3 === v3)) {
+        isCorrect = true;
+      }
+    }
+  } else if (currentTestType === 'inputRu') {
+    correctDisplay = v[3];
+    const ruTranslations = v[3].toLowerCase().split(',').map(s => s.trim());
+    isCorrect = ruTranslations.some(t => t.includes(ans) || ans.includes(t));
+  }
+
+  if (isCorrect) {
+    inputEl.classList.add('anim-success');
+    handleAnswerSuccess();
+  } else {
+    inputEl.classList.add('anim-error');
+    handleAnswerFailure(correctDisplay);
+  }
+
+  document.getElementById('testCheckBtn').classList.add('hidden');
+  document.getElementById('testNextBtn').classList.remove('hidden');
+  document.getElementById('testNextBtn').focus();
+}
+
+function handleAnswerSuccess() {
+  testScore++;
+  currentStreak++;
+  updateStats();
+
+  const v = testQueue[testIndex];
+  learnedSet.add(v[0]);
+  localStorage.setItem('verbs_learned_set', JSON.stringify([...learnedSet]));
+
+  const phrase = successPhrases[Math.floor(Math.random() * successPhrases.length)];
+  const feedbackEl = document.getElementById('feedbackBox');
+  feedbackEl.className = 'feedback-box success show anim-bounce';
+  feedbackEl.innerHTML = `
+    <div style="font-size:1.4rem; font-weight:800;">✅ Абсолютно верно!</div>
+    <div style="font-size:1rem; margin-top:4px;">${studentName}, ${phrase}</div>
+  `;
+
+  if (currentStreak >= 2 || Math.random() < 0.4) {
+    const pop = popupMotivations[Math.floor(Math.random() * popupMotivations.length)];
+    const streakTxt = currentStreak >= 2 ? `Серия: ${currentStreak}! 🔥 ` : '';
+    showToast(`${streakTxt}${pop}`);
+  }
+}
+
+function handleAnswerFailure(correctStr) {
+  currentStreak = 0;
+  updateStats();
+
+  const feedbackEl = document.getElementById('feedbackBox');
+  feedbackEl.className = 'feedback-box error show anim-bounce';
+  feedbackEl.innerHTML = `
+    <div style="font-size:1.4rem; font-weight:800;">❌ Не совсем так.</div>
+    <div style="font-size:1rem; margin-top:4px;">Правильный ответ: <b>${correctStr}</b></div>
+  `;
+
+  const retryText = retryMessages[Math.floor(Math.random() * retryMessages.length)];
+  showToast(retryText);
+}
+
+function nextTestQuestion() {
+  testIndex++;
+  if (testIndex >= testQueue.length) {
+    const percent = Math.round((testScore / testQueue.length) * 100);
+    let title = 'Отличная работа!';
+    if (percent === 100) title = 'Идеальный результат! 🏆';
+    else if (percent < 60) title = 'Хорошая тренировка, повторим ещё раз? 💪';
+
+    alert(`${title}\n${studentName}, вы набрали ${testScore} из ${testQueue.length} (${percent}%).`);
+    exitTraining();
+  } else {
+    renderTestQuestion();
+  }
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+function escapeAttr(s) {
+  return String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+</script>
+</body>
+</html>
