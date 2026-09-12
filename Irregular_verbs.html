@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="152 неправильных глагола английского языка: интерактивный справочник с транскрипцией и озвучкой, карточки, группы и тренажёр с правдоподобными вариантами ответов и автоозвучиванием 3 форм. Работает одним HTML-файлом офлайн.">
 <title>Неправильные глаголы английского языка (UK) | 150+ глаголов, Справочник и Тренажер</title>
-<style>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=wmq8zzVNfCUm8TNQo3z2q4eIOuRlWKfj0v-68yViErO8CEJVulc0vKCUCKo7iIz6UKKQuHlPpgmMb4H_rZwblJ_OrV7tMfL8lB9eXcEYqeaxiX6Hi-w9H4Dy1Mob0xVYCUmIGRC63BvjorS25p5c4DKv9K1JguZMyiNfnlmzRqs" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9wcmV2aWV3LWNoYXQtNWFjZDA5ZWMtM2RiNy00OTJiLWE2YzAtNWNmMzY3NGU1MDliLnNwYWNlLXouYWkvZG93bmxvYWRzL0lycmVndWxhcl92ZXJicy5odG1s"/><style>
 :root {
   --p: #4f67d8;
   --p-hover: #3b50ba;
@@ -33,6 +34,9 @@ body {
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -70,6 +74,8 @@ main {
   margin: -40px auto 0;
   padding: 0 14px 40px;
   position: relative;
+  flex: 1 0 auto;
+  width: 100%;
 }
 
 /* Статистика */
@@ -463,7 +469,8 @@ tr.highlight-row td {
 }
 
 .test-opt {
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
   padding: 14px 16px;
   border: 2px solid var(--bd);
@@ -489,6 +496,115 @@ tr.highlight-row td {
   background: #fee2e2;
   color: var(--error);
   border-color: var(--error);
+}
+
+/* Цифра-подсказка клавиши у варианта ответа */
+.opt-key {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  margin-right: 12px;
+  border: 1px solid var(--bd);
+  border-radius: 7px;
+  background: #f8fafc;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.opt-text { flex: 1; }
+
+.test-opt.correct .opt-key {
+  border-color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+}
+
+.test-opt.wrong .opt-key {
+  border-color: var(--error);
+  background: #fee2e2;
+  color: var(--error);
+}
+
+/* Индикатор и анимация озвучки правильного (зелёного) варианта */
+.opt-speak {
+  flex-shrink: 0;
+  margin-left: 10px;
+  font-size: 1.05rem;
+  line-height: 1;
+  opacity: 0.95;
+}
+.test-opt.correct.speaking {
+  animation: opt-speak-pulse 1.15s ease-in-out infinite;
+}
+@keyframes opt-speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 169, 106, 0.45); }
+  50% { box-shadow: 0 0 0 9px rgba(37, 169, 106, 0); }
+}
+.test-opt.correct.speaking .opt-speak {
+  animation: opt-speak-bounce 0.85s ease-in-out infinite;
+}
+@keyframes opt-speak-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.22); }
+}
+
+/* Тумблер автоозвучивания в настройках тренажёра */
+.tts-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 2px solid var(--bd);
+  border-radius: 12px;
+  background: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
+}
+.tts-toggle:hover { border-color: var(--p); background: var(--p-soft); }
+.tts-toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--ok);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Ссылки скачивания — видны только когда файл открыт с сервера (Next.js).
+   В автономном режиме (локальный файл, GitHub Pages) кнопки скрыты. */
+.dl-links {
+  display: none;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+body.has-server-tts .dl-links { display: flex; }
+.dl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border: 2px solid var(--bd);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.dl-btn:hover {
+  border-color: var(--ok);
+  background: var(--ok-bg);
+  color: var(--ok);
 }
 
 .test-input {
@@ -639,11 +755,53 @@ footer {
   color: var(--muted);
   font-size: 0.85rem;
   padding: 20px 16px 40px;
+  padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
+}
+
+/* Экран результатов тренажёра */
+.result-score {
+  background: var(--p-soft);
+  border: 1px solid #c7d2fe;
+  border-radius: 16px;
+  padding: 22px;
+  margin: 18px 0;
+}
+
+.result-percent {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--p);
+  line-height: 1.15;
+}
+
+.mistakes-list {
+  text-align: left;
+  margin: 0;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: #c7d2fe transparent;
+}
+.mistakes-list::-webkit-scrollbar { width: 8px; }
+.mistakes-list::-webkit-scrollbar-thumb { background: #c7d2fe; border-radius: 4px; }
+.mistakes-list::-webkit-scrollbar-track { background: transparent; }
+
+.mistake-item {
+  padding: 10px 14px;
+  border: 1px solid var(--bd);
+  border-left: 4px solid var(--error);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  background: #fff;
+  font-size: 0.95rem;
+  text-align: left;
 }
 
 @media(max-width: 768px) {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  th:nth-child(5), td:nth-child(5) { display: none; }
+  /* На мобильных скрываем колонку озвучки — перевод важнее */
+  th:last-child, td:last-child { display: none; }
 }
 </style>
 </head>
@@ -653,10 +811,14 @@ footer {
 <audio id="ttsAudio" preload="none"></audio>
 
 <header>
-  <h1>Об авторе</h2>
-<p><b>Материалы подготовил: Бабков Иван Леонидович</b></p>
-<p>✉ <a href="mailto:i@ibabkow.ru">i@ibabkow.ru</a></p>
-<p style="font-size:0.9rem;margin-top:20px;">Все данные хранятся локально в вашем браузере. Никакая информация о прогрессе не отправляется на серверы.</p>
+  <h1>Неправильные глаголы английского языка</h1>
+  <p>152 глагола · справочник, карточки и тренажёр · британское произношение</p>
+  <p style="margin-top:14px;">Материалы подготовил: <b>Бабков Иван Леонидович</b> · ✉ <a href="mailto:i@ibabkow.ru">i@ibabkow.ru</a></p>
+  <p style="font-size:0.9rem;margin-top:20px;">Все данные хранятся локально в вашем браузере. Никакая информация о прогрессе не отправляется на серверы.</p>
+  <div class="dl-links">
+    <a class="dl-btn" href="/downloads/Irregular_verbs.html" download="Irregular_verbs.html" title="Весь тренажёр в одном HTML-файле: сохраните и открывайте офлайн в любом браузере">⬇ Скачать одним файлом</a>
+    <a class="dl-btn" href="/downloads/irregular-verbs-trainer-github.zip" download="irregular-verbs-trainer-github.zip" title="Готовый пакет для публикации на GitHub: index.html, README.md, LICENSE, .gitignore">⬇ Пакет для GitHub (ZIP)</a>
+  </div>
 </header>
 
 <main>
@@ -684,7 +846,7 @@ footer {
   <section class="nav-panel">
     <div class="tab-buttons">
       <button id="tabListBtn" class="btn-primary" onclick="switchTab('list')">📋 Все глаголы (150+)</button>
-      <button id="tabSkillboxBtn" class="btn-soft" onclick="switchTab('skillbox')">📘 Топ-140</button>
+      <button id="tabSkillboxBtn" class="btn-soft" onclick="switchTab('skillbox')">📘 Справочник</button>
       <button id="tabGroupsBtn" class="btn-soft" onclick="switchTab('groups')">💡 90+ по группам</button>
       <button id="tabCardsBtn" class="btn-soft" onclick="switchTab('cards')">🃏 Карточки</button>
       <button id="tabTestBtn" class="btn-soft" onclick="switchTab('test')">📝 Тренажер</button>
@@ -718,7 +880,7 @@ footer {
 
   <!-- Вкладка 2: Топ-140 -->
   <section id="panelSkillbox" class="panel hidden">
-    <h2 style="margin-top:0; color:var(--p2);">Irregular verbs — неправильные глаголы английского языка (Топ-140)</h2>
+    <h2 style="margin-top:0; color:var(--p2);">Irregular verbs — неправильные глаголы английского языка</h2>
     <p style="color:var(--muted); margin-bottom: 20px;">
       Неправильные глаголы английского языка — это глаголы, которые не спрягаются по классическим правилам (без добавления стандартного окончания <i>-ed</i>). Ниже представлена подробная классификация, практические примеры и интерактивная таблица.
     </p>
@@ -744,7 +906,7 @@ footer {
 
     <!-- 1. Топ-140 неправильных глаголов: таблица -->
     <div id="sb-table" class="article-section">
-      <h3 class="article-title">📊 Топ-140 неправильных глаголов: таблица</h3>
+      <h3 class="article-title">📊 Все 152 неправильных глагола: таблица</h3>
       <p style="color:var(--muted);">
         В таблице собраны ключевые неправильные глаголы английского языка с транскрипцией, расширенным переводом и произношением при клике на 🔊.
       </p>
@@ -1161,6 +1323,7 @@ footer {
       <div id="testSetupScreen">
         <h2 style="margin-top:0; color:var(--p);">Тренажер проверки знаний</h2>
         <p style="color:var(--muted);">Настройте параметры проверки и приступайте к практике:</p>
+        <p style="color:var(--muted); font-size:0.88rem;">В режиме «Выбор из 4 вариантов» неверные варианты — это правдоподобные ошибочные формы глагола, как в реальных ошибках учеников: <i>goed</i>, <i>gone • went</i>, <i>cut • cutted</i>. Варианты можно выбирать клавишами 1–4. При верном ответе автоматически звучат все 3 формы глагола, а нажатие на зелёный вариант повторяет озвучивание.</p>
         
         <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:20px 0;">
           <input type="text" id="userNameInput" placeholder="Ваше имя..." class="search-input" style="max-width:240px;">
@@ -1174,15 +1337,28 @@ footer {
             <option value="inputForms">Ввод V2 и V3 (через запятую)</option>
             <option value="inputRu">Ввод перевода на русском</option>
           </select>
+          <select id="testCountSelect" class="search-input" style="max-width:240px;" aria-label="Количество вопросов">
+            <option value="10">10 вопросов</option>
+            <option value="20" selected>20 вопросов</option>
+            <option value="40">40 вопросов</option>
+            <option value="all">Все глаголы сразу</option>
+          </select>
+          <label class="tts-toggle" title="В режиме «Выбор из 4 вариантов» при верном ответе автоматически произносятся все 3 формы глагола (V1, V2, V3)">
+            <input type="checkbox" id="autoSpeakToggle" checked aria-label="Автоозвучивание 3 форм глагола при верном ответе" onchange="localStorage.setItem('verbs_autospeak', this.checked ? '1' : '0')">
+            🔊 Автоозвучивание 3 форм
+          </label>
         </div>
         <button class="btn-primary" style="font-size:1.15rem; padding:12px 32px;" onclick="startTraining()">▶ Начать тренировку</button>
       </div>
 
       <div id="testActiveScreen" class="hidden">
-        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--bd); padding-bottom:10px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--bd); padding-bottom:10px; gap:8px; flex-wrap:wrap;">
           <button class="btn-soft" onclick="exitTraining()">⬅ В меню</button>
           <span style="font-weight:700; color:var(--muted);" id="testProgressInfo">Вопрос 1 из 20</span>
           <span style="font-weight:800; color:var(--ok);" id="testScoreInfo">Счет: 0</span>
+        </div>
+        <div style="height:6px; background:var(--bd); border-radius:3px; margin:12px 0 0; overflow:hidden;" role="progressbar" aria-label="Прогресс тренировки">
+          <div id="testProgressBar" style="height:100%; width:0%; background:linear-gradient(90deg, var(--ok), #4ade80); transition:width 0.3s ease;"></div>
         </div>
 
         <div id="testPrompt" style="font-size:2.3rem; font-weight:800; color:var(--p); margin:25px 0 10px;">—</div>
@@ -1200,6 +1376,24 @@ footer {
         </div>
 
         <div id="feedbackBox" class="feedback-box"></div>
+      </div>
+
+      <!-- Экран результатов -->
+      <div id="testResultsScreen" class="hidden">
+        <h2 id="resultTitle" style="margin-top:0; color:var(--p);">🎉 Тренировка завершена!</h2>
+        <p id="resultGreeting" style="color:var(--muted);">Ваш результат:</p>
+        <div class="result-score">
+          <div class="result-percent" id="resultPercent">0%</div>
+          <div id="resultDetail" style="font-weight:700; color:var(--text);"></div>
+        </div>
+        <div id="resultMistakesWrap" class="hidden">
+          <h3 style="text-align:left; color:var(--error); margin:16px 0 8px; font-size:1.05rem;">🔍 Разбор ошибок — повторите эти глаголы:</h3>
+          <div id="resultMistakes" class="mistakes-list"></div>
+        </div>
+        <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:18px;">
+          <button class="btn-primary" onclick="startTraining()">🔄 Тренироваться ещё</button>
+          <button class="btn-soft" onclick="exitTraining()">⬅ В меню</button>
+        </div>
       </div>
     </div>
   </section>
@@ -1421,10 +1615,17 @@ window.addEventListener('DOMContentLoaded', () => {
   renderGroupTables();
   updateStats();
   updateCardUI();
+  detectServerTTS();
 
   const savedName = localStorage.getItem('verbs_user_name');
   if (savedName) {
     document.getElementById('userNameInput').value = savedName;
+  }
+
+  const savedAutoSpeak = localStorage.getItem('verbs_autospeak');
+  if (savedAutoSpeak !== null) {
+    const autoSpeakEl = document.getElementById('autoSpeakToggle');
+    if (autoSpeakEl) autoSpeakEl.checked = savedAutoSpeak !== '0';
   }
 });
 
@@ -1439,6 +1640,7 @@ function switchTab(tabId) {
   document.getElementById('panel' + capitalize(tabId)).classList.remove('hidden');
   document.getElementById('tab' + capitalize(tabId) + 'Btn').className = 'btn-primary';
 
+  stopSpeaking();
   if (tabId === 'cards') updateCardUI();
   if (tabId === 'test') resetTest();
 }
@@ -1491,6 +1693,122 @@ function speakAllThree(v1, v2, v3) {
   speakWord(`${v1}, ${v2}, ${v3}`);
 }
 
+// --- Озвучивание 3 форм глагола в тренажёре ---
+// Основной источник — серверный TTS (/api/tts на базе z-ai-web-dev-sdk),
+// резерв — встроенный синтезатор речи браузера (speechSynthesis).
+let speakToken = 0;
+let speakAudioEl = null;
+
+function stopSpeaking() {
+  speakToken++;
+  try { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); } catch (e) {}
+  if (speakAudioEl) {
+    speakAudioEl.onended = null;
+    speakAudioEl.onerror = null;
+    speakAudioEl.pause();
+    speakAudioEl = null;
+  }
+  document.querySelectorAll('.test-opt.correct.speaking').forEach(b => b.classList.remove('speaking'));
+}
+
+// Для форм с вариантами (burn/burned, was/were) в озвучку берём первый вариант
+function firstForm(form) {
+  return String(form || '').split('/')[0].trim();
+}
+
+function markQuizSpeaking(on) {
+  const btn = document.querySelector('#testQuizOptions .test-opt.correct');
+  if (btn) btn.classList.toggle('speaking', on);
+}
+
+// Резерв: встроенный синтезатор браузера — формы произносятся по очереди
+function speakFormsFallback(words, token) {
+  if (!('speechSynthesis' in window)) return;
+  let idx = 0;
+  const playNext = () => {
+    if (token !== speakToken || idx >= words.length) {
+      markQuizSpeaking(false);
+      return;
+    }
+    const u = new SpeechSynthesisUtterance(words[idx++]);
+    u.lang = 'en-GB';
+    u.rate = 0.9;
+    u.pitch = 1;
+    u.onend = playNext;
+    u.onerror = () => markQuizSpeaking(false);
+    window.speechSynthesis.speak(u);
+  };
+  playNext();
+}
+
+// Озвучивание всех 3 форм глагола: «go — went — gone»
+function speakVerbForms(v1, v2, v3) {
+  const words = [firstForm(v1), firstForm(v2), firstForm(v3)].filter(Boolean);
+  if (words.length < 3) return;
+
+  stopSpeaking();
+  const token = speakToken;
+  markQuizSpeaking(true);
+
+  // Автономный режим (файл открыт локально или сервер без /api/tts) —
+  // сразу используем встроенный синтезатор речи браузера
+  if (location.protocol === 'file:' || serverTtsAvailable === false) {
+    speakFormsFallback(words, token);
+    return;
+  }
+
+  const text = words.join(', ');
+  const url = '/api/tts?text=' + encodeURIComponent(text) + '&voice=jam&speed=0.9';
+
+  fetch(url)
+    .then(r => {
+      if (!r.ok) throw new Error('TTS HTTP ' + r.status);
+      return r.blob();
+    })
+    .then(blob => {
+      if (token !== speakToken) return; // озвучивание уже отменено
+      const audio = new Audio(URL.createObjectURL(blob));
+      speakAudioEl = audio;
+      audio.onended = () => {
+        URL.revokeObjectURL(audio.src);
+        speakAudioEl = null;
+        if (token === speakToken) markQuizSpeaking(false);
+      };
+      audio.onerror = () => {
+        URL.revokeObjectURL(audio.src);
+        speakAudioEl = null;
+        if (token === speakToken) speakFormsFallback(words, token);
+      };
+      audio.play().catch(() => {
+        URL.revokeObjectURL(audio.src);
+        speakAudioEl = null;
+        if (token === speakToken) speakFormsFallback(words, token);
+      });
+    })
+    .catch(() => {
+      if (token === speakToken) speakFormsFallback(words, token);
+    });
+}
+
+function autoSpeakEnabled() {
+  const t = document.getElementById('autoSpeakToggle');
+  return t ? t.checked : localStorage.getItem('verbs_autospeak') !== '0';
+}
+
+// Определяем окружение: доступен ли серверный TTS (когда файл открыт с Next.js).
+// В автономном режиме (локальный файл, GitHub Pages) озвучка идёт через speechSynthesis.
+let serverTtsAvailable = null; // null — проверка ещё не завершена
+function detectServerTTS() {
+  if (location.protocol === 'file:') { serverTtsAvailable = false; return; }
+  fetch('/api/tts?text=')
+    .then(r => {
+      // 400 = эндпоинт существует, просто не передан текст
+      serverTtsAvailable = (r.status === 400 || r.ok);
+      if (serverTtsAvailable) document.body.classList.add('has-server-tts');
+    })
+    .catch(() => { serverTtsAvailable = false; });
+}
+
 // Рендер основной таблицы
 function renderMainTable() {
   const tbody = document.getElementById('verbsTableBody');
@@ -1499,7 +1817,7 @@ function renderMainTable() {
     return `
       <tr id="verb-row-${v[0].toLowerCase()}">
         <td style="text-align: center; width: 36px;">
-          <button class="check-btn ${isLearned ? 'on' : ''}" onclick="toggleLearned('${v[0]}')">${isLearned ? '✓' : ''}</button>
+          <button class="check-btn ${isLearned ? 'on' : ''}" onclick="toggleLearned('${v[0]}')" title="Отметить как выученное" aria-label="Отметить глагол ${v[0]} как выученное">${isLearned ? '✓' : ''}</button>
         </td>
         <td>
           <div class="tts-cell">
@@ -1753,6 +2071,163 @@ let testIndex = 0;
 let testScore = 0;
 let currentTestType = 'quiz';
 let studentName = '';
+let sessionMistakes = [];     // глаголы с ошибками в текущей сессии
+let questionAnswered = false; // отвечен ли текущий вопрос
+let currentQuizOptions = [];  // варианты текущего вопроса (тест)
+
+// Честное перемешивание — алгоритм Фишера — Йетса
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// ===== Генерация правдоподобных неверных вариантов (дистракторов) =====
+// Неверные варианты построены на типичных ошибках учеников:
+//   1) «регуляризация» — окончание -ed по правилам (go → goed, cut → cutted);
+//   2) перестановка или дублирование форм (gone • went, took • took);
+//   3) инфинитив вместо изменённой формы (take • taken);
+//   4) формы похожего глагола (lie/lay, see/saw) — классические ловушки.
+
+// Глаголы, для которых «регулярная» форма не имеет смысла (модальные и be)
+const SPECIAL_NO_REG = new Set(['be', 'can', 'may', 'shall', 'will', 'must']);
+
+// Все допустимые записи одной формы: "burnt/burned" → ["burnt","burned"], "born(e)" → ["born","borne"]
+function formVariants(formStr) {
+  return String(formStr).toLowerCase().split('/').flatMap(part => {
+    const t = part.trim();
+    const m = t.match(/^(.+)\(e\)$/);
+    return m ? [m[1], m[1] + 'e'] : [t];
+  }).filter(Boolean);
+}
+
+// «Наивная» форма по правилам правильных глаголов (типичная ошибка ученика)
+function regularizedForm(v1) {
+  const w = v1.toLowerCase();
+  if (/[bcdfghjklmnpqrstvwxz]y$/.test(w) && w.length > 2) return w.slice(0, -1) + 'ied'; // fly → flied
+  if (w.endsWith('e')) return w.slice(0, -1) + 'ed';                                    // drive → drived
+  if (isSingleCvc(w)) return w + w.slice(-1) + 'ed';                                    // cut → cutted
+  return w + 'ed';                                                                       // want → wanted
+}
+
+// Короткий глагол вида «согласный-гласный-согласный» (удвоение согласной)
+function isSingleCvc(w) {
+  if (w.length < 3) return false;
+  return /^[bcdfghjklmnpqrstvwxz][aeiou][bcdfgklmnprst]$/.test(w.slice(-3));
+}
+
+// Введённая форма совпадает с эталоном (точно или «почти» — по вхождению)
+function matchesForm(user, validList) {
+  const u = String(user).toLowerCase().trim();
+  if (validList.includes(u)) return true;
+  return u.length >= 3 && validList.some(f => f.includes(u));
+}
+
+// Похожие по написанию/формам глаголы — для «обманчивых» вариантов
+function findSimilarVerbs(target, pool) {
+  const t = target[0].toLowerCase();
+  const tV2 = target[1].toLowerCase();
+  const tV3 = target[2].toLowerCase();
+  const scored = [];
+
+  for (const o of pool) {
+    const w = o[0].toLowerCase();
+    if (w === t) continue;
+    if (o[1].toLowerCase() === tV2 && o[2].toLowerCase() === tV3) continue; // тот же набор форм
+
+    let score = 0;
+    if (w.slice(0, 3) === t.slice(0, 3)) score += 3;
+    else if (w.slice(0, 2) === t.slice(0, 2)) score += 2;
+    if (Math.abs(w.length - t.length) <= 1) score += 1;
+    if (w.slice(-2) === t.slice(-2)) score += 1;
+    if (o[1].toLowerCase() === t || o[2].toLowerCase() === t) score += 4; // их V2/V3 — наш инфинитив
+    if (w === tV2 || w === tV3) score += 4;                              // их инфинитив — наша V2/V3 (lie → lay)
+    if (score >= 2) scored.push({ verb: o, score });
+  }
+
+  return scored
+    .sort(() => Math.random() - 0.5)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
+    .map(x => x.verb);
+}
+
+// Строим 4 варианта ответа: 1 правильный + 3 правдоподобных неверных
+function buildQuizOptions(v) {
+  const [v1, v2, v3] = v;
+  const correctText = `${v2} • ${v3}`;
+  const validV2 = formVariants(v2);
+  const validV3 = formVariants(v3);
+
+  // Пара подходит как НЕВЕРНЫЙ вариант, если она не совпадает с правильным
+  // ответом и не является случайно корректной комбинацией форм
+  const isWrongPair = (a, b) => {
+    const na = String(a).toLowerCase().trim();
+    const nb = String(b).toLowerCase().trim();
+    if (validV2.includes(na) && validV3.includes(nb)) return false;
+    return `${na} • ${nb}` !== correctText.toLowerCase();
+  };
+
+  const reg = SPECIAL_NO_REG.has(v1.toLowerCase()) ? null : regularizedForm(v1);
+
+  // Кандидаты по категориям типичных ошибок
+  const byCategory = { reg: [], mix: [], inf: [], sim: [] };
+  if (reg) {
+    byCategory.reg.push(`${reg} • ${reg}`, `${reg} • ${v3}`, `${v2} • ${reg}`);
+  }
+  if (v2.toLowerCase() !== v3.toLowerCase()) {
+    byCategory.mix.push(`${v2} • ${v2}`, `${v3} • ${v2}`, `${v3} • ${v3}`);
+  }
+  byCategory.inf.push(`${v1} • ${v3}`, `${v2} • ${v1}`, `${v1} • ${v1}`);
+
+  const sims = findSimilarVerbs(v, ALL_VERBS);
+  for (const s of sims) {
+    byCategory.sim.push(`${s[1]} • ${v3}`, `${v2} • ${s[2]}`, `${s[1]} • ${s[2]}`);
+  }
+
+  // Отбираем по одному из каждой категории — для разнообразия ошибок,
+  // затем добираем из остатков и (в крайнем случае) случайными глаголами
+  const chosen = [];
+  const seen = new Set([correctText.toLowerCase()]);
+
+  const tryAdd = (pair) => {
+    if (!pair || chosen.length >= 3) return false;
+    const parts = pair.split(' • ');
+    if (parts.length !== 2) return false;
+    const key = pair.toLowerCase();
+    if (seen.has(key) || !isWrongPair(parts[0], parts[1])) return false;
+    seen.add(key);
+    chosen.push(pair);
+    return true;
+  };
+
+  for (const cat of ['reg', 'mix', 'inf', 'sim']) {
+    const candidates = shuffleArray(byCategory[cat]);
+    for (const cand of candidates) {
+      if (tryAdd(cand)) break;
+    }
+  }
+  if (chosen.length < 3) {
+    const rest = shuffleArray([...byCategory.reg, ...byCategory.mix, ...byCategory.inf, ...byCategory.sim]);
+    for (const cand of rest) {
+      if (chosen.length >= 3) break;
+      tryAdd(cand);
+    }
+  }
+  let guard = 0;
+  while (chosen.length < 3 && guard++ < 300) {
+    const r = ALL_VERBS[Math.floor(Math.random() * ALL_VERBS.length)];
+    tryAdd(`${r[1]} • ${r[2]}`);
+  }
+
+  return shuffleArray([
+    { text: correctText, correct: true },
+    ...chosen.map(c => ({ text: c, correct: false }))
+  ]);
+}
 
 function showToast(text) {
   const container = document.getElementById('toastContainer');
@@ -1775,6 +2250,7 @@ function startTraining() {
   localStorage.setItem('verbs_user_name', studentName);
 
   const scope = document.getElementById('testScopeSelect').value;
+  const countVal = document.getElementById('testCountSelect').value;
   currentTestType = document.getElementById('testTypeSelect').value;
 
   let pool = [...ALL_VERBS];
@@ -1783,25 +2259,30 @@ function startTraining() {
   } else if (scope === 'unlearned') {
     pool = ALL_VERBS.filter(v => !learnedSet.has(v[0]));
     if (pool.length === 0) {
-      alert('Поздравляем! Вы уже выучили все глаголы! Переключаем на весь список.');
+      showToast('Поздравляем! Вы уже выучили все глаголы! 🎉 Тренируемся по всему списку.');
       pool = [...ALL_VERBS];
     }
   }
 
-  testQueue = pool.sort(() => Math.random() - 0.5).slice(0, 20);
+  const targetCount = countVal === 'all' ? pool.length : Math.min(parseInt(countVal, 10), pool.length);
+  testQueue = shuffleArray(pool).slice(0, targetCount);
   testIndex = 0;
   testScore = 0;
   currentStreak = 0;
+  sessionMistakes = [];
   updateStats();
 
   document.getElementById('testSetupScreen').classList.add('hidden');
   document.getElementById('testActiveScreen').classList.remove('hidden');
+  document.getElementById('testResultsScreen').classList.add('hidden');
 
   renderTestQuestion();
 }
 
 function exitTraining() {
+  stopSpeaking();
   document.getElementById('testActiveScreen').classList.add('hidden');
+  document.getElementById('testResultsScreen').classList.add('hidden');
   document.getElementById('testSetupScreen').classList.remove('hidden');
 }
 
@@ -1809,8 +2290,11 @@ function renderTestQuestion() {
   const v = testQueue[testIndex];
   if (!v) return;
 
+  stopSpeaking();
+  questionAnswered = false;
   document.getElementById('testProgressInfo').textContent = `Вопрос ${testIndex + 1} из ${testQueue.length}`;
   document.getElementById('testScoreInfo').textContent = `Счет: ${testScore}`;
+  document.getElementById('testProgressBar').style.width = `${(testIndex / testQueue.length) * 100}%`;
 
   const promptEl = document.getElementById('testPrompt');
   const hintEl = document.getElementById('testHint');
@@ -1825,6 +2309,7 @@ function renderTestQuestion() {
   checkBtn.classList.remove('hidden');
   nextBtn.classList.add('hidden');
   inputEl.classList.remove('anim-error', 'anim-success');
+  inputEl.disabled = false;
 
   if (currentTestType === 'quiz') {
     inputEl.classList.add('hidden');
@@ -1832,26 +2317,33 @@ function renderTestQuestion() {
     quizBox.classList.remove('hidden');
 
     promptEl.textContent = v[0];
-    hintEl.textContent = `Транскрипция: ${v[4]} | Выберите правильные формы (V2, V3) и перевод:`;
+    hintEl.innerHTML = `${escapeHtml(v[4])} · <b>${escapeHtml(v[3])}</b><br>Выберите правильные формы: V2 (Past Simple) и V3 (Past Participle) · клавиши 1–4 · 🔊 при верном ответе звучат все 3 формы`;
 
-    const correctAns = `${v[1]} • ${v[2]} (${v[3]})`;
-    const options = [correctAns];
-
-    while (options.length < 4) {
-      const randV = ALL_VERBS[Math.floor(Math.random() * ALL_VERBS.length)];
-      const candidate = `${randV[1]} • ${randV[2]} (${randV[3]})`;
-      if (!options.includes(candidate)) {
-        options.push(candidate);
-      }
-    }
-    options.sort(() => Math.random() - 0.5);
-
-    quizBox.innerHTML = options.map(opt => `
-      <button class="test-opt" onclick="checkQuizAnswer(this, '${escapeAttr(opt)}', '${escapeAttr(correctAns)}')">${escapeHtml(opt)}</button>
+    currentQuizOptions = buildQuizOptions(v);
+    quizBox.innerHTML = currentQuizOptions.map((o, i) => `
+      <button class="test-opt" data-i="${i}"><span class="opt-key">${i + 1}</span><span class="opt-text">${escapeHtml(o.text)}</span></button>
     `).join('');
+    quizBox.querySelectorAll('button').forEach(b => {
+      b.addEventListener('click', () => {
+        const i = parseInt(b.dataset.i, 10);
+        if (questionAnswered) {
+          // Повторное нажатие на зелёный правильный вариант — повторное озвучивание 3 форм
+          if (currentQuizOptions[i] && currentQuizOptions[i].correct) {
+            const cv = testQueue[testIndex];
+            if (cv) speakVerbForms(cv[0], cv[1], cv[2]);
+          }
+          return;
+        }
+        checkQuizAnswer(i);
+      });
+    });
+
+    // На мобильных прокручиваем экран к вопросу, чтобы варианты были видны
+    document.getElementById('testActiveScreen').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   } else if (currentTestType === 'inputForms') {
     quizBox.classList.add('hidden');
+    quizBox.innerHTML = '';
     inputEl.classList.remove('hidden');
     inputEl.value = '';
     inputEl.placeholder = 'например: broke, broken';
@@ -1862,6 +2354,7 @@ function renderTestQuestion() {
 
   } else if (currentTestType === 'inputRu') {
     quizBox.classList.add('hidden');
+    quizBox.innerHTML = '';
     inputEl.classList.remove('hidden');
     inputEl.value = '';
     inputEl.placeholder = 'например: ломать';
@@ -1872,54 +2365,81 @@ function renderTestQuestion() {
   }
 }
 
-function checkQuizAnswer(btnEl, selectedAns, correctAns) {
-  const isCorrect = (selectedAns === correctAns);
-  const v = testQueue[testIndex];
+function checkQuizAnswer(idx) {
+  if (questionAnswered) return;
+  const opt = currentQuizOptions[idx];
+  if (!opt) return;
+  questionAnswered = true;
 
-  document.querySelectorAll('#testQuizOptions button').forEach(b => {
-    b.disabled = true;
-    if (b.textContent === correctAns) b.classList.add('correct');
+  const v = testQueue[testIndex];
+  const btns = document.querySelectorAll('#testQuizOptions button');
+
+  btns.forEach((b, i) => {
+    if (currentQuizOptions[i] && currentQuizOptions[i].correct) {
+      // Зелёный правильный вариант остаётся активным: повторное нажатие озвучивает все 3 формы
+      b.classList.add('correct');
+      b.title = 'Нажмите, чтобы прослушать все 3 формы глагола';
+      if (!b.querySelector('.opt-speak')) {
+        const sp = document.createElement('span');
+        sp.className = 'opt-speak';
+        sp.textContent = '🔊';
+        b.appendChild(sp);
+      }
+    } else {
+      b.disabled = true;
+    }
   });
 
-  if (isCorrect) {
-    btnEl.classList.add('correct');
+  if (opt.correct) {
     handleAnswerSuccess();
+    // Автоозвучивание 3 форм глагола при нажатии верного (зелёного) варианта
+    if (autoSpeakEnabled()) {
+      setTimeout(() => {
+        if (testQueue[testIndex] === v) speakVerbForms(v[0], v[1], v[2]);
+      }, 400);
+    }
   } else {
-    btnEl.classList.add('wrong');
-    handleAnswerFailure(`${v[1]} • ${v[2]} (${v[3]})`);
+    if (btns[idx]) btns[idx].classList.add('wrong');
+    handleAnswerFailure(`${v[1]} • ${v[2]}`);
   }
 
-  document.getElementById('testNextBtn').classList.remove('hidden');
+  const nextBtn = document.getElementById('testNextBtn');
+  nextBtn.classList.remove('hidden');
+  nextBtn.focus();
 }
 
 function submitTestInput() {
+  if (questionAnswered) return;
   const inputEl = document.getElementById('testTextInput');
   const ans = inputEl.value.trim().toLowerCase();
   const v = testQueue[testIndex];
   if (!ans) return;
+  questionAnswered = true;
 
   let isCorrect = false;
   let correctDisplay = '';
 
   if (currentTestType === 'inputForms') {
-    const v2 = v[1].toLowerCase().replace('/', ' ');
-    const v3 = v[2].toLowerCase().replace('/', ' ');
     correctDisplay = `${v[1]}, ${v[2]}`;
+    const validV2 = formVariants(v[1]);
+    const validV3 = formVariants(v[2]);
+    const tokens = ans.replace(/[,;]/g, ' ').replace(/\s+/g, ' ').trim().split(' ').filter(Boolean);
 
-    const cleanedUser = ans.replace(/[,;]/g, ' ').replace(/\s+/g, ' ');
-    const parts = cleanedUser.split(' ');
-    
-    if (parts.length >= 2) {
-      const userV2 = parts[0];
-      const userV3 = parts[1];
-      if ((v2.includes(userV2) || userV2 === v2) && (v3.includes(userV3) || userV3 === v3)) {
+    // Формы бывают из двух слов (was/were, been able) — пробуем разные разбиения
+    for (let k = 1; k < tokens.length; k++) {
+      const userV2 = tokens.slice(0, k).join(' ');
+      const userV3 = tokens.slice(k).join(' ');
+      if (matchesForm(userV2, validV2) && matchesForm(userV3, validV3)) {
         isCorrect = true;
+        break;
       }
     }
   } else if (currentTestType === 'inputRu') {
     correctDisplay = v[3];
-    const ruTranslations = v[3].toLowerCase().split(',').map(s => s.trim());
-    isCorrect = ruTranslations.some(t => t.includes(ans) || ans.includes(t));
+    if (ans.length >= 2) {
+      const ruTranslations = v[3].toLowerCase().split(',').map(s => s.trim()).filter(Boolean);
+      isCorrect = ruTranslations.some(t => t.includes(ans) || ans.includes(t));
+    }
   }
 
   if (isCorrect) {
@@ -1931,14 +2451,16 @@ function submitTestInput() {
   }
 
   document.getElementById('testCheckBtn').classList.add('hidden');
-  document.getElementById('testNextBtn').classList.remove('hidden');
-  document.getElementById('testNextBtn').focus();
+  const nextBtn = document.getElementById('testNextBtn');
+  nextBtn.classList.remove('hidden');
+  nextBtn.focus();
 }
 
 function handleAnswerSuccess() {
   testScore++;
   currentStreak++;
   updateStats();
+  document.getElementById('testScoreInfo').textContent = `Счет: ${testScore}`;
 
   const v = testQueue[testIndex];
   learnedSet.add(v[0]);
@@ -1963,11 +2485,17 @@ function handleAnswerFailure(correctStr) {
   currentStreak = 0;
   updateStats();
 
+  // Запоминаем глагол для разбора ошибок в конце тренировки
+  const v = testQueue[testIndex];
+  if (v && !sessionMistakes.some(m => m.v1 === v[0])) {
+    sessionMistakes.push({ v1: v[0], v2: v[1], v3: v[2], ru: v[3] });
+  }
+
   const feedbackEl = document.getElementById('feedbackBox');
   feedbackEl.className = 'feedback-box error show anim-bounce';
   feedbackEl.innerHTML = `
     <div style="font-size:1.4rem; font-weight:800;">❌ Не совсем так.</div>
-    <div style="font-size:1rem; margin-top:4px;">Правильный ответ: <b>${correctStr}</b></div>
+    <div style="font-size:1rem; margin-top:4px;">Правильный ответ: <b>${escapeHtml(correctStr)}</b></div>
   `;
 
   const retryText = retryMessages[Math.floor(Math.random() * retryMessages.length)];
@@ -1977,15 +2505,42 @@ function handleAnswerFailure(correctStr) {
 function nextTestQuestion() {
   testIndex++;
   if (testIndex >= testQueue.length) {
-    const percent = Math.round((testScore / testQueue.length) * 100);
-    let title = 'Отличная работа!';
-    if (percent === 100) title = 'Идеальный результат! 🏆';
-    else if (percent < 60) title = 'Хорошая тренировка, повторим ещё раз? 💪';
-
-    alert(`${title}\n${studentName}, вы набрали ${testScore} из ${testQueue.length} (${percent}%).`);
-    exitTraining();
+    finishTraining();
   } else {
     renderTestQuestion();
+  }
+}
+
+// Экран итогов вместо alert()
+function finishTraining() {
+  const total = testQueue.length;
+  const percent = total ? Math.round((testScore / total) * 100) : 0;
+
+  let title = '💪 Хорошая тренировка — повторим ещё раз!';
+  if (percent === 100) title = '🏆 Идеальный результат!';
+  else if (percent >= 90) title = '🌟 Блестящий результат!';
+  else if (percent >= 70) title = '🎉 Отличная работа!';
+  else if (percent >= 50) title = '👍 Неплохо, есть куда расти!';
+
+  document.getElementById('testActiveScreen').classList.add('hidden');
+  document.getElementById('testResultsScreen').classList.remove('hidden');
+
+  const percentEl = document.getElementById('resultPercent');
+  document.getElementById('resultTitle').textContent = title;
+  document.getElementById('resultGreeting').textContent = `${studentName}, ваш результат:`;
+  percentEl.textContent = `${percent}%`;
+  percentEl.style.color = percent >= 70 ? 'var(--ok)' : (percent >= 50 ? 'var(--accent)' : 'var(--error)');
+  document.getElementById('resultDetail').textContent = `${testScore} из ${total} правильных ответов`;
+
+  const mistakesWrap = document.getElementById('resultMistakesWrap');
+  const mistakesEl = document.getElementById('resultMistakes');
+  if (sessionMistakes.length) {
+    mistakesWrap.classList.remove('hidden');
+    mistakesEl.innerHTML = sessionMistakes.map(m => `
+      <div class="mistake-item"><b>${escapeHtml(m.v1)}</b> — ${escapeHtml(m.v2)} — ${escapeHtml(m.v3)} <span style="color:var(--muted);">(${escapeHtml(m.ru)})</span></div>
+    `).join('');
+  } else {
+    mistakesWrap.classList.add('hidden');
   }
 }
 
@@ -1993,9 +2548,19 @@ function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 }
 
-function escapeAttr(s) {
-  return String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
-}
+// Горячие клавиши в тесте: 1–4 выбирают вариант ответа
+// (в режимах ввода работает Enter — «Проверить»/«Дальше»)
+document.addEventListener('keydown', (e) => {
+  const activeScreen = document.getElementById('testActiveScreen');
+  if (!activeScreen || activeScreen.classList.contains('hidden')) return;
+  if (currentTestType !== 'quiz' || questionAnswered) return;
+
+  const n = parseInt(e.key, 10);
+  if (n >= 1 && n <= 4) {
+    const btns = document.querySelectorAll('#testQuizOptions button');
+    if (btns[n - 1] && !btns[n - 1].disabled) btns[n - 1].click();
+  }
+});
 </script>
 </body>
 </html>
