@@ -2,10 +2,11 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1e293b">
 <meta name="description" content="152 неправильных глагола английского языка: интерактивный справочник с транскрипцией и озвучкой, карточки, группы и тренажёр с правдоподобными вариантами ответов и автоозвучиванием 3 форм. Работает одним HTML-файлом офлайн.">
 <title>Неправильные глаголы английского языка (UK) | 150+ глаголов, Справочник и Тренажер</title>
-<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=wmq8zzVNfCUm8TNQo3z2q4eIOuRlWKfj0v-68yViErO8CEJVulc0vKCUCKo7iIz6UKKQuHlPpgmMb4H_rZwblJ_OrV7tMfL8lB9eXcEYqeaxiX6Hi-w9H4Dy1Mob0xVYCUmIGRC63BvjorS25p5c4DKv9K1JguZMyiNfnlmzRqs" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9wcmV2aWV3LWNoYXQtNWFjZDA5ZWMtM2RiNy00OTJiLWE2YzAtNWNmMzY3NGU1MDliLnNwYWNlLXouYWkvZG93bmxvYWRzL0lycmVndWxhcl92ZXJicy5odG1s"/><style>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=X9eEue8Kh_z0nMl1GmwVSDLDyHmSqdvkRfFOuEfVzHiiidnqny2D7RnJMjAhoNUek-ddQ5sfxfuGRty4E9eDQ-m0fUwmZ87_k2EGCxPeLzw7NaKWIZb3HvrallLSXKT-O9-WO1T74Nb8s9EasNN_PIpF1h3udz6eoSxmavbsMuM" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9wcmV2aWV3LWNoYXQtOWIzODRmY2MtODQwNi00NzYyLTg0MGMtODVmN2I2N2QxMmQ4LnNwYWNlLXouYWkvZG93bmxvYWRzL0lycmVndWxhcl92ZXJicy5odG1s"/><style>
 :root {
   --p: #4f67d8;
   --p-hover: #3b50ba;
@@ -25,7 +26,13 @@
   --accent: #f59e0b;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -35,6 +42,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -798,10 +806,114 @@ footer {
   text-align: left;
 }
 
-@media(max-width: 768px) {
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  /* На мобильных скрываем колонку озвучки — перевод важнее */
-  th:last-child, td:last-child { display: none; }
+/* ============ Мобильная оптимизация (≤768px) ============ */
+@media (max-width: 768px) {
+  header { padding: 22px 14px 54px; border-radius: 0 0 18px 18px; }
+  header p { font-size: 0.92rem; }
+  main { margin-top: -32px; padding: 0 10px 28px; }
+  .panel { padding: 16px 12px; border-radius: 16px; }
+
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .stat-card { padding: 10px; border-radius: 12px; }
+  .stat-num { font-size: 1.3rem; }
+  .stat-lbl { font-size: 0.68rem; }
+
+  /* Навигация: липкая панель, вкладки листаются по горизонтали */
+  .nav-panel {
+    position: sticky;
+    top: 6px;
+    z-index: 40;
+    padding: 8px;
+    margin-bottom: 12px;
+  }
+  .tab-buttons {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tab-buttons::-webkit-scrollbar { display: none; }
+  .tab-buttons button { flex: 0 0 auto; white-space: nowrap; padding: 11px 14px; }
+
+  /* Поиск */
+  .search-box { padding: 8px 10px; gap: 8px; margin-bottom: 12px; }
+  .search-input { font-size: 1rem; padding: 11px 12px; min-width: 0; }
+  #panelList .search-input { flex: 1 1 0; width: auto; }
+  .search-box .btn-soft { flex: 0 0 auto; padding: 10px 12px; }
+
+  /* Таблицы → компактные карточки (без горизонтальной прокрутки) */
+  .table-wrap {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    margin: 10px 0 6px;
+  }
+  table { background: transparent; }
+  thead { display: none; }
+  tbody tr {
+    display: block;
+    background: #fff;
+    border: 1px solid var(--bd);
+    border-radius: 14px;
+    padding: 2px 12px;
+    margin: 0 0 10px;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+  }
+  tbody tr:hover td { background: transparent; }
+  tbody td {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    width: auto !important;
+    padding: 9px 0;
+    border-bottom: 1px solid #eef2f7;
+    text-align: left;
+  }
+  tbody td::before {
+    content: attr(data-label);
+    flex: 0 0 auto;
+    min-width: 30%;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--muted);
+  }
+  tbody td:last-child { border-bottom: 0; }
+  .tts-cell { flex: 1 1 auto; gap: 8px; }
+
+  /* Крупные удобные кнопки под палец (≥44px) */
+  .tts-btn { min-width: 44px; min-height: 44px; padding: 8px 12px; font-size: 1.1rem; }
+  .check-btn { width: 36px; height: 36px; font-size: 18px; border-radius: 9px; }
+  .verb-word { font-size: 1.05rem; }
+
+  /* Нижняя строка карточки глагола: большая кнопка озвучки всех форм */
+  td.c-speak::before { display: none; }
+  td.c-speak .tts-btn-all { flex: 1 1 auto; justify-content: center; min-height: 46px; }
+
+  /* Карточки (flashcards) */
+  .flashcard { min-height: 240px; padding: 24px 14px; }
+  .flashcard .main-text { font-size: 2.2rem; }
+
+  /* Тренажёр: элементы управления во всю ширину */
+  #testSetupScreen .search-input,
+  #testSetupScreen .tts-toggle { width: 100%; max-width: none; }
+  .test-opt { padding: 15px 14px; font-size: 1rem; }
+  #testPrompt { font-size: 2rem; }
+  .btn-primary { padding: 12px 18px; }
+
+  /* Тосты снизу — не перекрывают вкладки и не мешают вводу */
+  .toast-container { top: auto; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* Очень узкие экраны */
+@media (max-width: 400px) {
+  .stat-num { font-size: 1.15rem; }
+  tbody td::before { min-width: 27%; }
+  #testPrompt { font-size: 1.8rem; }
 }
 </style>
 </head>
@@ -857,7 +969,7 @@ footer {
   <section id="panelList" class="panel">
     <div class="search-box">
       <span style="font-size: 1.3rem;">🔍</span>
-      <input type="text" id="searchInput" class="search-input" placeholder="Поиск по любой форме (Infinitive, V2, V3) или русскому переводу..." oninput="filterAndScrollVerbs()">
+      <input type="text" id="searchInput" class="search-input" placeholder="Поиск: go, went, ломать…" enterkeyhint="search" autocomplete="off" autocapitalize="off" spellcheck="false" oninput="onSearchInput()" onkeydown="if(event.key==='Enter'){event.preventDefault();filterAndScrollVerbs(true);}">
       <button class="btn-soft" onclick="clearSearch()">Очистить</button>
     </div>
     
@@ -1610,9 +1722,8 @@ let isCardShuffled = false;
 
 // Инициализация при загрузке
 window.addEventListener('DOMContentLoaded', () => {
+  // Рендерим только видимую вкладку — первый экран появляется мгновенно
   renderMainTable();
-  renderSkillboxTable();
-  renderGroupTables();
   updateStats();
   updateCardUI();
   detectServerTTS();
@@ -1627,6 +1738,14 @@ window.addEventListener('DOMContentLoaded', () => {
     const autoSpeakEl = document.getElementById('autoSpeakToggle');
     if (autoSpeakEl) autoSpeakEl.checked = savedAutoSpeak !== '0';
   }
+
+  // Тяжёлые таблицы (Топ-140 и 14 групповых) догружаем в простое браузера,
+  // чтобы не задерживать первый экран на слабых телефонах
+  const idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 1200); };
+  idle(() => {
+    renderSkillboxTableLazy();
+    renderGroupTablesLazy();
+  });
 });
 
 // Переключение вкладок
@@ -1639,6 +1758,11 @@ function switchTab(tabId) {
 
   document.getElementById('panel' + capitalize(tabId)).classList.remove('hidden');
   document.getElementById('tab' + capitalize(tabId) + 'Btn').className = 'btn-primary';
+
+  // Ленивый рендер тяжёлых вкладок при первом открытии
+  if (tabId === 'list') syncLearnedMarks();
+  if (tabId === 'skillbox') renderSkillboxTableLazy();
+  if (tabId === 'groups') renderGroupTablesLazy();
 
   stopSpeaking();
   if (tabId === 'cards') updateCardUI();
@@ -1816,38 +1940,38 @@ function renderMainTable() {
     const isLearned = learnedSet.has(v[0]);
     return `
       <tr id="verb-row-${v[0].toLowerCase()}">
-        <td style="text-align: center; width: 36px;">
-          <button class="check-btn ${isLearned ? 'on' : ''}" onclick="toggleLearned('${v[0]}')" title="Отметить как выученное" aria-label="Отметить глагол ${v[0]} как выученное">${isLearned ? '✓' : ''}</button>
+        <td class="c-check" data-label="Выучено" style="text-align: center; width: 36px;">
+          <button class="check-btn ${isLearned ? 'on' : ''}" data-verb="${v[0]}" onclick="toggleLearned('${v[0]}')" title="Отметить как выученное" aria-label="Отметить глагол ${v[0]} как выученное">${isLearned ? '✓' : ''}</button>
         </td>
-        <td>
+        <td class="c-v1" data-label="V1 — Infinitive">
           <div class="tts-cell">
             <div class="tts-cell-info">
               <span class="verb-word">${v[0]}</span>
               <span class="verb-ipa">${v[4]}</span>
             </div>
-            <button class="tts-btn" onclick="speakWord('${v[0]}')" title="Озвучить V1">🔊</button>
+            <button class="tts-btn" onclick="speakWord('${v[0]}')" title="Озвучить V1" aria-label="Озвучить ${v[0]}">🔊</button>
           </div>
         </td>
-        <td>
+        <td class="c-v2" data-label="V2 — Past Simple">
           <div class="tts-cell">
             <div class="tts-cell-info">
               <span class="verb-word">${v[1]}</span>
               <span class="verb-ipa">${v[5]}</span>
             </div>
-            <button class="tts-btn" onclick="speakWord('${v[1]}')" title="Озвучить V2">🔊</button>
+            <button class="tts-btn" onclick="speakWord('${v[1]}')" title="Озвучить V2" aria-label="Озвучить ${v[1]}">🔊</button>
           </div>
         </td>
-        <td>
+        <td class="c-v3" data-label="V3 — Participle">
           <div class="tts-cell">
             <div class="tts-cell-info">
               <span class="verb-word">${v[2]}</span>
               <span class="verb-ipa">${v[6]}</span>
             </div>
-            <button class="tts-btn" onclick="speakWord('${v[2]}')" title="Озвучить V3">🔊</button>
+            <button class="tts-btn" onclick="speakWord('${v[2]}')" title="Озвучить V3" aria-label="Озвучить ${v[2]}">🔊</button>
           </div>
         </td>
-        <td class="verb-translation">${v[3]}</td>
-        <td style="text-align: center; width: 120px;">
+        <td class="c-ru verb-translation" data-label="Перевод">${v[3]}</td>
+        <td class="c-speak" style="text-align: center; width: 120px;">
           <button class="tts-btn tts-btn-all" onclick="speakAllThree('${v[0]}', '${v[1]}', '${v[2]}')" title="Все 3 формы">🔊 1-2-3</button>
         </td>
       </tr>
@@ -1861,11 +1985,11 @@ function renderSkillboxTable() {
   if (!tbody) return;
   tbody.innerHTML = ALL_VERBS.map(v => `
     <tr>
-      <td><b>${v[0]}</b> <span class="verb-ipa">${v[4]}</span></td>
-      <td><b>${v[1]}</b> <span class="verb-ipa">${v[5]}</span></td>
-      <td><b>${v[2]}</b> <span class="verb-ipa">${v[6]}</span></td>
-      <td>${v[3]}</td>
-      <td style="text-align: center;">
+      <td data-label="1-я форма"><b>${v[0]}</b> <span class="verb-ipa">${v[4]}</span></td>
+      <td data-label="2-я форма"><b>${v[1]}</b> <span class="verb-ipa">${v[5]}</span></td>
+      <td data-label="3-я форма"><b>${v[2]}</b> <span class="verb-ipa">${v[6]}</span></td>
+      <td data-label="Перевод">${v[3]}</td>
+      <td data-label="Озвучить" style="text-align: center;">
         <button class="tts-btn tts-btn-all" onclick="speakAllThree('${v[0]}', '${v[1]}', '${v[2]}')" title="Озвучить все 3 формы">🔊 1-2-3</button>
       </td>
     </tr>
@@ -1897,11 +2021,11 @@ function renderGroupTables() {
     const groupVerbs = ALL_VERBS.filter(v => v[7] === grp);
     el.innerHTML = groupVerbs.map(v => `
       <tr>
-        <td><b>${v[0]}</b> <span class="verb-ipa">${v[4]}</span></td>
-        <td><b>${v[1]}</b> <span class="verb-ipa">${v[5]}</span></td>
-        <td><b>${v[2]}</b> <span class="verb-ipa">${v[6]}</span></td>
-        <td>${v[3]}</td>
-        <td style="text-align:center;">
+        <td data-label="V1"><b>${v[0]}</b> <span class="verb-ipa">${v[4]}</span></td>
+        <td data-label="V2"><b>${v[1]}</b> <span class="verb-ipa">${v[5]}</span></td>
+        <td data-label="V3"><b>${v[2]}</b> <span class="verb-ipa">${v[6]}</span></td>
+        <td data-label="Перевод">${v[3]}</td>
+        <td data-label="Озвучить" style="text-align:center;">
           <button class="tts-btn tts-btn-all" onclick="speakAllThree('${v[0]}', '${v[1]}', '${v[2]}')" title="Озвучить все три формы">🔊 1-2-3</button>
         </td>
       </tr>
@@ -1909,8 +2033,30 @@ function renderGroupTables() {
   }
 }
 
+// Ленивый рендер: тяжёлые таблицы строятся при первом открытии вкладки
+// или в простое браузера — первый экран не ждёт ~400 строк
+let skillboxRendered = false;
+let groupsRendered = false;
+function renderSkillboxTableLazy() {
+  if (skillboxRendered) return;
+  renderSkillboxTable();
+  skillboxRendered = true;
+}
+function renderGroupTablesLazy() {
+  if (groupsRendered) return;
+  renderGroupTables();
+  groupsRendered = true;
+}
+
 // Поиск и скролл
-function filterAndScrollVerbs() {
+let searchTimer = null;
+// Debounce: фильтрация не запускается на каждое нажатие клавиши — плавно на телефоне
+function onSearchInput() {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => filterAndScrollVerbs(false), 200);
+}
+
+function filterAndScrollVerbs(scrollToMatch) {
   const q = document.getElementById('searchInput').value.trim().toLowerCase();
   if (!q) {
     document.querySelectorAll('#verbsTableBody tr').forEach(r => {
@@ -1940,17 +2086,23 @@ function filterAndScrollVerbs() {
   });
 
   if (firstMatchRow) {
-    firstMatchRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Прокрутка к совпадению — только по Enter / кнопке «Поиск» на клавиатуре,
+    // чтобы страница не прыгала при каждом нажатии на телефоне
+    if (scrollToMatch) {
+      firstMatchRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
     firstMatchRow.classList.add('highlight-row');
+    const rowToUnhighlight = firstMatchRow;
     setTimeout(() => {
-      firstMatchRow.classList.remove('highlight-row');
+      rowToUnhighlight.classList.remove('highlight-row');
     }, 2000);
   }
 }
 
 function clearSearch() {
+  clearTimeout(searchTimer);
   document.getElementById('searchInput').value = '';
-  filterAndScrollVerbs();
+  filterAndScrollVerbs(false);
 }
 
 // Управление выученными
@@ -1962,8 +2114,31 @@ function toggleLearned(verb) {
     showToast(`Глагол «${verb}» добавлен в выученные! ⭐`);
   }
   localStorage.setItem('verbs_learned_set', JSON.stringify([...learnedSet]));
-  renderMainTable();
+  updateLearnedMark(verb);
   updateStats();
+}
+
+// Точечное обновление одной строки вместо перерисовки всех 152 строк —
+// мгновенный отклик и без лишней нагрузки на телефон
+function updateLearnedMark(verb) {
+  const row = document.getElementById('verb-row-' + String(verb).toLowerCase());
+  if (!row) return;
+  const btn = row.querySelector('.check-btn');
+  if (!btn) return;
+  const on = learnedSet.has(verb);
+  btn.classList.toggle('on', on);
+  btn.textContent = on ? '✓' : '';
+}
+
+// Синхронизация отметок после карточек/тренажёра — без полной перерисовки
+function syncLearnedMarks() {
+  document.querySelectorAll('#verbsTableBody .check-btn').forEach(btn => {
+    const verb = btn.getAttribute('data-verb');
+    if (!verb) return;
+    const on = learnedSet.has(verb);
+    btn.classList.toggle('on', on);
+    btn.textContent = on ? '✓' : '';
+  });
 }
 
 function updateStats() {
