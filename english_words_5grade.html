@@ -121,7 +121,7 @@ details[open] .summary-style::after{transform:rotate(180deg)}
 /* ===== Карточки с картинками ===== */
 .pic-tag{color:var(--muted);font-size:.78rem;font-weight:700;letter-spacing:.5px}
 .pic-emoji{font-size:clamp(4.5rem,18vw,7rem);line-height:1.15;margin:4px 0}
-.pic-img{max-height:180px;max-width:92%;object-fit:contain;margin:6px 0}
+.pic-emoji-sm{font-size:clamp(2.8rem,11vw,4.6rem);letter-spacing:.02em}
 .pic-title{font-size:.9rem;color:var(--p2);font-weight:700;margin-top:6px}
 .pic-ru{font-size:1.15rem;font-weight:700;margin-top:6px}
 .pic-controls{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
@@ -129,6 +129,7 @@ details[open] .summary-style::after{transform:rotate(180deg)}
 .pic-item{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:10px 6px;text-align:center;cursor:pointer;transition:.15s}
 .pic-item:hover{border-color:var(--p);transform:translateY(-2px)}
 .pic-item .e{font-size:2rem;line-height:1.2}
+.pic-item .e-sm{font-size:1.35rem;letter-spacing:-.04em}
 .pic-item .w{font-size:.72rem;font-weight:700;margin-top:4px;word-break:break-word}
 .pic-item .u{font-size:.6rem;color:var(--muted);margin-top:2px}
 .pic-item.done{border-color:var(--ok);background:var(--ok-bg)}
@@ -168,9 +169,10 @@ td.c-speak .tts-btn-all{flex:1 1 auto;justify-content:center;min-height:46px}
 .trainer-prompt{font-size:1.9rem}
 .toast-container{top:auto;bottom:calc(14px + env(safe-area-inset-bottom,0px))}
 .pic-emoji{font-size:5rem}
+.pic-emoji-sm{font-size:3.4rem}
 .pic-grid{grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px}
 }
-@media(max-width:400px){.num{font-size:1.15rem}tbody td::before{min-width:27%}.pic-emoji{font-size:4.2rem}}
+@media(max-width:400px){.num{font-size:1.15rem}tbody td::before{min-width:27%}.pic-emoji{font-size:4.2rem}.pic-emoji-sm{font-size:2.8rem}}
 </style>
 </head>
 <body>
@@ -369,35 +371,45 @@ const VERBS=[
 const VERB_FORMS={};VERBS.forEach(v=>VERB_FORMS[v[0]]=v[1]+", "+v[2].replace(/\s*\[red\]/,""));
 
 /* Карточки с картинками из PDF «Vocabulary cards for games».
-   Формат: [слово (как в словаре), эмодзи-рисунок, юнит, урок, надпись с карточки PDF, URL картинки (необяз.)] */
+   Формат: [слово (как в словаре), эмодзи-рисунок (композиция для фраз), юнит, урок, надпись с карточки PDF] */
 const PICS=[
-["seaside","🏖️","U1","L1","at the seaside"],["home","🏠","U1","L1","at home"],["summer camp","⛺","U1","L1","at summer camp"],["in the country","🐑","U1","L1","in the country"],["town","🏙️","U1","L1","in town"],["abroad","🗺️","U1","L1","abroad"],
-["wood","🌲","U1","L5","wood"],["lake","🦆","U1","L5","lake"],["summer house","🏡","U1","L5","summer house"],["see-saw","🤸","U1","L5","play on the see-saw"],["slide","🛝","U1","L5","play on the slide"],["swing","🎐","U1","L5","play on the swing"],["pick berries","🫐","U1","L5","pick berries"],["pick flowers","🌸","U1","L5","pick flowers"],["pick mushrooms","🍄","U1","L5","pick mushrooms"],
-["go fishing","🎣","U2","L1","go fishing"],["go mountain climbing","🧗","U2","L1","go mountain climbing"],["go swimming","🏊","U2","L1","go swimming"],["go for a swim","🏊‍♀️","U2","L1","go for a swim"],["go for a picnic","🧺","U2","L1","go for a picnic"],["go for a walk","🚶","U2","L1","go for a walk"],
-["cafe","☕","U2","L5","café"],["big wheel","🎡","U2","L5","big wheel"],["pony","🐴","U2","L5","ride a pony"],["merry-go-round","🎠","U2","L5","merry-go-round"],["gift shop","🎁","U2","L5","gift shop"],
-["news","📺","U3","L1","the news"],["documentary","🔬","U3","L1","documentary"],["nature programme","🦁","U3","L1","nature programme"],["quiz show","❓","U3","L1","quiz show"],["talent show","🎤","U3","L1","talent show"],["sports programme","🎾","U3","L1","sports programme"],["talk show","💬","U3","L1","talk show"],["music programme","🎵","U3","L1","music programme"],
-["detective film","🕵️","U3","L2","detective film"],["action film","🔫","U3","L2","action film"],["adventure film","🛶","U3","L2","adventure film"],["romantic film","💑","U3","L2","romantic film"],["comedy","🤡","U3","L2","comedy"],["scary","👻","U3","L2","horror film"],["science fiction","🚀","U3","L2","science fiction film"],["sitcom","🐻","U3","L2","sitcom"],["fairy tale","👸","U3","L2","fairy tale"],
-["quarter","🕕","U3","L4","It's quarter past six"],["half","🕡","U3","L4","It's half past six"],
-["Independence Day","🎇","U4","L1","Independence Day"],["Christmas","🎄","U4","L1","Christmas"],["New Year's Day","📅","U4","L1","New Year's Day"],["Valentine's Day","💌","U4","L1","Valentine's Day"],["April Fool's Day","🃏","U4","L1","April Fool's Day"],["Victory Day","🎗️","U4","L1","Victory Day"],["Queen's Official Birthday","👑","U4","L1","the Queen's Official Birthday"],["Easter","🐣","U4","L1","Easter"],
-["celebrate","🎊","U4","L2","celebrate"],["invite","🎂","U4","L2","invite friends and relatives"],["decorate","🎉","U4","L2","decorate … with"],["light","🕯️","U4","L2","light candles"],["present","🛍️","U4","L2","get presents"],["parade","🥁","U4","L2","watch a parade"],["fireworks","🎆","U4","L2","watch fireworks"],["play jokes","😜","U4","L2","play jokes on …"],["send","📮","U4","L2","send cards"],["wish","💝","U4","L2","wish happiness"],["paint","🥚","U4","L2","paint eggs"],
-["cracker","🧨","U4","L4","pull crackers"],["stocking","🧦","U4","L4","stocking"],["carol","🎶","U4","L4","sing carols"],["fireplace","🔥","U4","L4","fireplace"],["angel","👼","U4","L4","put an angel"],["tinsel","✨","U4","L4","tinsel"],["ornament","🔔","U4","L4","ornaments"],["lights","💡","U4","L4","lights"],["snowman","⛄","U4","L4","snowman"],["snowflake","❄️","U4","L4","snowflake"],
-["bacon and eggs","🥓","U5","L1","bacon"],["biscuit","🍪","U5","L1","biscuit"],["butter","🧈","U5","L1","butter"],["crisps","🍟","U5","L1","crisps"],["fruit","🍎","U5","L1","fruit"],["honey","🍯","U5","L1","honey"],["rice","🍚","U5","L1","rice"],["roll","🥐","U5","L1","roll"],["sugar","🧂","U5","L1","sugar"],["toast","🍞","U5","L1","toast"],["vegetables","🥕","U5","L1","vegetables"],
-["arm","💪","U5","L5","arm"],["back","🧍","U5","L5","back"],["body","🧍‍♂️","U5","L5","body"],["ear","👂","U5","L5","ear"],["elbow","🦾","U5","L5","elbow"],["eye","👁️","U5","L5","eye"],["face","😊","U5","L5","face"],["finger","☝️","U5","L5","finger"],["foot","🦶","U5","L5","foot"],["hair","💇","U5","L5","hair"],["hand","✋","U5","L5","hand"],["head","👤","U5","L5","head"],["knee","🧎","U5","L5","knee"],["leg","🦵","U5","L5","leg"],["mouth","👄","U5","L5","mouth"],["neck","🦒","U5","L5","neck"],["nose","👃","U5","L5","nose"],["shoulder","🤷","U5","L5","shoulder"],["stomach","🤰","U5","L5","stomach"],["toe","👣","U5","L5","toe"],["tooth","🦷","U5","L5","tooth"],
-["headache","🤕","U5","L6","headache"],["hurt","😣","U5","L6","hurt"],["stomach ache","🤢","U5","L6","stomach ache"],["toothache","😖","U5","L6","toothache"],
+/* === UNIT 1 === */
+["seaside","🏖️","U1","L1","at the seaside"],["home","🏠","U1","L1","at home"],["summer camp","🏕️","U1","L1","at summer camp"],["in the country","🏡🐑","U1","L1","in the country"],["town","🏙️","U1","L1","in town"],["abroad","✈️🌍","U1","L1","abroad"],
+["wood","🌲🌲","U1","L5","wood"],["lake","🏞️","U1","L5","lake"],["summer house","🏡","U1","L5","summer house"],["see-saw","⚖️","U1","L5","play on the see-saw"],["slide","🛝","U1","L5","play on the slide"],["swing","🧒↕️","U1","L5","play on the swing"],["pick berries","🫐🧺","U1","L5","pick berries"],["pick flowers","🌸🧺","U1","L5","pick flowers"],["pick mushrooms","🍄🧺","U1","L5","pick mushrooms"],
+/* === UNIT 2 === */
+["go fishing","🎣","U2","L1","go fishing"],["go mountain climbing","🧗","U2","L1","go mountain climbing"],["go swimming","🏊","U2","L1","go swimming"],["go for a swim","🏊‍♀️","U2","L1","go for a swim"],["go for a picnic","🍉🧺","U2","L1","go for a picnic"],["go for a walk","🚶","U2","L1","go for a walk"],
+["cafe","☕","U2","L5","café"],["big wheel","🎡","U2","L5","big wheel"],["pony","🧒🐴","U2","L5","ride a pony"],["merry-go-round","🎠","U2","L5","merry-go-round"],["gift shop","🎁🏪","U2","L5","gift shop"],
+/* === UNIT 3 === */
+["news","📰📺","U3","L1","the news"],["documentary","🔬📺","U3","L1","documentary"],["nature programme","🦁📺","U3","L1","nature programme"],["quiz show","❓📺","U3","L1","quiz show"],["talent show","🎤📺","U3","L1","talent show"],["sports programme","🎾📺","U3","L1","sports programme"],["talk show","💬📺","U3","L1","talk show"],["music programme","🎵📺","U3","L1","music programme"],
+["detective film","🕵️","U3","L2","detective film"],["action film","🔫","U3","L2","action film"],["adventure film","🧭","U3","L2","adventure film"],["romantic film","💑","U3","L2","romantic film"],["comedy","😂","U3","L2","comedy"],["scary","👻","U3","L2","horror film"],["science fiction","🚀","U3","L2","science fiction film"],["sitcom","😂📺","U3","L2","sitcom"],["fairy tale","👸","U3","L2","fairy tale"],
+["quarter","🕕¼","U3","L4","It's quarter past six"],["half","🕕½","U3","L4","It's half past six"],
+/* === UNIT 4 === */
+["Independence Day","🇧🇾🎆","U4","L1","Independence Day"],["Christmas","🎄","U4","L1","Christmas"],["New Year's Day","📅🎆","U4","L1","New Year's Day"],["Valentine's Day","💌","U4","L1","Valentine's Day"],["April Fool's Day","🃏","U4","L1","April Fool's Day"],["Victory Day","🎖️","U4","L1","Victory Day"],["Queen's Official Birthday","👑","U4","L1","the Queen's Official Birthday"],["Easter","🥚🐣","U4","L1","Easter"],
+["celebrate","🎊","U4","L2","celebrate"],["invite","✉️","U4","L2","invite friends and relatives"],["decorate","🎄✨","U4","L2","decorate … with"],["light","🕯️","U4","L2","light candles"],["present","🎁","U4","L2","get presents"],["parade","🥁🎺","U4","L2","watch a parade"],["fireworks","🎆","U4","L2","watch fireworks"],["play jokes","😜","U4","L2","play jokes on …"],["send","📮","U4","L2","send cards"],["wish","🌠","U4","L2","wish happiness"],["paint","🥚🎨","U4","L2","paint eggs"],
+["cracker","🎉","U4","L4","pull crackers"],["stocking","🧦","U4","L4","stocking"],["carol","🎶","U4","L4","sing carols"],["fireplace","🔥","U4","L4","fireplace"],["angel","👼","U4","L4","put an angel"],["tinsel","✨","U4","L4","tinsel"],["ornament","🔔","U4","L4","ornaments"],["lights","💡","U4","L4","lights"],["snowman","⛄","U4","L4","snowman"],["snowflake","❄️","U4","L4","snowflake"],
+/* === UNIT 5 === */
+["bacon and eggs","🥓🍳","U5","L1","bacon"],["biscuit","🍪","U5","L1","biscuit"],["butter","🧈","U5","L1","butter"],["crisps","🍟","U5","L1","crisps"],["fruit","🍎🍌🍇","U5","L1","fruit"],["honey","🍯","U5","L1","honey"],["rice","🍚","U5","L1","rice"],["roll","🥯","U5","L1","roll"],["sugar","🧂","U5","L1","sugar"],["toast","🍞🔥","U5","L1","toast"],["vegetables","🥕🍅🥬","U5","L1","vegetables"],
+["arm","💪","U5","L5","arm"],["back","🔙","U5","L5","back"],["body","🧍‍♂️","U5","L5","body"],["ear","👂","U5","L5","ear"],["elbow","🦾","U5","L5","elbow"],["eye","👁️","U5","L5","eye"],["face","🙂","U5","L5","face"],["finger","☝️","U5","L5","finger"],["foot","🦶","U5","L5","foot"],["hair","🦱","U5","L5","hair"],["hand","✋","U5","L5","hand"],["head","👤","U5","L5","head"],["knee","🧎","U5","L5","knee"],["leg","🦵","U5","L5","leg"],["mouth","👄","U5","L5","mouth"],["neck","🦒","U5","L5","neck"],["nose","👃","U5","L5","nose"],["shoulder","🤷","U5","L5","shoulder"],["stomach","🤰","U5","L5","stomach"],["toe","👣","U5","L5","toe"],["tooth","🦷","U5","L5","tooth"],
+["headache","🤕","U5","L6","headache"],["hurt","🩹","U5","L6","hurt"],["stomach ache","🤢","U5","L6","stomach ache"],["toothache","🦷😣","U5","L6","toothache"],
 ["cold","🤒","U5","L7","cold"],["cough","😷","U5","L7","cough"],["runny nose","🤧","U5","L7","runny nose"],["sore throat","🧣","U5","L7","sore throat"],["temperature","🌡️","U5","L7","temperature"],
-["next to","🏘️","U6","L1","next to"],["opposite","🔄","U6","L1","opposite"],["between","↔️","U6","L1","between"],["behind","🙈","U6","L1","behind"],["in front of","↩️","U6","L1","in front of"],["supermarket","🛒","U6","L1","supermarket"],["post office","🏤","U6","L1","post office"],["hospital","🏥","U6","L1","hospital"],["church","⛪","U6","L1","church"],["bookshop","📚","U6","L1","bookshop"],["museum","🖼️","U6","L1","museum"],["traffic lights","🚦","U6","L1","traffic lights"],["library","📖","U6","L1","library"],["school","🏫","U6","L1","school"],["theatre","🎭","U6","L1","theatre"],["bank","🏦","U6","L1","bank"],["bridge","🌉","U6","L1","bridge"],["bus stop","🚏","U6","L1","bus stop"],
-["cross the street","🚸","U6","L2","cross the street"],["go along the street","🛣️","U6","L2","go along the street"],["go past","🏃","U6","L2","go past the park"],["go over","🌁","U6","L2","go over the bridge"],["turn left (right)","↪️","U6","L2","turn left / turn right"],
-["village","🛖","U7","L1","village"],["old","🏚️","U7","L1","old"],["modern","🏢","U7","L1","modern"],["clean","🧼","U7","L1","clean"],["dirty","🗑️","U7","L1","dirty"],["healthy","🌞","U7","L1","healthy"],["unhealthy","🏭","U7","L1","unhealthy"],
-["sheep","🐑","U7","L2","sheep"],["cow","🐄","U7","L2","cow"],["pig","🐖","U7","L2","pig"],["hen","🐔","U7","L2","hen"],["goose","🦢","U7","L2","goose"],
-["brush pets","🐩","U7","L3","brush pets"],["milk cows","🥛","U7","L3","milk cows"],["feed animals","🐷","U7","L3","feed animals"],["pigsty","🐽","U7","L3","pigsty"],["cowshed","🚜","U7","L3","cowshed"],
-["plant tomatoes","🍅","U7","L4","plant tomatoes"],["plant cucumbers","🥒","U7","L4","plant cucumbers"],["plant cabbages","🥬","U7","L4","plant cabbages"],["seed carrots","🌱","U7","L4","seed carrots"],["seed peas","🫛","U7","L4","seed peas"],["seed beans","🫘","U7","L4","seed beans"],["grow apple trees","🍏","U7","L4","grow apple trees"],["grow pear trees","🍐","U7","L4","grow pear trees"],["weed","🌿","U7","L4","weed flower beds"],["flowerbed","🌷","U7","L4","flowerbed"],["vegetable bed","🧑‍🌾","U7","L4","vegetable bed"],
-["Africa","🌍","U8","L1","Africa"],["Antarctica","🧊","U8","L1","Antarctica"],["Europe","🇪🇺","U8","L1","Europe"],["North America","🗽","U8","L1","North America"],["South America","🦜","U8","L1","South America"],["Arctic Ocean","🐻‍❄️","U8","L1","the Arctic Ocean"],["Atlantic Ocean","🌊","U8","L1","the Atlantic Ocean"],["Pacific Ocean","🏝️","U8","L1","the Pacific Ocean"],
-["mountain","⛰️","U8","L2","mountain"],["deep","🕳️","U8","L2","deep"],["desert","🏜️","U8","L2","desert"],["dry","🌵","U8","L2","dry"],["grasslands","🌾","U8","L2","grasslands"],["high","🗻","U8","L2","high"],["jungle","🌴","U8","L2","jungle"],["ocean","🐚","U8","L2","ocean"],["wet","💧","U8","L2","wet"],
-["camel","🐪","U8","L3","camel"],["cheetah","🐆","U8","L3","cheetah"],["dolphin","🐬","U8","L3","dolphin"],["eagle","🦅","U8","L3","eagle"],["kangaroo","🦘","U8","L3","kangaroo"],["koala","🐨","U8","L3","koala"],["lizard","🦎","U8","L3","lizard"],["octopus","🐙","U8","L3","octopus"],["ostrich","🦩","U8","L3","ostrich"],["panda","🐼","U8","L3","panda"],["penguin","🐧","U8","L3","penguin"],["rhino","🦏","U8","L3","rhino"],["shark","🦈","U8","L3","shark"],["whale","🐋","U8","L3","whale"],
-["beaver","🦫","U8","L4","beaver"],["bison","🦬","U8","L4","bison"],["deer","🦌","U8","L4","deer"],["elk","🫎","U8","L4","elk"],["field","🌻","U8","L4","field"],["hedgehog","🦔","U8","L4","hedgehog"],["hill","🌄","U8","L4","hill"],
-["lynx","🐈‍⬛","U8","L7","lynx"],["meadow","🌼","U8","L7","meadow"],["stork","🕊️","U8","L7","stork"],["wild boar","🐗","U8","L7","wild boar"],["go down","⤵️","U8","L7","go down"],["go through the park","🌳","U8","L7","go through"],
-["Australia","🇦🇺","U9","L1","Australia"],["Canada","🍁","U9","L1","Canada"],["India","🇮🇳","U9","L1","India"],["the UK","🇬🇧","U9","L1","the UK"],
-["bicycle","🚲","U9","L2","bicycle"],["boat","⛵","U9","L2","boat"],["bus","🚌","U9","L2","bus"],["car","🚗","U9","L2","car"],["helicopter","🚁","U9","L2","helicopter"],["hot-air balloon","🎈","U9","L2","hot-air balloon"],["motorbike","🏍️","U9","L2","motorbike"],["plane","✈️","U9","L2","plane"],["ship","🚢","U9","L2","ship"],["train","🚆","U9","L2","train"],["travel","🧳","U9","L2","travel"]
+/* === UNIT 6 === */
+["next to","🏠🧍","U6","L1","next to"],["opposite","🏠↔️🏠","U6","L1","opposite"],["between","🏠🧍🏠","U6","L1","between"],["behind","🏠🙈","U6","L1","behind"],["in front of","🧍🏠","U6","L1","in front of"],
+["supermarket","🛒🏪","U6","L1","supermarket"],["post office","🏤","U6","L1","post office"],["hospital","🏥","U6","L1","hospital"],["church","⛪","U6","L1","church"],["bookshop","📚🏪","U6","L1","bookshop"],["museum","🏛️","U6","L1","museum"],["traffic lights","🚦","U6","L1","traffic lights"],["library","📚","U6","L1","library"],["school","🏫","U6","L1","school"],["theatre","🎭","U6","L1","theatre"],["bank","🏦","U6","L1","bank"],["bridge","🌉","U6","L1","bridge"],["bus stop","🚏","U6","L1","bus stop"],
+["cross the street","🚸","U6","L2","cross the street"],["go along the street","🚶🛣️","U6","L2","go along the street"],["go past","🏃🌳","U6","L2","go past the park"],["go over","🚶🌉","U6","L2","go over the bridge"],["turn left (right)","⬅️➡️","U6","L2","turn left / turn right"],
+/* === UNIT 7 === */
+["village","🏘️","U7","L1","village"],["old","🏚️","U7","L1","old"],["modern","🏢","U7","L1","modern"],["clean","🧼","U7","L1","clean"],["dirty","🗑️","U7","L1","dirty"],["healthy","🥗","U7","L1","healthy"],["unhealthy","🍔🚬","U7","L1","unhealthy"],
+["sheep","🐑","U7","L2","sheep"],["cow","🐄","U7","L2","cow"],["pig","🐖","U7","L2","pig"],["hen","🐔","U7","L2","hen"],["goose","🪿","U7","L2","goose"],
+["brush pets","🐩🪥","U7","L3","brush pets"],["milk cows","🐄🥛","U7","L3","milk cows"],["feed animals","🐖🥣","U7","L3","feed animals"],["pigsty","🐖🏚️","U7","L3","pigsty"],["cowshed","🐄🏚️","U7","L3","cowshed"],
+["plant tomatoes","🌱🍅","U7","L4","plant tomatoes"],["plant cucumbers","🌱🥒","U7","L4","plant cucumbers"],["plant cabbages","🌱🥬","U7","L4","plant cabbages"],["seed carrots","🥕🌱","U7","L4","seed carrots"],["seed peas","🫛🌱","U7","L4","seed peas"],["seed beans","🫘🌱","U7","L4","seed beans"],["grow apple trees","🌳🍏","U7","L4","grow apple trees"],["grow pear trees","🌳🍐","U7","L4","grow pear trees"],["weed","🧤🌿","U7","L4","weed flower beds"],["flowerbed","🌷","U7","L4","flowerbed"],["vegetable bed","🥕🥬","U7","L4","vegetable bed"],
+/* === UNIT 8 === */
+["Africa","🌍","U8","L1","Africa"],["Antarctica","🧊🐧","U8","L1","Antarctica"],["Europe","🗼","U8","L1","Europe"],["North America","🗽","U8","L1","North America"],["South America","🦜🌴","U8","L1","South America"],["Arctic Ocean","🧊🌊","U8","L1","the Arctic Ocean"],["Atlantic Ocean","⛵🌊","U8","L1","the Atlantic Ocean"],["Pacific Ocean","🏝️","U8","L1","the Pacific Ocean"],
+["mountain","⛰️","U8","L2","mountain"],["deep","🌊⬇️","U8","L2","deep"],["desert","🏜️","U8","L2","desert"],["dry","🌵","U8","L2","dry"],["grasslands","🦁🌾","U8","L2","grasslands"],["high","⛰️⬆️","U8","L2","high"],["jungle","🐒🌴","U8","L2","jungle"],["ocean","🌊","U8","L2","ocean"],["wet","💦","U8","L2","wet"],
+["camel","🐪","U8","L3","camel"],["cheetah","🐆","U8","L3","cheetah"],["dolphin","🐬","U8","L3","dolphin"],["eagle","🦅","U8","L3","eagle"],["kangaroo","🦘","U8","L3","kangaroo"],["koala","🐨","U8","L3","koala"],["lizard","🦎","U8","L3","lizard"],["octopus","🐙","U8","L3","octopus"],["ostrich","🦤","U8","L3","ostrich"],["panda","🐼","U8","L3","panda"],["penguin","🐧","U8","L3","penguin"],["polar bear","🐻‍❄️","U8","L3","polar bear"],["rhino","🦏","U8","L3","rhino"],["shark","🦈","U8","L3","shark"],["whale","🐋","U8","L3","whale"],
+["beaver","🦫","U8","L4","beaver"],["bison","🦬","U8","L4","bison"],["deer","🦌","U8","L4","deer"],["elk","🫎","U8","L4","elk"],["field","🚜🌾","U8","L4","field"],["hedgehog","🦔","U8","L4","hedgehog"],["hill","🌄","U8","L4","hill"],
+["lynx","🐈‍⬛","U8","L7","lynx"],["meadow","🐝🌼","U8","L7","meadow"],["stork","🦩","U8","L7","stork"],["wild boar","🐗","U8","L7","wild boar"],["go down","⤵️","U8","L7","go down"],["go through the park","🚶🌳","U8","L7","go through"],
+/* === UNIT 9 === */
+["Australia","🇦🇺","U9","L1","Australia"],["Canada","🍁","U9","L1","Canada"],["country","🗺️","U9","L1","country"],["India","🇮🇳","U9","L1","India"],["the UK","🇬🇧","U9","L1","the UK"],
+["bicycle","🚲","U9","L2","bicycle"],["boat","🛶","U9","L2","boat"],["bus","🚌","U9","L2","bus"],["car","🚗","U9","L2","car"],["helicopter","🚁","U9","L2","helicopter"],["hot-air balloon","🎈🧺","U9","L2","hot-air balloon"],["motorbike","🏍️","U9","L2","motorbike"],["plane","✈️","U9","L2","plane"],["ship","🚢","U9","L2","ship"],["train","🚆","U9","L2","train"],["travel","🧳","U9","L2","travel"]
 ];
 
 /* ==================== УТИЛИТЫ ==================== */
@@ -508,13 +520,21 @@ function rebuildPics(){
  picIdx=0;picFront=true;renderPic();renderPicGrid();
 }
 function picWordInfo(p){const k=p[0].toLowerCase();return WORDS.find(x=>x[0].toLowerCase()===k)||[p[0],'',p[4],'','']}
+/* Подсчёт видимых символов в эмодзи-строке (композиции из 3+ эмодзи уменьшаем) */
+function emojiCount(s){
+ try{ if(window.Intl&&Intl.Segmenter) return [...new Intl.Segmenter('ru',{granularity:'grapheme'}).segment(s)].length }catch(e){}
+ return [...s].length;
+}
 function renderPic(){
  if(!picView.length){$('picLabel').textContent='—';$('picEmoji').textContent='😕';return}
  const p=picView[picIdx],w=picWordInfo(p);
  $('picLabel').textContent=p[2]+', '+p[3]+' · '+(picIdx+1)+'/'+picView.length;
- $('picFrontBox').innerHTML=p[5]?`<img class="pic-img" src="${p[5]}" alt="${p[0]}">`:`<div class="pic-emoji">${p[1]}</div>`;
- $('picWord').textContent=p[0];$('picIpa').textContent=w[1]?'['+w[1]+']':'';
- $('picRu').textContent=w[2];$('picTitle').textContent='🖼 на карточке: '+p[4];
+ $('picEmoji').textContent=p[1];
+ $('picEmoji').classList.toggle('pic-emoji-sm',emojiCount(p[1])>2);
+ $('picWord').textContent=p[0];
+ $('picIpa').textContent=w[1]?'['+w[1]+']':'';
+ $('picRu').textContent=w[2];
+ $('picTitle').textContent='🖼 на карточке: '+p[4];
  $('picFrontBox').classList.toggle('hidden',!picFront);
  $('picBackBox').classList.toggle('hidden',picFront);
  $('picPos').textContent=(picIdx+1)+'/'+picView.length;
@@ -534,7 +554,7 @@ function togglePicGrid(){
 }
 function renderPicGrid(){
  const daySet=new Set(curWords.map(w=>w[0].toLowerCase()));
- $('picGrid').innerHTML=picView.map((p,i)=>`<div class="pic-item ${learned.has(p[0].toLowerCase())?'done':''} ${daySet.has(p[0].toLowerCase())?'today':''}" onclick="picJump(${i})"><div class="e">${p[5]?'🖼️':p[1]}</div><div class="w">${p[0]}</div><div class="u">${p[2]}·${p[3]}</div></div>`).join('');
+ $('picGrid').innerHTML=picView.map((p,i)=>`<div class="pic-item ${learned.has(p[0].toLowerCase())?'done':''} ${daySet.has(p[0].toLowerCase())?'today':''}" onclick="picJump(${i})"><div class="e${emojiCount(p[1])>2?' e-sm':''}">${p[1]}</div><div class="w">${p[0]}</div><div class="u">${p[2]}·${p[3]}</div></div>`).join('');
 }
 function picJump(i){picIdx=i;picFront=true;renderPic();$('picGrid').classList.add('hidden');$('picFlashWrap').classList.remove('hidden');$('btnPicGrid').textContent='🧩 Сетка'}
 
