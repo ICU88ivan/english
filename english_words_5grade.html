@@ -187,12 +187,31 @@ input,select{min-height:44px}
 </div>
 </section>
 
+<!-- ===== Таблица неправильных глаголов ===== -->
+<section class="panel">
+<details>
+  <summary class="summary-style">📜 Таблица неправильных глаголов  ▼</summary>
+  <div class="day-title" style="margin-top: 20px;">
+    <div><h2 style="margin:0">Таблица неправильных глаголов</h2><div style="color:var(--muted);font-size:.85rem" id="irrCountLabel">Все формы с транскрипцией и озвучкой (UK) · кнопка 🔊 1-2-3 произносит три формы подряд</div></div>
+  </div>
+  <div class="search-box" style="margin-top:14px">
+    <span style="font-size:1.3rem;">🔍</span>
+    <input type="text" id="verbSearch" class="search-input" placeholder="Поиск по любой форме (Infinitive, V2, V3) или русскому переводу..." oninput="filterIrregularVerbs()" aria-label="Поиск по таблице неправильных глаголов">
+    <button class="soft" onclick="clearIrregularSearch()">Очистить</button>
+  </div>
+  <audio id="ttsAudio" preload="none"></audio>
+  <div class="table-wrap"><table class="irregular-table"><thead><tr><th>V1 (Infinitive)</th><th>V2 (Past Simple)</th><th>V3 (Past Participle)</th><th>Перевод</th><th>🔊 1-2-3</th></tr></thead><tbody id="irregularBody"></tbody></table></div>
+</details>
+</section>
+
 <!-- ===== Тренажёр неправильных глаголов ===== -->
 <section class="panel">
-<div class="day-title">
-  <div><h2 style="margin:0">🎯 Тренажёр неправильных глаголов</h2><div style="color:var(--muted);font-size:.85rem">Проверка знания форм V2 (Past Simple) и V3 (Past Participle)</div></div>
-</div>
-<div class="trainer-box">
+<details>
+  <summary class="summary-style">🎯 Тренажёр неправильных глаголов  ▼</summary>
+  <div class="day-title" style="margin-top: 20px;">
+    <div><h2 style="margin:0">🎯 Тренажёр неправильных глаголов</h2><div style="color:var(--muted);font-size:.85rem">Проверка знания форм V2 (Past Simple) и V3 (Past Participle)</div></div>
+  </div>
+<div class="trainer-box" style="margin-top: 20px;">
   <!-- Экран настройки -->
   <div id="vTestSetup">
     <p class="trainer-hint">В режиме «Выбор из 4 вариантов» неверные варианты — это правдоподобные ошибочные формы глагола, как в реальных ошибках учеников: <i>goed</i>, <i>gone • went</i>, <i>cut • cutted</i>. Варианты можно выбирать клавишами 1–4. При верном ответе автоматически звучат все 3 формы глагола.</p>
@@ -265,21 +284,6 @@ input,select{min-height:44px}
     </div>
   </div>
 </div>
-</section>
-
-<section class="panel">
-<details>
-  <summary class="summary-style">📜 Таблица неправильных глаголов  ▼</summary>
-  <div class="day-title" style="margin-top: 20px;">
-    <div><h2 style="margin:0">Таблица неправильных глаголов</h2><div style="color:var(--muted);font-size:.85rem" id="irrCountLabel">Все формы с транскрипцией и озвучкой (UK) · кнопка 🔊 1-2-3 произносит три формы подряд</div></div>
-  </div>
-  <div class="search-box" style="margin-top:14px">
-    <span style="font-size:1.3rem;">🔍</span>
-    <input type="text" id="verbSearch" class="search-input" placeholder="Поиск по любой форме (Infinitive, V2, V3) или русскому переводу..." oninput="filterIrregularVerbs()" aria-label="Поиск по таблице неправильных глаголов">
-    <button class="soft" onclick="clearIrregularSearch()">Очистить</button>
-  </div>
-  <audio id="ttsAudio" preload="none"></audio>
-  <div class="table-wrap"><table class="irregular-table"><thead><tr><th>V1 (Infinitive)</th><th>V2 (Past Simple)</th><th>V3 (Past Participle)</th><th>Перевод</th><th>🔊 1-2-3</th></tr></thead><tbody id="irregularBody"></tbody></table></div>
 </details>
 </section>
 
