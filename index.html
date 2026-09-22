@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Oxford 3000™ Complete List - Все уровни</title>
+<title>The Oxford 3000™ → The Oxford 5000™ — Все уровни</title>
 <style>
 :root{--p:#4f67d8;--p2:#3449a8;--bg:#f4f6fb;--card:#fff;--text:#202633;--muted:#6b7280;--ok:#25a96a;--bd:#e2e6ee}
 *{box-sizing:border-box}
@@ -32,6 +32,18 @@ section.intro{background:var(--card);border:1px solid var(--bd);border-radius:16
 .feature-icon{font-size:1.5rem;flex-shrink:0}
 .feature-text{font-size:0.95rem;line-height:1.6;color:var(--muted)}
 
+/* Баннер B2+ — The Oxford 5000™ (другая цветовая гамма: фиолетовая) */
+.b2plus-banner{background:linear-gradient(135deg,#ffffff 0%,#faf5ff 100%);border:2px solid #e9d5ff;border-radius:20px;box-shadow:0 8px 30px rgba(124,58,237,0.14);padding:32px 30px;margin:0 0 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;transition:all 0.3s ease}
+.b2plus-banner:hover{border-color:#7c3aed;box-shadow:0 12px 36px rgba(124,58,237,0.22)}
+.b2plus-banner-info{flex:1;min-width:280px}
+.b2plus-badge{display:inline-block;background:linear-gradient(135deg,#7c3aed,#c026d3);color:#fff;padding:6px 14px;border-radius:20px;font-size:0.85rem;font-weight:700;margin-bottom:12px}
+.b2plus-banner h2{margin:0 0 10px;color:#6b21a8;font-size:1.65rem;font-weight:800}
+.b2plus-banner p{margin:0 0 18px;color:var(--muted);font-size:1.02rem;line-height:1.6}
+.b2plus-tags{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.b2plus-tag-item{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #e9d5ff;padding:6px 12px;border-radius:10px;font-size:0.88rem;font-weight:600;color:var(--text)}
+.b2plus-btn{display:inline-block;background:linear-gradient(135deg,#7c3aed,#c026d3);color:#fff;padding:14px 30px;border-radius:12px;text-decoration:none;font-weight:700;transition:all 0.25s ease;font-size:1.05rem;white-space:nowrap;box-shadow:0 4px 16px rgba(124,58,237,0.3)}
+.b2plus-btn:hover{background:linear-gradient(135deg,#6b21a8,#a21caf);transform:translateY(-2px);box-shadow:0 8px 24px rgba(124,58,237,0.4)}
+
 /* Баннер Неправильных глаголов */
 .verbs-banner{background:linear-gradient(135deg,#ffffff 0%,#f5f7ff 100%);border:2px solid #c7d2fe;border-radius:20px;box-shadow:0 8px 30px rgba(79,103,216,0.12);padding:32px 30px;margin:40px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;transition:all 0.3s ease}
 .verbs-banner:hover{border-color:var(--p);box-shadow:0 12px 36px rgba(79,103,216,0.18)}
@@ -54,11 +66,15 @@ footer{text-align:center;color:#8b93a1;font-size:0.85rem;padding:20px 16px 30px;
 .level-a2{--color:#4ecdc4}
 .level-b1{--color:#ffd93d}
 .level-b2{--color:#6bcf7f}
+.level-b2plus{--color:#9333ea}
 
 @media(max-width:768px){
   .grid-levels{grid-template-columns:1fr}
   .level-card{padding:20px}
   .features{grid-template-columns:1fr}
+  .b2plus-banner{padding:22px;flex-direction:column;align-items:stretch;text-align:center}
+  .b2plus-tags{justify-content:center}
+  .b2plus-btn{text-align:center}
   .verbs-banner{padding:22px;flex-direction:column;align-items:stretch;text-align:center}
   .verbs-tags{justify-content:center}
   .verbs-btn{text-align:center}
@@ -67,14 +83,14 @@ footer{text-align:center;color:#8b93a1;font-size:0.85rem;padding:20px 16px 30px;
 </head>
 <body>
 <header>
-<h1>📚 The Oxford 3000™</h1>
-<p>Базовый словарь английского языка • Изучение слов с 🎯 и 🔊</p>
+<h1>📚 The Oxford 3000™ → The Oxford 5000™</h1>
+<p>Базовый и расширенный словари английского языка • Изучение слов с 🎯 и 🔊</p>
 </header>
 
 <main>
 <section class="intro">
-<h2>Добро пожаловать в мой словарь The Oxford 3000™</h2>
-<p>Интерактивное обучение базовому словарю английского языка. Выберите свой уровень и начните учить слова с карточками, тестами и озвучиванием.</p>
+<h2>Добро пожаловать в мой словарь: The Oxford 3000™ → The Oxford 5000™</h2>
+<p>Интерактивное обучение словарю английского языка: от базового The Oxford 3000™ до расширенного The Oxford 5000™ — более 5000 слов. Выберите свой уровень и начните учить слова с карточками, тестами и озвучиванием.</p>
 <div class="features">
 <div class="feature-item">
 <span class="feature-icon">🃏</span>
@@ -158,16 +174,35 @@ footer{text-align:center;color:#8b93a1;font-size:0.85rem;padding:20px 16px 30px;
 <div class="stats">
 <div class="stats-item">
 <div class="label">Слов</div>
-<div class="value">800+</div>
+<div class="value">700+</div>
 </div>
 <div class="stats-item">
 <div class="label">Дней</div>
-<div class="value">~30</div>
+<div class="value">~25</div>
 </div>
 </div>
 <a href="my_english_words_3000_B2.html">Начать учить →</a>
 </div>
 </div>
+
+<!-- Раздел: B2+ — расширение до The Oxford 5000™ (полная ширина, другая цветовая гамма) -->
+<section class="b2plus-banner">
+  <div class="b2plus-banner-info">
+    <div class="b2plus-badge">🟣 Новый уровень: The Oxford 5000™</div>
+    <h2>B2+ / Advanced — расширение до The Oxford 5000™</h2>
+    <p>
+      Продолжение словаря для продвинутых: 1999 новых слов уровней B2–C1, которых нет в The Oxford 3000™. Тот же привычный формат — карточки, тесты, озвучка каждой формы (UK) и челлендж «100 дней».
+    </p>
+    <div class="b2plus-tags">
+      <div class="b2plus-tag-item"><span>📚</span> 1999 новых слов</div>
+      <div class="b2plus-tag-item"><span>🎯</span> Уровни B2–C1</div>
+      <div class="b2plus-tag-item"><span>📅</span> Челлендж ~100 дней</div>
+      <div class="b2plus-tag-item"><span>🔊</span> Озвучка UK</div>
+      <div class="b2plus-tag-item"><span>🃏</span> Карточки и тесты</div>
+    </div>
+  </div>
+  <a href="my_english_words_5000_B2plus.html" class="b2plus-btn">Учить слова →</a>
+</section>
 
 <!-- Раздел: Неправильные глаголы (Irregular Verbs) -->
 <section class="verbs-banner">
@@ -220,7 +255,7 @@ footer{text-align:center;color:#8b93a1;font-size:0.85rem;padding:20px 16px 30px;
 </main>
 
 <footer>
-<p>The Oxford 3000™ — базовый словарь, признанный во всем мире как эталон для изучения английского языка.</p>
+<p>The Oxford 3000™ и The Oxford 5000™ — базовый и расширенный словари, признанные во всем мире как эталон для изучения английского языка.</p>
 <p style="margin-top:10px;font-size:0.8rem;">© 2026 | Бабков Иван Леонидович Все права защищены</p>
 </footer>
 
